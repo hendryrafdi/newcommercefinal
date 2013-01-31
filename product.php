@@ -10,9 +10,7 @@
 	<script src="js/jquery.jcarousel.min.js" type="text/javascript" charset="utf-8"></script>
 	<script src="js/jquery-func.js" type="text/javascript" charset="utf-8"></script>	
 </head>
-<?php
-include 'pages/config.php';
-?>
+
 <body>
 	<!-- Wrapper -->
 	<div id="wrapper">
@@ -48,7 +46,8 @@ include 'pages/config.php';
 					<h1 class="h1"><a href="#" ><br>Shopping Partner</a></h1>
 					<div id="navigation">
 						<ul>
-						    <li><a href="#" class="active" title="Gadget"><span>Gadget</span></a></li>
+							<li><a href="#" title="All" class="active"><span>All</span></a></li>
+						    <li><a href="#" title="Gadget"><span>Gadget</span></a></li>
 						    <li><a href="#" title="Fashion"><span>Fashion</span></a></li>
 						    <li><a href="#" title="Computer"><span>Computer</span></a></li>
 						</ul>
@@ -93,11 +92,11 @@ include 'pages/config.php';
 						</ul>
 					</div>
 					<div class="nav">
-						<a href="#" title="First Slide">&nbsp;</a>
-						<a href="#" title="Second Slide">&nbsp;</a>
-						<a href="#" title="Third Slide">&nbsp;</a>
-						<a href="#" title="Fourth Slide">&nbsp;</a>
-						<a href="#" title="Fifth Slide">&nbsp;</a>
+						<a href="#" title="Happy Shopping">&nbsp;</a>
+						<a href="#" title="Mac Book Apple">&nbsp;</a>
+						<a href="#" title="Iphone 4 3G">&nbsp;</a>
+						<a href="#" title="Iphone 5">&nbsp;</a>
+						<a href="#" title="Iphone Inovation">&nbsp;</a>
 					</div>
 				</div>
 				<!-- End Slider -->
@@ -105,42 +104,59 @@ include 'pages/config.php';
 				<div id="content">
 					<!-- Case -->
 					<div class="case">
-						<h3>Latest</h3>
+						<h3>Product</h3>
 						<!-- Row -->
 						<div class="row">
 							<ul>
+							<?php
+							include 'pages/config.php';
+							include 'pages/fungsi_paging.php';
+							
+							$p = new Paging;
+                            $batas = 20;
+                            $posisi = $p->cariPosisi($batas);
+                            switch ($_GET[act]) {
+                                default:
+
+                                    $tampil = mysql_query("select *from product limit $posisi, $batas ");
+                                    $no = $posisi + 1;
+                                    while ($r = mysql_fetch_array($tampil)) {
+							?>
 							    <li>
-									<a href="#" class="product" title="Product 1">
-										<img src="css/images/product-1.jpg" alt="Product Image 1" />
-										<span class="order model">IPhone 3G</span>
-										<span class="order">catalog number: <span class="number">1</span></span>
-										<span class="order"><span class="buy-text">Buy Now</span><span class="price"><span class="dollar">$</span>599<span class="sub-text">.99</span></span></span>
+									<a href="product.php?&act=product&detail=<?php echo $r[id_product];?>" class="product" title="<?php echo $r[nm_product]; ?>">
+										<img src="<?php echo $r[image]; ?>" alt="Product Image 1" />
+										<span class="order model"><?php echo $r[nm_product]; ?></span>
+										<span class="order"><span class="buy-text">Buy Now</span><span class="price"><span class="dollar">IDR</span><?php echo $r[price]; ?><span class="sub-text">.00</span></span></span>
 									</a>
 							    </li>
-							    <li>
-									<a href="#" class="product" title="Product 2">
-										<img src="css/images/product-2.jpg" alt="Product Image 2" />
-										<span class="order model">Mac Book</span>
-										<span class="order">catalog number: <span class="number">2</span></span>
-										<span class="order"><span class="buy-text">Buy Now</span><span class="price"><span class="dollar">$</span>1999<span class="sub-text">.99</span></span></span>
-									</a>	
+							<?php } 
+							$jmldata = mysql_num_rows(mysql_query("select *from product"));
+                            $jmlhalaman = $p->jumlahHalaman($jmldata, $batas);
+                            $linkHalaman = $p->navHalaman($_GET[halaman], $jmlhalaman);
+							
+							 case 'product':
+                                    include 'pages/config.php';
+                                    if (isset($_GET['detail'])) {
+                                        $productId = $_GET['detail'];
+                                        $detailproduct = mysql_query("SELECT * FROM product WHERE id_product='$productId' ORDER by id_product asc");
+                                        if ($tampildong = mysql_fetch_array($detailproduct)) {
+							?>
+								<li>
+									<a href="product.php?&act=product&detail=<?php echo $tampildong[id_product];?>" class="product" title="<?php echo $tampildong[nm_product]; ?>">
+										<img src="<?php echo $tampildong[image]; ?>" alt="Product Image 1" />
+										<span class="order model"><?php echo $tampildong[nm_product]; ?></span>
+										<span class="number"><?php echo $tampildong[desc]; ?></span>
+										<span class="order"><span class="buy-text">Buy Now</span><span class="price"><span class="dollar">IDR</span><?php echo $tampildong[price]; ?><span class="sub-text">.00</span></span></span>
+									</a>
 							    </li>
-							    <li>
-									<a href="#" class="product" title="Product 3">
-										<img src="css/images/product-3.jpg" alt="Product Image 3" />
-										<span class="order model">IPhone 4s</span>
-										<span class="order">catalog number: <span class="number">3</span></span>
-										<span class="order"><span class="buy-text">Buy Now</span><span class="price"><span class="dollar">$</span>15<span class="sub-text">.99</span></span></span>
-									</a>	
-							    </li>
-							    <li>
-									<a href="#" class="product" title="Product 4">
-										<img src="css/images/product-4.jpg" alt="Product Image 4" />
-										<span class="order model">Mac OS</span>
-										<span class="order">catalog number: <span class="number">4</span></span>
-										<span class="order"><span class="buy-text">Buy Now</span><span class="price"><span class="dollar">$</span>1999<span class="sub-text">.99</span></span></span>
-									</a>	
-							    </li>
+								<?php 
+								}
+							}
+							}
+							
+							echo "<center>$linkHalaman</center>";
+								?>
+							    
 							</ul>
 							<div class="cl">&nbsp;</div>
 						</div>
