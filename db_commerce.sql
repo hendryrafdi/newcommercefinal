@@ -100,7 +100,7 @@ CREATE TABLE `product` (
   `product_added` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `product_last_modify` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id_product`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -109,7 +109,7 @@ CREATE TABLE `product` (
 
 LOCK TABLES `product` WRITE;
 /*!40000 ALTER TABLE `product` DISABLE KEYS */;
-INSERT INTO `product` VALUES (1,'Mac Book Pro','images/product/product-6.jpg','Apple notebook with pink skin','Computer',6000000,'2013-01-31 12:51:26','2013-01-31 12:51:26');
+INSERT INTO `product` VALUES (1,'Mac Book Pro','images/product/product-6.jpg','Apple notebook with pink skin','Computer',6000000,'2013-01-31 12:51:26','2013-01-31 12:51:26'),(2,'Apple Mac PC','images/product/product-4.jpg','Apple PC Desktop with Pink Skin','Computer',4800000,'2013-02-01 01:48:08',NULL),(3,'iPhone5','images/product/product-5.jpg','New iPhone 5','Gadget',5000000,'2013-02-01 01:48:08',NULL),(4,'Apple Mac PC','images/product/product-2.jpg','Apple PC Desktop','Computer',4800000,'2013-02-01 01:55:39','2013-02-01 01:57:19'),(5,'iPhone4','images/product/product-12.jpg','iPhone4 3G','Gadget',4000000,'2013-02-01 01:55:39','2013-02-01 01:55:39');
 /*!40000 ALTER TABLE `product` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -153,6 +153,7 @@ CREATE TABLE `user` (
   `f_name` varchar(20) NOT NULL,
   `l_name` varchar(20) NOT NULL,
   `gender` varchar(1) NOT NULL,
+  `birthday_place` varchar(30) NOT NULL,
   `birthday` varchar(20) NOT NULL,
   `address` text NOT NULL,
   `telp` int(12) NOT NULL,
@@ -180,4 +181,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2013-01-31 20:50:31
+-- Dump completed on 2013-02-01  9:35:06
