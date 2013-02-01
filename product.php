@@ -122,7 +122,7 @@
                                             $no = $posisi + 1;
                                             while ($r = mysql_fetch_array($tampil)) {
                                                 ?>
-                                                <li>
+                                                <li style="height: 300px;">
                                                     <a href="product.php?&act=product&detail=<?php echo $r[id_product]; ?>" class="product" title="<?php echo $r[nm_product]; ?>">
                                                         <img src="<?php echo $r[image]; ?>" alt="Product Image 1" />
                                                         <span class="order model"><?php echo $r[nm_product]; ?></span>
