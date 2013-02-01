@@ -45,141 +45,161 @@
 				<!-- Header -->
 				<div id="header">
 					<h1 id="logo"><a href="#" class="notext" title="Shopper Friend">Login From</a></h1>
-					<a><img src="css/images/judul.png" id="cot"/></a>
+					<a><img src="css/images/judul_about.png" id="cot"/></a>
+					
 					<div class="cl">&nbsp;</div>
 				</div>
 				<!-- End Header -->
 				<!-- Slider -->
-				<div id="main-slider">
+				<div id="main-slider2">
 					<div id="slider-holder">
-						<div class="judul-kiri">
-							<font face="Pristina" size="10" color="black">Member</font>
-						</div>
-						<div class="con-kiri">
+						<div class="con-kiri1">
 							<table border="0">
 								<tr>
-									<td style="width: 100px;">
-										<font face="Gill Sans MT Condensed" size="5" color="black" >
-											Email
+									<td>
+										<img src="css/images/logo_phone.png" style="width: 30px; height: 30px;">
+									</td>
+									<td style="height: 20px; width: 100px;">
+										<font face="Gill Sans MT Condensed" size="4" color="black">
+											No. Telp
 										</font>
 									</td>
-									<td style="width: 300px;">
-										<input type="text" name="email" placeholder="Email" class="inputlogin">
+									<td style="height: 20px; width: 10px;">
+										<b style="color: black">:</b>
 									</td>
-								</tr>
-								<tr>
-									<td style="width: 60px;">
-										<font face="Gill Sans MT Condensed" size="5" color="black" colspan="2">
-											Password
+									<td style="height: 40px; width: 260px;">
+										<font face="Gill Sans MT Condensed" size="4" color="black">
+											085692535495
 										</font>
 									</td>
-									<td style="width: 60px;">
-										<input type="password" name="password" placeholder="Password" class="inputlogin" colspan="2">
-									</td>
 								</tr>
 								<tr>
-									<td style="width: 60px;" colspan="2">
-										<img src="css/images/button_login.png" style="height: 40px; margin-left: 100px;">
+									<td>
+										<img src="css/images/logo_alamat.png" style="width: 40px; height: 4	0px;">
 									</td>
-									
-								</tr>
-							</table>
-						</div>
-						<div class="garis">
-						&nbsp;
-						</div>
-						<div class="judul-kanan">
-							<font face="Pristina" size="10" color="black">New Member</font>
-						</div>
-						<div class="con-kanan">
-							<table border="0">
-								<tr>
-									<td style="width: 180px;">
-										<font face="Gill Sans MT Condensed" size="5" color="black">
-											Username
-										</font>
-									</td>
-									<td style="width: 300px;">
-										<input type="text" name="f_name" placeholder="First Name" style="width: 100px; height: 30px;">
-										<input type="text" name="l_name" placeholder="Last Name" style="width: 173px; height: 30px;">
-									</td>
-								</tr>
-								<tr>
-									<td style="width: 180px;">
-										<font face="Gill Sans MT Condensed" size="5" color="black">
-											Tempat, Tanggal Lahir
-										</font>
-									</td>
-									<td style="width: 300px;">
-										<input type="text" name="birthday_place" placeholder="Birthday_place" style="width: 130px; height: 30px;">
-										<input type="date" name="birthday" style="height: 30px; width: 143px;">
-									</td>
-								</tr>
-								<tr>
-									<td style="width: 180px;">
-										<font face="Gill Sans MT Condensed" size="5" color="black">
-											Jenis Kelamin
-										</font>
-									</td>
-									<td style="width: 300px;">
-										<select class="inputlogin" name="gender" style="width: 284px;">
-											<option selected="selected">Gender</option>
-											<option value="l">Male</option>
-											<option value="p">Female</option>
-										</select>
-									</td>
-								</tr>
-								<tr>
-									<td style="width: 180px;">
-										<font face="Gill Sans MT Condensed" size="5" color="black">
-											No. Telepon
-										</font>
-									</td>
-									<td style="width: 300px;">
-										<input type="text" name="telp" placeholder="Phone Number" class="inputlogin">
-									</td>
-								</tr>
-								<tr>
-									<td style="width: 180px;">
-										<font face="Gill Sans MT Condensed" size="5" color="black">
+									<td style="height: 40px; width: 100px;">
+										<font face="Gill Sans MT Condensed" size="4" color="black">
 											Alamat
 										</font>
 									</td>
-									<td style="width: 300px;">
-										<input type="text" name="addres" placeholder="Addres" class="inputlogin">
+									<td style="height: 20px; width: 10px;">
+										<b style="color: black">:</b>
+									</td>
+									<td style="height: 40px; width: 260px;">
+										<font face="Gill Sans MT Condensed" size="4" color="black">
+											Jl. Kegausan Raya , No.36 Keluarahan Ragunan </br>Kecamatan Pasar Minggu
+										</font>
 									</td>
 								</tr>
 								<tr>
-									<td style="width: 180px;">
-										<font face="Gill Sans MT Condensed" size="5" color="black">
+									<td>
+										<img src="css/images/logo_email.png" style="width: 30px; height: 30px;">
+									</td>
+									<td style="height: 40px; width: 100px;">
+										<font face="Gill Sans MT Condensed" size="4" color="black">
 											Email
 										</font>
 									</td>
-									<td style="width: 300px;">
-										<input type="text" name="email" placeholder="Email" class="inputlogin">
+									<td style="height: 20px; width: 10px;">
+										<b style="color: black">:</b>
 									</td>
-								</tr>
-								<tr>
-									<td style="width: 180px;">
-										<font face="Gill Sans MT Condensed" size="5" color="black">
-											Password
+									<td style="height: 40px; width: 260px;">
+										<font face="Gill Sans MT Condensed" size="4" color="black">
+											Carpink@Cingprung.krik
 										</font>
 									</td>
-									<td style="width: 300px;">
-										<input type="password" name="password" placeholder="Password" class="inputlogin">
+								</tr>
+								<tr>
+									<td>
+										<img src="css/images/logo_fax.png" style="width: 30px; height: 40px;">
+									</td>
+									<td style="height: 40px; width: 100px;">
+										<font face="Gill Sans MT Condensed" size="4" color="black">
+											Fax
+										</font>
+									</td>
+									<td style="height: 20px; width: 10px;">
+										<b style="color: black">:</b>
+									</td>
+									<td style="height: 40px; width: 260px;">
+										<font face="Gill Sans MT Condensed" size="4" color="black">
+											14045
+										</font>
+									</td>
+								</tr>
+							</table>
+						</div>
+						<div class="garis" style="margin-left: 480px;">
+						&nbsp;
+						</div>
+						<div class="con-kiri2">
+							<table border="0">
+								
+								<tr>
+									<td style="width: 100px;">
+										
+									</td>
+									<td>
+									<td>
+										<font face="rockwell" size="5" color="black" style="padding: 10px; margin-left: 60px;">Message</font>
 									</td>
 								</tr>
 								<tr>
-									<td></td>
-									<td style="width: 180px;">
-										<img src="css/images/button_signup.png" style="height: 40px;">
+									<td style="width: 100px; height: 10px;">
+										
+									</td>
+									<td>
+									<td>
+										
+									</td>
+								</tr>
+								<tr>
+									<td style="width: 100px;">
+										<font face="rockwell" size="3" color="black" style="padding: 10px;">Name</font>
+									</td>
+									<td>
+									<td>
+										<input type="text" name="name" style="width: 300px; height: 10px; padding: 5px;" placeholder="Your Name">
+									</td>
+								</tr>
+								<tr>
+									<td style="width: 100px;">
+										<font face="rockwell" size="3" color="black" style="padding: 10px;">Email</font>
+									</td>
+									<td>
+									<td>
+										<input type="text" name="email" style="width: 300px; height: 10px; padding: 5px;" placeholder="Your Email">
+									</td>
+								</tr>
+								<tr>
+									<td style="width: 100px;"> 
+										<font face="rockwell" size="3" color="black" style="padding: 10px;">Message</font>
+									</td>
+									<td>
+									<td>
+										<textarea name="message" placeholder="Your Message" style="width: 300px; height: 60px; padding: 5px;"></textarea>
+									</td>
+								</tr>
+								<tr>
+									<td style="width: 100px;"> 
+										
+									</td>
+									<td>
+									<td>
+										<img src="css/images/button_send.png" style="height: 40px;">
 										<img src="css/images/button_reset.png" style="height: 40px;">
 									</td>
 								</tr>
 							</table>
 						</div>
+						<div style="margin-top: 25px; margin-left: 550px; position: absolute;">
+							<font face="rockwell" color="black" size="5">Where to find us</font> 
+						</div>
+						<div class="con-kanan1">
+							
+							<iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.co.id/maps?f=q&amp;source=s_q&amp;hl=id&amp;geocode=&amp;q=Jalan+Kebagusan+Raya,+Ragunan,+Jakarta&amp;aq=0&amp;oq=Jl.+Kegausan+Raya+,&amp;sll=-1.889306,117.685547&amp;sspn=21.266986,43.286133&amp;t=h&amp;ie=UTF8&amp;hq=&amp;hnear=Jalan+Kebagusan+Raya,+Jakarta+Selatan,+Jakarta&amp;ll=-6.311437,106.825795&amp;spn=0.041546,0.084543&amp;z=14&amp;iwloc=A&amp;output=embed"></iframe><br /><small><a href="https://maps.google.co.id/maps?f=q&amp;source=embed&amp;hl=id&amp;geocode=&amp;q=Jalan+Kebagusan+Raya,+Ragunan,+Jakarta&amp;aq=0&amp;oq=Jl.+Kegausan+Raya+,&amp;sll=-1.889306,117.685547&amp;sspn=21.266986,43.286133&amp;t=h&amp;ie=UTF8&amp;hq=&amp;hnear=Jalan+Kebagusan+Raya,+Jakarta+Selatan,+Jakarta&amp;ll=-6.311437,106.825795&amp;spn=0.041546,0.084543&amp;z=14&amp;iwloc=A" style="color:#0000FF;text-align:left">Lihat Peta Lebih Besar</a></small>
+						</div>
 					</div>
-					
 				</div>
 				<!-- End Slider -->
 			</div>

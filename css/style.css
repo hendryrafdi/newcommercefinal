@@ -152,6 +152,21 @@ h1#logo a { display: block; no-repeat 0 0; height: 63px;}
 	margin-top: 100px;
 	position: absolute;
 }
+.con-kiri1{
+	margin-left: 20px;
+	margin-top: 20px;
+	position: absolute;
+}
+.con-kiri2{
+	margin-left: 20px;
+	margin-top: 230px;
+	position: absolute;
+}
+.con-kanan1{
+	margin-left: 520px;
+	margin-top: 60px;
+	position: absolute;
+}
 .con-kanan{
 	margin-left: 460px;
 	margin-top: 100px;
@@ -180,4 +195,7 @@ h1#logo a { display: block; no-repeat 0 0; height: 63px;}
 	margin-top: 20px;
 	margin-left: 600px;
 	position: absolute;
+}
+#main-slider2 { 
+	background: url(images/main-slider-bg2.png) no-repeat 0 0; width: 953px; height: 410px; padding: 13px 14px 46px 13px; position: relative; 
 }
