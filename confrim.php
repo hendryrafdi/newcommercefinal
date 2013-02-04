@@ -58,43 +58,6 @@
 						<div class="con-kiri">
 							<table border="0">
 								<tr>
-									<td style="width: 100px;">
-										<font face="Gill Sans MT Condensed" size="5" color="black">
-											Email
-										</font>
-									</td>
-									<td style="width: 300px;">
-										<input type="text" name="email" placeholder="Email" class="inputlogin">
-									</td>
-								</tr>
-								<tr>
-									<td style="width: 100px;">
-										<font face="Gill Sans MT Condensed" size="5" color="black">
-											Password
-										</font>
-									</td>
-									<td style="width: 300px;">
-										<input type="password" name="password" placeholder="Password" class="inputlogin">
-									</td>
-								</tr>
-								<tr>
-									<td></td>
-									<td style="width: 180px;">
-										<img src="css/images/button_login.png" style="height: 40px;">
-										<img src="css/images/button_reset.png" style="height: 40px;">
-									</td>
-								</tr>
-							</table>
-						</div>
-						<div class="garis2">
-						&nbsp;
-						</div>
-						<div class="judul-kanan">
-							<font face="Pristina" size="10" color="black">Payment Method</font>
-						</div>
-						<div class="con2-kanan">
-							<table border="0">
-								<tr>
 									<td style="width: 180px;">
 										<font face="Gill Sans MT Condensed" size="5" color="black">
 											Username
@@ -173,10 +136,67 @@
 								<tr>
 									<td></td>
 									<td style="width: 180px;">
-										<img src="css/images/button_signup.png" style="height: 40px;">
+										<img src="css/images/button_reset.png" style="height: 40px;">
 									</td>
 								</tr>
 							</table>
+						</div>
+						<div class="garis">
+						&nbsp;
+						</div>
+						<div class="judul-kanan">
+							<font face="Pristina" size="10" color="black">Payment Method</font>
+						</div>
+						<div class="con-kanan">
+							<fieldset style="height: 150px; width: 300px;">
+								<table border="0" style="height: 130px; width: 300px;">
+									<tr>
+										<td style="height: 3px;">
+											<input type="radio" name="pembayaran" value="cod">
+										</td>
+										<td style="height: 3px;">
+											<font face="rockwell" color="black" size="3">Bayar Ditempat (COD)</font>
+										</td>
+									</tr>
+									<tr>
+										<td style="height: 5px;">
+										
+										</td>
+										<td style="height: 5px;">
+											<font face="rockwell" size="2" color="black"><br>Pembayaran Tunai Saat Barang Diterima.<br>Gratis Ongkos Pengantaran Barang<font>
+										</td>
+									</tr>
+									<tr>
+										<td colspan="2" style="height: 3px;">
+											<hr style="width: 280px;"></hr>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<input type="radio" name="pembayaran" value="tb">
+										</td>
+										<td>
+											<font face="rockwell" size="3" color="black">Transfer Bank</font>
+										</td>
+									</tr>
+									<tr>
+										<td colspan="2" style="height: 3px;">
+											<hr style="width: 280px;"></hr>
+										</td>
+									</tr>
+									<tr>
+										<td style="height: 5px;">
+											<input type="radio" name="pembayaran" value="kk">
+										</td>
+										<td style="height: 5px;">
+											<font face="rockwell" size="3" color="black">Kartu Kredit</font>
+										</td>
+									</tr>
+								</table>
+							</fieldset>
+							<div class="bnext">
+								<img src="css/images/button_next.png" style="height: 40px;">
+							</div>
 						</div>
 					</div>
 					

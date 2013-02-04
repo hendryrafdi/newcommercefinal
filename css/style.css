@@ -172,6 +172,11 @@ h1#logo a { display: block; no-repeat 0 0; height: 63px;}
 	margin-top: 80px;
 	position: absolute;
 }
+.con2-kanan{
+	margin-left: 480px;
+	margin-top: 80px;
+	position: absolute;
+}
 .inputlogin{
 	height: 30px;
 	width: 280px;
@@ -184,6 +189,15 @@ h1#logo a { display: block; no-repeat 0 0; height: 63px;}
 	background-color: black; 
 	position: absolute; 
 	margin-left: 520px;
+	margin-top: 30px;
+}
+.garis2{
+	width: 1px; 
+	height: 350px;
+	display: block; 
+	background-color: black; 
+	position: absolute; 
+	margin-left: 450px;
 	margin-top: 30px;
 }
 .judul-kiri{
