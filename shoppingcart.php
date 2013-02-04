@@ -81,7 +81,7 @@ include 'pages/config.php';
 										<td align='center'>$tian[nm_product]</td>
 										<td align='center'>$tian[qty]</td>
 										<td align='center'>Rp. $tian[price]</td>
-										<td align='center'><a href=input.php?input=delete&id=$tian[id_keranjang]>Hapus</a></td></tr>";
+										<td align='center'><a href=pages/input.php?input=delete&id=$tian[id_shopping]>Hapus</a></td></tr>";
 							$no++;
 								}
 							}
