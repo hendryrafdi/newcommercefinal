@@ -30,7 +30,15 @@ include 'pages/config.php';
 					    <li><a href="login.php" title="Login">Login</a></li>
 					    <li><a href="profile.php" title="My Account">My Account</a></li>
 					    <li><a href="channel.php" title="My Wishlist">Channel</a></li>
-					    <li class="nobg"><a href="#" class="bag" title="My Bag">My Bag</a></li>
+					    <li class="nobg"><a href="shoppingcart.php" class="bag" title="My Bag">My Bag <?php
+include "pages/config.php";
+	$sid = session_id();
+	$sql = mysql_query("SELECT * FROM shoppingcart");
+	$row = mysql_num_rows($sql);
+	$jml = mysql_fetch_array($sql);
+	
+	echo "<span class='KetCart'>$row item</span>";
+	?></a></li>
 					</ul>
 				</div>
 				<div id="search">
