@@ -100,9 +100,9 @@ h1#logo a { display: block; no-repeat 0 0; height: 63px;}
 .product .model { font-size: 16px; color: #1898d6; padding: 0 0 2px 0; }
 .product .number { font-family: arial, sans-serif; font-style: normal; }
 .product .buy-text { font-size: 18px; line-height: 30px; color: #ffba00; font-style: normal; font-weight: bold; letter-spacing: -1px; float: left; display: inline; padding: 8px 0 0 0; }
-.product .price { font-size: 24px; line-height: 40px; float: right; display: inline; font-style: normal; color: #1898d6; font-weight: bold; }
+.product .price { font-size: 30px; line-height: 40px; float: right; display: inline; font-style: normal; color: #1898d6; font-weight: bold; }
 .product .sub-text { font-size: 20px; line-height: 20px; vertical-align: super; }
-.product .dollar { font-size: 14px; }
+.product .dollar { font-size: 20px; }
 .product:hover,
 .product.hover { background: url(images/product-hover.png) no-repeat 0 0; text-decoration: none; }
 .product.hover .model { font-weight: bold; }
@@ -152,6 +152,21 @@ h1#logo a { display: block; no-repeat 0 0; height: 63px;}
 	margin-top: 100px;
 	position: absolute;
 }
+.con-kiri1{
+	margin-left: 20px;
+	margin-top: 20px;
+	position: absolute;
+}
+.con-kiri2{
+	margin-left: 20px;
+	margin-top: 230px;
+	position: absolute;
+}
+.con-kanan1{
+	margin-left: 520px;
+	margin-top: 60px;
+	position: absolute;
+}
 .con-kanan{
 	margin-left: 460px;
 	margin-top: 100px;
@@ -181,6 +196,7 @@ h1#logo a { display: block; no-repeat 0 0; height: 63px;}
 	margin-left: 600px;
 	position: absolute;
 }
+<<<<<<< HEAD
 #keranjang{
 	position: absolute;
 	left: 54px;
@@ -264,3 +280,8 @@ h1#logo a { display: block; no-repeat 0 0; height: 63px;}
 th {
 	background-color: #e0e0e0;
 	}
+=======
+#main-slider2 { 
+	background: url(images/main-slider-bg2.png) no-repeat 0 0; width: 953px; height: 410px; padding: 13px 14px 46px 13px; position: relative; 
+}
+>>>>>>> 10f0a356cde2703962943667138357ae34df9fbd
