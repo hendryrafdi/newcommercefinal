@@ -87,8 +87,9 @@ include 'pages/config.php';
 							}
 						?>
 						</table>
-						<a class="tombol" href="order.php">Selesai</a>
-						<a class="tombol" href="product.php">Belanja Lagi..</a>
+						<a id="btnblue" href="product.php">Add more items</a>
+						<a id="btnred" href="pages/cancel.php">Cancel</a>
+						<a id="btngreen" href="#">Next</a>
 					
 				</div>
 				<!-- End Slider -->

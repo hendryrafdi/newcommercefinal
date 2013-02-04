@@ -100,9 +100,9 @@ h1#logo a { display: block; no-repeat 0 0; height: 63px;}
 .product .model { font-size: 16px; color: #1898d6; padding: 0 0 2px 0; }
 .product .number { font-family: arial, sans-serif; font-style: normal; }
 .product .buy-text { font-size: 18px; line-height: 30px; color: #ffba00; font-style: normal; font-weight: bold; letter-spacing: -1px; float: left; display: inline; padding: 8px 0 0 0; }
-.product .price { font-size: 30px; line-height: 40px; float: right; display: inline; font-style: normal; color: #1898d6; font-weight: bold; }
+.product .price { font-size: 24px; line-height: 40px; float: right; display: inline; font-style: normal; color: #1898d6; font-weight: bold; }
 .product .sub-text { font-size: 20px; line-height: 20px; vertical-align: super; }
-.product .dollar { font-size: 20px; }
+.product .dollar { font-size: 14px; }
 .product:hover,
 .product.hover { background: url(images/product-hover.png) no-repeat 0 0; text-decoration: none; }
 .product.hover .model { font-weight: bold; }
@@ -168,7 +168,7 @@ h1#logo a { display: block; no-repeat 0 0; height: 63px;}
 	position: absolute;
 }
 .con-kanan{
-	margin-left: 460px;
+	margin-left: 560px;
 	margin-top: 100px;
 	position: absolute;
 }
@@ -183,7 +183,7 @@ h1#logo a { display: block; no-repeat 0 0; height: 63px;}
 	display: block; 
 	background-color: black; 
 	position: absolute; 
-	margin-left: 430px;
+	margin-left: 520px;
 	margin-top: 30px;
 }
 .judul-kiri{
@@ -196,7 +196,10 @@ h1#logo a { display: block; no-repeat 0 0; height: 63px;}
 	margin-left: 600px;
 	position: absolute;
 }
-<<<<<<< HEAD
+#main-slider2 { 
+	background: url(images/main-slider-bg2.png) no-repeat 0 0; width: 953px; height: 410px; padding: 13px 14px 46px 13px; position: relative; 
+}
+
 #keranjang{
 	position: absolute;
 	left: 54px;
@@ -220,8 +223,8 @@ h1#logo a { display: block; no-repeat 0 0; height: 63px;}
 	color: rgba(255,255,255,1);
 	text-transform: uppercase;
 	position: absolute;
-	left: 535px;
-	top: 357px;
+	left: 785px;
+	top: 225px;
 }
 #btnred:hover {
    -webkit-box-shadow: 0px 0px 6px 0px rgba(0,0,0,1);
@@ -236,12 +239,12 @@ h1#logo a { display: block; no-repeat 0 0; height: 63px;}
 	display: inline-block;
 	font-family: Segoe UI Semilight;
 	line-height: 28px;
-	text-indent: 25px;
+	text-indent: 23px;
 	color: rgba(255,255,255,1);
 	text-transform: uppercase;
 	position: absolute;
-	left: 861px;
-	top: 357px;
+	left: 867px;
+	top: 225px;
 }
 #btngreen:hover {
    -webkit-box-shadow: 0px 0px 6px 0px rgba(0,0,0,1);
@@ -259,8 +262,8 @@ h1#logo a { display: block; no-repeat 0 0; height: 63px;}
 	color: rgba(255,255,255,1);
 	text-transform: uppercase;
 	position: absolute;
-	left: 205px;
-	top: 357px;
+	left: 644px;
+	top: 225px;
 }
 #btnblue:hover {
    -webkit-box-shadow: 0px 0px 6px 0px rgba(0,0,0,1);
@@ -280,8 +283,3 @@ h1#logo a { display: block; no-repeat 0 0; height: 63px;}
 th {
 	background-color: #e0e0e0;
 	}
-=======
-#main-slider2 { 
-	background: url(images/main-slider-bg2.png) no-repeat 0 0; width: 953px; height: 410px; padding: 13px 14px 46px 13px; position: relative; 
-}
->>>>>>> 10f0a356cde2703962943667138357ae34df9fbd
