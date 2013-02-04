@@ -26,15 +26,17 @@ include 'pages/config.php';
 			<div class="shell">
 			  <div class="top-nav">
 				  <ul>
-					    <li class="first nobg"><h1>Indosat M2 - Shopping Partner</h1></li>
-					    <?php if($_SESSION[email]==NULL){?>
+					    <li class="first nobg"><h1><a href="index.php">Shopping Partner</a></h1></li>
+						<?php if($_SESSION[email]==NULL){?>
 					    <li><a href="login.php" title="Login">Login</a></li>
 					    <?php } else{ ?>
 						<li><a href="pages/logout.php" title="Logout">Logout</a></li>
 						<?php }?>
-					    <li><a href="profile.php" title="My Account">My Account</a></li>
-					    <li><a href="contact.php" title="Contact Us">Contact Us</a></li>
-					    <li class="nobg"><a href="shoppingcart.php" class="bag" title="My Bag">My Bag <?php
+						<li><a href="product.php" title="Product">Product</a></li>
+						<li><a href="contact.php" title="Contact us">Contact Us</a></li>
+						<li><a href="profile.php" title="My Account">My Account</a></li>
+					    <li class="nobg"><a href="shoppingcart.php" class="bag" title="My Bag">My Bag
+							 <?php
 include "pages/config.php";
 	$sid = session_id();
 	$sql = mysql_query("SELECT * FROM shoppingcart");
@@ -42,7 +44,8 @@ include "pages/config.php";
 	$jml = mysql_fetch_array($sql);
 	
 	echo "<span class='KetCart'>$row item</span>";
-	?></a></li>
+		?>
+						</a></li>
 					</ul>
 				</div>
 				<div id="search">

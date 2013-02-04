@@ -25,15 +25,16 @@
 			<div class="shell">
 				<div class="top-nav">
 					<ul>
-					    <li class="first nobg"><h1>Indosat M2 - Shopping Partner</h1></li>
-					    <?php if($_SESSION[email]==NULL){?>
+					    <li class="first nobg"><h1><a href="index.php">Shopping Partner</a></h1></li>
+						<?php if($_SESSION[email]==NULL){?>
 					    <li><a href="login.php" title="Login">Login</a></li>
 					    <?php } else{ ?>
 						<li><a href="pages/logout.php" title="Logout">Logout</a></li>
 						<?php }?>
-					    <li><a href="profile.php" title="My Account">My Account</a></li>
-					    <li><a href="contact.php" title="Contact Us">Contact Us</a></li>
-					    <li class="nobg"><a href="#" class="bag" title="My Bag">My Bag
+						<li><a href="product.php" title="Product">Product</a></li>
+						<li><a href="contact.php" title="Contact us">Contact Us</a></li>
+						<li><a href="profile.php" title="My Account">My Account</a></li>
+					    <li class="nobg"><a href="shoppingcart.php" class="bag" title="My Bag">My Bag
 							 <?php
 include "pages/config.php";
 	$sid = session_id();
@@ -42,7 +43,7 @@ include "pages/config.php";
 	$jml = mysql_fetch_array($sql);
 	
 	echo "<span class='KetCart'>$row item</span>";
-	?>
+		?>
 						</a></li>
 					</ul>
 				</div>				<div id="search">
@@ -67,22 +68,33 @@ include "pages/config.php";
 				</div>
 				<!-- End Header -->
 				<!-- Slider -->
-				<div id="main-slider">
-					<div id="slider-holder">
+				<div id="main-slider" style="height: 600px;">
+					<div id="slider-holder" style="height: 550px;">
 						<div class="judul-kiri">
 							<font face="Pristina" size="10" color="black">Isi Data</font>
 						</div>
 						<div class="con-kiri">
+						<form action="pages/input.php?input=inputform" method="post">
 							<table border="0">
 								<tr>
 									<td style="width: 180px;">
 										<font face="Gill Sans MT Condensed" size="5" color="black">
-											Username
+											Name
 										</font>
 									</td>
 									<td style="width: 300px;">
 										<input type="text" name="f_name" placeholder="First Name" style="width: 100px; height: 30px;" required>
-										<input type="text" name="l_name" placeholder="Last Name" style="width: 173px; height: 30px;" required>
+										<input type="text" name="l_name" placeholder="Last Name" style="width: 173px; height: 30px;">
+									</td>
+								</tr>
+								<tr>
+									<td style="width: 180px;">
+										<font face="Gill Sans MT Condensed" size="5" color="black">
+											Company
+										</font>
+									</td>
+									<td style="width: 300px;">
+										<input type="text" name="company" placeholder="Company" style="width: 173px; height: 30px;">
 									</td>
 								</tr>
 								<tr>
@@ -94,20 +106,6 @@ include "pages/config.php";
 									<td style="width: 300px;">
 										<input type="text" name="birthday_place" placeholder="Birthday_place" style="width: 130px; height: 30px;" required >
 										<input type="date" name="birthday" style="height: 30px; width: 143px;" required>
-									</td>
-								</tr>
-								<tr>
-									<td style="width: 180px;">
-										<font face="Gill Sans MT Condensed" size="5" color="black">
-											Jenis Kelamin
-										</font>
-									</td>
-									<td style="width: 300px;">
-										<select class="inputlogin" name="gender" style="width: 284px;" required>
-											<option selected="selected">Gender</option>
-											<option value="l">Male</option>
-											<option value="p">Female</option>
-										</select>
 									</td>
 								</tr>
 								<tr>
@@ -127,7 +125,47 @@ include "pages/config.php";
 										</font>
 									</td>
 									<td style="width: 300px;">
-										<input type="text" name="addres" placeholder="Addres" class="inputlogin" required>
+										<input type="text" name="address" placeholder="Addres" class="inputlogin" required>
+									</td>
+								</tr>
+								<tr>
+									<td style="width: 180px;">
+										<font face="Gill Sans MT Condensed" size="5" color="black">
+											City
+										</font>
+									</td>
+									<td style="width: 300px;">
+										<input type="text" name="city" placeholder="City" style="width: 280px; height: 30px;" required >
+									</td>
+								</tr>
+								<tr>
+									<td style="width: 180px;">
+										<font face="Gill Sans MT Condensed" size="5" color="black">
+											State
+										</font>
+									</td>
+									<td style="width: 300px;">
+										<input type="text" name="state" placeholder="State" style="width: 280px; height: 30px;" required >
+									</td>
+								</tr>
+								<tr>
+									<td style="width: 180px;">
+										<font face="Gill Sans MT Condensed" size="5" color="black">
+											Country
+										</font>
+									</td>
+									<td style="width: 300px;">
+										<input type="text" name="country" placeholder="Country" style="width: 280px; height: 30px;" required >
+									</td>
+								</tr>
+								<tr>
+									<td style="width: 180px;">
+										<font face="Gill Sans MT Condensed" size="5" color="black">
+											Postcode
+										</font>
+									</td>
+									<td style="width: 300px;">
+										<input type="text" name="postcode" placeholder="Postcode" style="width: 130px; height: 30px;" required >
 									</td>
 								</tr>
 								<tr>
@@ -141,22 +179,13 @@ include "pages/config.php";
 									</td>
 								</tr>
 								<tr>
-									<td style="width: 180px;">
-										<font face="Gill Sans MT Condensed" size="5" color="black">
-											Password
-										</font>
-									</td>
-									<td style="width: 300px;">
-										<input type="password" name="password" placeholder="Password" class="inputlogin" required>
-									</td>
-								</tr>
-								<tr>
 									<td></td>
 									<td style="width: 180px;">
-										<img src="css/images/button_reset.png" style="height: 40px;">
+										<input type="submit" value="Submit"/>
 									</td>
 								</tr>
 							</table>
+							
 						</div>
 						<div class="garis">
 						&nbsp;
@@ -190,7 +219,7 @@ include "pages/config.php";
 									</tr>
 									<tr>
 										<td>
-											<input type="radio" name="pembayaran" value="tb">
+											<input type="radio" name="pembayaran" value="tb" disabled>
 										</td>
 										<td>
 											<font face="rockwell" size="3" color="black">Transfer Bank</font>
@@ -203,7 +232,7 @@ include "pages/config.php";
 									</tr>
 									<tr>
 										<td style="height: 5px;">
-											<input type="radio" name="pembayaran" value="kk">
+											<input type="radio" name="pembayaran" value="kk" disabled>
 										</td>
 										<td style="height: 5px;">
 											<font face="rockwell" size="3" color="black">Kartu Kredit</font>
@@ -211,6 +240,7 @@ include "pages/config.php";
 									</tr>
 								</table>
 							</fieldset>
+							</form>
 							<div class="bnext">
 								<img src="css/images/button_next.png" style="height: 40px;">
 							</div>

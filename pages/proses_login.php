@@ -13,7 +13,14 @@
 		session_start();
 		$_SESSION[email] = $r[email];
 		$_SESSION[password] = $r[password];
-		header('location:../index.php');
+		$shop = mysql_query("select *from shoppingcart");
+		$isi = mysql_num_rows($shop);
+		if($isi > 0){
+			header("location: ../confrim.php");
+		}
+		else{
+			header('location:../index.php');
+		}
 	}
 	else{
 		echo "<script>

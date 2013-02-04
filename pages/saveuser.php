@@ -1,5 +1,6 @@
 <?php
 include"config.php";
+session_start();
 $f_name = $_POST[f_name];
 $l_name = $_POST[l_name];
 $gender = $_POST[gender];
@@ -12,7 +13,15 @@ $password = $_POST[password];
 
 $save = mysql_query("insert into user values(null,'$f_name', '$l_name', '$gender', '$birthday_p', '$birthday', '$adress', '$telp', '$email', '$password')");
 if ($save) {
-    header("location:../login.php?link=succes");
+	$_SESSION[email] = $email;
+    $shop = mysql_query("select *from shoppingcart");
+		$isi = mysql_num_rows($shop);
+		if($isi > 0){
+			header("location: ../confrim.php");
+		}
+		else{
+			header('location:../index.php');
+		}
 } else {
     header("location:../login.php?link=failed");
 }

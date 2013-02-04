@@ -47,34 +47,48 @@ elseif ($input=='inputform'){
 	$jml = count($ct_content);
 	$now = date("Ymd");
 	for($i=0; $i<$jml; $i++){
-	mysql_query("INSERT INTO order_product(name,
+	mysql_query("INSERT INTO orders(customer_name,
+											customer_company,
+											birthday_place,
+											birthday,
 											email,
-											phone,
+											telp,
 											address,
+											city,
+											postcode,
+											state,
+											country,
 											id_product,
-											jumlah,
-											tanggal,
-											id_pemesan) 
-									VALUES ('$_POST[name]',
+											qty,
+											date_purchased,
+											id_order) 
+									VALUES ('$_POST[f_name]' '$_POST[l_name]',
+											'$_POST[company]',
+											'$_POST[birthday_place]',
+											'$_POST[birthday]',
 											'$_POST[email]',
 											'$_POST[telp]',
 											'$_POST[address]',
+											'$_POST[city]',
+											'$_POST[postcode]',
+											'$_POST[state]',
+											'$_POST[country]',
 											{$ct_content[$i]['id_product']},
 											{$ct_content[$i]['qty']},
 											'$now',
-											'$sid')");
+											NULL)");
 		}
 	for($i=0; $i<$jml; $i++){
 		mysql_query("DELETE FROM shoppingcart WHERE id_shopping = {$ct_content[$i]['id_shopping']}");
 		}
 		echo "<script>window.alert('Terima Kasih Pesanan Anda Sedang Kami Proses');
-        window.location=('index.php')</script>";
+        window.location=('../index.php')</script>";
 	}								
 												
 
 function deletecart(){
 	$del = date('Y-m-d', mktime(0,0,0, date('m'), date('d') - 1, date('Y')));
-	mysql_query("DELETE FROM keranjang WHERE tgl_keranjang < '$del'");
+	mysql_query("DELETE FROM shoppingcart WHERE shopping_date < '$del'");
 	}
 	
 

@@ -36,12 +36,14 @@ include 'pages/config.php';
 			<div class="shell">
 				<div class="top-nav">
 					<ul>
-					    <li class="first nobg"><h1>Indosat M2 - Shopping Partner</h1></li>
+					    <li class="first nobg"><h1><a href="index.php">Shopping Partner</a></h1></li>
 						<?php if($_SESSION[email]==NULL){?>
 					    <li><a href="login.php" title="Login">Login</a></li>
 					    <?php } else{ ?>
 						<li><a href="pages/logout.php" title="Logout">Logout</a></li>
 						<?php }?>
+						<li><a href="product.php" title="Product">Product</a></li>
+						<li><a href="contact.php" title="Contact us">Contact Us</a></li>
 						<li><a href="profile.php" title="My Account">My Account</a></li>
 					    <li class="nobg"><a href="shoppingcart.php" class="bag" title="My Bag">My Bag
 							 <?php
@@ -146,7 +148,7 @@ include "pages/config.php";
                                     switch ($_GET[act]) {
                                         default:
 
-                                            $tampil = mysql_query("select *from product limit $posisi, $batas ");
+                                            $tampil = mysql_query("select *from product order by product_added desc limit 0,20 ");
                                             $no = $posisi + 1;
                                             while ($r = mysql_fetch_array($tampil)) {
                                                 ?>
@@ -182,8 +184,6 @@ include "pages/config.php";
                                                 }
                                             }
                                     }
-                                    echo "<div class='cl'>&nbsp;</div>";
-                                    echo "<div class='pagination'><center>$linkHalaman</center></div>";
                                     ?>
 							</ul>
 							<div class="cl">&nbsp;</div>
