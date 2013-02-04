@@ -25,7 +25,6 @@ include 'pages/config.php';
 					    <li class="first nobg"><h1>Indosat M2 - Shopping Partner</h1></li>
 					    <li><a href="login.php" title="Login">Login</a></li>
 					    <li><a href="profile.php" title="My Account">My Account</a></li>
-					    <li><a href="channel.php" title="My Wishlist">Channel</a></li>
 					    <li class="nobg"><a href="#" class="bag" title="My Bag">My Bag</a></li>
 					</ul>
 				</div>

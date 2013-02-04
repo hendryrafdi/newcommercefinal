@@ -57,6 +57,7 @@
 						</div>
 						<div class="con-kiri">
 							<table border="0">
+							<form method="post" action="saveuser.php">
 								<tr>
 									<td style="width: 180px;">
 										<font face="Gill Sans MT Condensed" size="5" color="black">
@@ -66,17 +67,6 @@
 									<td style="width: 300px;">
 										<input type="text" name="f_name" placeholder="First Name" style="width: 100px; height: 30px;">
 										<input type="text" name="l_name" placeholder="Last Name" style="width: 173px; height: 30px;">
-									</td>
-								</tr>
-								<tr>
-									<td style="width: 180px;">
-										<font face="Gill Sans MT Condensed" size="5" color="black">
-											Tempat, Tanggal Lahir
-										</font>
-									</td>
-									<td style="width: 300px;">
-										<input type="text" name="birthday_place" placeholder="Birthday_place" style="width: 130px; height: 30px;">
-										<input type="date" name="birthday" style="height: 30px; width: 143px;">
 									</td>
 								</tr>
 								<tr>
@@ -96,11 +86,12 @@
 								<tr>
 									<td style="width: 180px;">
 										<font face="Gill Sans MT Condensed" size="5" color="black">
-											No. Telepon
+											Tempat, Tanggal Lahir
 										</font>
 									</td>
 									<td style="width: 300px;">
-										<input type="text" name="telp" placeholder="Phone Number" class="inputlogin">
+										<input type="text" name="birthday_place" placeholder="Birthday_place" style="width: 130px; height: 30px;">
+										<input type="date" name="birthday" style="height: 30px; width: 143px;">
 									</td>
 								</tr>
 								<tr>
@@ -114,6 +105,17 @@
 									</td>
 								</tr>
 								<tr>
+								<tr>
+									<td style="width: 180px;">
+										<font face="Gill Sans MT Condensed" size="5" color="black">
+											No. Telepon
+										</font>
+									</td>
+									<td style="width: 300px;">
+										<input type="text" name="telp" placeholder="Phone Number" class="inputlogin">
+									</td>
+								</tr>
+								
 									<td style="width: 180px;">
 										<font face="Gill Sans MT Condensed" size="5" color="black">
 											Email
@@ -136,9 +138,10 @@
 								<tr>
 									<td></td>
 									<td style="width: 180px;">
-										<img src="css/images/button_reset.png" style="height: 40px;">
+										<input type="image"><img src="css/images/button_reset.png" style="height: 40px;"></img></input>
 									</td>
 								</tr>
+								</form>
 							</table>
 						</div>
 						<div class="garis">
