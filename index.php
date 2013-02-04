@@ -1,4 +1,20 @@
+<?php ob_start(); ?>
+<?php
+include 'pages/config.php';
+//memulai session
+session_start();	
+//cek adanya session
+if (ISSET($_SESSION[email])){
+echo "Anda Login Sebagai ";
+echo $_SESSION[email];
+echo "<br><a href='pages/logout.php'>logout</a>";
+//jika tidak ada session
+}else{
+header("location: login.php");
+}
+?>
 <!DOCTYPE html>
+
 <html>
 <head>
 	<title>Indosat M2 - Your Shopping Partner</title>
@@ -334,3 +350,4 @@ include 'pages/config.php';
 	<!-- End Footer -->
 </body>
 </html>
+<?php ob_flush(); ?>

@@ -56,8 +56,8 @@
 							<font face="Pristina" size="10" color="black">Isi Data</font>
 						</div>
 						<div class="con-kiri">
+						<form method="post" action="pages/proses_login.php">
 							<table border="0">
-							<form method="post" action="saveuser.php">
 								<tr>
 									<td style="width: 100px;">
 										<font face="Gill Sans MT Condensed" size="5" color="black">
@@ -81,19 +81,21 @@
 								<tr>
 									<td></td>
 									<td style="width: 180px;">
-										<img src="css/images/button_login.png" style="height: 40px;">
+										<input type="submit" value="login"/>
 										<img src="css/images/button_reset.png" style="height: 40px;">
 									</td>
 								</tr>
 							</table>
+							</form>
 						</div>
 						<div class="garis2">
 						&nbsp;
 						</div>
 						<div class="judul-kanan">
-							<font face="Pristina" size="10" color="black">Payment Method</font>
+							<font face="Pristina" size="10" color="black">Register</font>
 						</div>
 						<div class="con2-kanan">
+						<form method="post" action="pages/saveuser.php">
 							<table border="0">
 								<tr>
 									<td style="width: 180px;">
@@ -104,6 +106,17 @@
 									<td style="width: 300px;">
 										<input type="text" name="f_name" placeholder="First Name" style="width: 100px; height: 30px;">
 										<input type="text" name="l_name" placeholder="Last Name" style="width: 173px; height: 30px;">
+									</td>
+								</tr>
+								<tr>
+									<td style="width: 180px;">
+										<font face="Gill Sans MT Condensed" size="5" color="black">
+											Tempat, Tanggal Lahir
+										</font>
+									</td>
+									<td style="width: 300px;">
+										<input type="text" name="birthday_place" placeholder="Birthday_place" style="width: 130px; height: 30px;">
+										<input type="date" name="birthday" style="height: 30px; width: 143px;">
 									</td>
 								</tr>
 								<tr>
@@ -123,12 +136,11 @@
 								<tr>
 									<td style="width: 180px;">
 										<font face="Gill Sans MT Condensed" size="5" color="black">
-											Tempat, Tanggal Lahir
+											No. Telepon
 										</font>
 									</td>
 									<td style="width: 300px;">
-										<input type="text" name="birthday_place" placeholder="Birthday_place" style="width: 130px; height: 30px;">
-										<input type="date" name="birthday" style="height: 30px; width: 143px;">
+										<input type="text" name="telp" placeholder="Phone Number" class="inputlogin">
 									</td>
 								</tr>
 								<tr>
@@ -142,17 +154,6 @@
 									</td>
 								</tr>
 								<tr>
-								<tr>
-									<td style="width: 180px;">
-										<font face="Gill Sans MT Condensed" size="5" color="black">
-											No. Telepon
-										</font>
-									</td>
-									<td style="width: 300px;">
-										<input type="text" name="telp" placeholder="Phone Number" class="inputlogin">
-									</td>
-								</tr>
-								
 									<td style="width: 180px;">
 										<font face="Gill Sans MT Condensed" size="5" color="black">
 											Email
@@ -175,15 +176,11 @@
 								<tr>
 									<td></td>
 									<td style="width: 180px;">
-<<<<<<< HEAD
-										<input type="image"><img src="css/images/button_reset.png" style="height: 40px;"></img></input>
-=======
-										<img src="css/images/button_signup.png" style="height: 40px;">
->>>>>>> 4ef310431e8686563e0917d5e295795c165dae65
+										<input type="submit" value="Register"/>
 									</td>
 								</tr>
-								</form>
 							</table>
+							</form>
 						</div>
 					</div>
 					

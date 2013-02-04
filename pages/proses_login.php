@@ -1,24 +1,24 @@
 <?php
-	inldue 'pages/config.php';
-	error_repporting(0);
-	$pass = md5($_POST[password]);
+	include 'config.php';
+	$password    = $_POST['password'];
+	$pass_md5 = md5($password);
 	
-	$login = mysql_query("select *from user where id_user='$_POST[username]' AND password='$pass'");
-	$_ketemu = mysql_num_rows($login);
+	$login = mysql_query("select *from user where email='$_POST[email]' AND password='$password'");
+	$ketemu = mysql_num_rows($login);
 	$r = mysql_fetch_array($login);
 	
 	//kalo username ama password nya ada
 	
 	if($ketemu > 0){
 		session_start();
-		session_register("password");
+		$_SESSION[email] = $r[email];
 		$_SESSION[password] = $r[password];
-		header('location:index.php')
+		header('location:../index.php');
 	}
 	else{
 		echo "<script>
-				window.alert('Username And Password Anda Salah');
-				window.location=('index.php')
+				window.alert('Email And Password Anda Salah');
+				window.location=('../login.php')
 			</script>";
 	}
 ?>
