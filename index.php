@@ -39,8 +39,12 @@ include 'pages/config.php';
 				<div class="top-nav">
 					<ul>
 					    <li class="first nobg"><h1>Indosat M2 - Shopping Partner</h1></li>
+						<?php if($_SESSION[email]==NULL){?>
 					    <li><a href="login.php" title="Login">Login</a></li>
-					    <li><a href="profile.php" title="My Account">My Account</a></li>
+					    <?php } else{ ?>
+						<li><a href="pages/logout.php" title="Logout">Logout</a></li>
+						<?php }?>
+						<li><a href="profile.php" title="My Account">My Account</a></li>
 					    <li class="nobg"><a href="#" class="bag" title="My Bag">My Bag</a></li>
 					</ul>
 				</div>
