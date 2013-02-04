@@ -149,7 +149,7 @@ h1#logo a { display: block; no-repeat 0 0; height: 63px;}
 #footer a.logo { float: right; display: inline; }
 .con-kiri{
 	margin-left: 20px;
-	margin-top: 100px;
+	margin-top: 80px;
 	position: absolute;
 }
 .con-kiri1{
@@ -169,7 +169,7 @@ h1#logo a { display: block; no-repeat 0 0; height: 63px;}
 }
 .con-kanan{
 	margin-left: 560px;
-	margin-top: 100px;
+	margin-top: 80px;
 	position: absolute;
 }
 .inputlogin{
@@ -283,3 +283,8 @@ h1#logo a { display: block; no-repeat 0 0; height: 63px;}
 th {
 	background-color: #e0e0e0;
 	}
+.bnext{
+	margin-left: 280px;
+	margin-top: 130px;
+	position: absolute;
+}
