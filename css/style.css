@@ -181,3 +181,86 @@ h1#logo a { display: block; no-repeat 0 0; height: 63px;}
 	margin-left: 600px;
 	position: absolute;
 }
+#keranjang{
+	position: absolute;
+	left: 54px;
+	top: 30px;
+}
+.isi-shop{
+	color: #000;
+	position: absolute;
+	left: 204px;
+	top: 28px;
+	width: 733px;
+	height: 319px;
+}
+#btnred {
+	background-color: rgba(230,37,37,1);
+	width: 78px;
+	display: inline-block;
+	font-family: Segoe UI Semilight;
+	line-height: 28px;
+	text-indent: 16px;
+	color: rgba(255,255,255,1);
+	text-transform: uppercase;
+	position: absolute;
+	left: 535px;
+	top: 357px;
+}
+#btnred:hover {
+   -webkit-box-shadow: 0px 0px 6px 0px rgba(0,0,0,1);
+      -moz-box-shadow: 0px 0px 6px 0px rgba(0,0,0,1);
+           box-shadow: 0px 0px 6px 0px rgba(0,0,0,1);
+   text-shadow: none;
+   text-decoration:none;
+}
+#btngreen {
+	background-color: rgba(45,189,55,1);
+	width: 75px;
+	display: inline-block;
+	font-family: Segoe UI Semilight;
+	line-height: 28px;
+	text-indent: 25px;
+	color: rgba(255,255,255,1);
+	text-transform: uppercase;
+	position: absolute;
+	left: 861px;
+	top: 357px;
+}
+#btngreen:hover {
+   -webkit-box-shadow: 0px 0px 6px 0px rgba(0,0,0,1);
+      -moz-box-shadow: 0px 0px 6px 0px rgba(0,0,0,1);
+           box-shadow: 0px 0px 6px 0px rgba(0,0,0,1);
+		   text-decoration:none;
+}
+#btnblue {
+	background-color: rgba(0,146,199,1);
+	width: 137px;
+	display: inline-block;
+	font-family: Segoe UI Semilight;
+	line-height: 28px;
+	text-indent: 14px;
+	color: rgba(255,255,255,1);
+	text-transform: uppercase;
+	position: absolute;
+	left: 205px;
+	top: 357px;
+}
+#btnblue:hover {
+   -webkit-box-shadow: 0px 0px 6px 0px rgba(0,0,0,1);
+      -moz-box-shadow: 0px 0px 6px 0px rgba(0,0,0,1);
+           box-shadow: 0px 0px 6px 0px rgba(0,0,0,1);
+		   text-decoration:none;
+}
+.TableCart {
+	border: 1px solid #CCC;
+	    color: #000000;
+    font-family: Verdana;
+    font-size: 8pt;
+    line-height: 18px;
+    text-decoration: none;
+    width: 100%;
+	}
+th {
+	background-color: #e0e0e0;
+	}

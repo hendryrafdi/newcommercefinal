@@ -69,7 +69,6 @@ CREATE TABLE `orders` (
   KEY `id_product` (`id_product`),
   KEY `id_product_2` (`id_product`),
   KEY `id_product_3` (`id_product`),
-  CONSTRAINT `orders_ibfk_2` FOREIGN KEY (`id_product`) REFERENCES `product` (`id_product`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `orders_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -123,13 +122,13 @@ DROP TABLE IF EXISTS `shoppingcart`;
 CREATE TABLE `shoppingcart` (
   `id_shopping` int(11) NOT NULL AUTO_INCREMENT,
   `id_product` int(11) NOT NULL,
-  `product_name` varchar(40) NOT NULL,
-  `price` int(255) NOT NULL,
+  `id_session` varchar(100) NOT NULL,
   `shopping_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `qty` int(10) NOT NULL,
   PRIMARY KEY (`id_shopping`),
   KEY `id_product` (`id_product`),
   CONSTRAINT `shoppingcart_ibfk_1` FOREIGN KEY (`id_product`) REFERENCES `product` (`id_product`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -138,6 +137,7 @@ CREATE TABLE `shoppingcart` (
 
 LOCK TABLES `shoppingcart` WRITE;
 /*!40000 ALTER TABLE `shoppingcart` DISABLE KEYS */;
+INSERT INTO `shoppingcart` VALUES (1,2,'i8mggl26mt8k76eatmtm441sl2','2013-02-01 17:00:24',1),(2,2,'3nmj3t2el7e336thc7olqbq0q3','2013-02-03 17:00:24',3),(3,1,'3nmj3t2el7e336thc7olqbq0q3','2013-02-03 17:00:24',1),(4,5,'3nmj3t2el7e336thc7olqbq0q3','2013-02-03 17:00:24',1),(5,4,'3nmj3t2el7e336thc7olqbq0q3','2013-02-03 17:00:24',1);
 /*!40000 ALTER TABLE `shoppingcart` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -181,4 +181,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2013-02-01  9:35:06
+-- Dump completed on 2013-02-04  9:40:03
