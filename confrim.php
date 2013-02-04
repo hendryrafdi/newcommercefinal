@@ -57,44 +57,6 @@
 						</div>
 						<div class="con-kiri">
 							<table border="0">
-							<form method="post" action="saveuser.php">
-								<tr>
-									<td style="width: 100px;">
-										<font face="Gill Sans MT Condensed" size="5" color="black">
-											Email
-										</font>
-									</td>
-									<td style="width: 300px;">
-										<input type="text" name="email" placeholder="Email" class="inputlogin">
-									</td>
-								</tr>
-								<tr>
-									<td style="width: 100px;">
-										<font face="Gill Sans MT Condensed" size="5" color="black">
-											Password
-										</font>
-									</td>
-									<td style="width: 300px;">
-										<input type="password" name="password" placeholder="Password" class="inputlogin">
-									</td>
-								</tr>
-								<tr>
-									<td></td>
-									<td style="width: 180px;">
-										<img src="css/images/button_login.png" style="height: 40px;">
-										<img src="css/images/button_reset.png" style="height: 40px;">
-									</td>
-								</tr>
-							</table>
-						</div>
-						<div class="garis2">
-						&nbsp;
-						</div>
-						<div class="judul-kanan">
-							<font face="Pristina" size="10" color="black">Payment Method</font>
-						</div>
-						<div class="con2-kanan">
-							<table border="0">
 								<tr>
 									<td style="width: 180px;">
 										<font face="Gill Sans MT Condensed" size="5" color="black">
@@ -104,6 +66,17 @@
 									<td style="width: 300px;">
 										<input type="text" name="f_name" placeholder="First Name" style="width: 100px; height: 30px;">
 										<input type="text" name="l_name" placeholder="Last Name" style="width: 173px; height: 30px;">
+									</td>
+								</tr>
+								<tr>
+									<td style="width: 180px;">
+										<font face="Gill Sans MT Condensed" size="5" color="black">
+											Tempat, Tanggal Lahir
+										</font>
+									</td>
+									<td style="width: 300px;">
+										<input type="text" name="birthday_place" placeholder="Birthday_place" style="width: 130px; height: 30px;">
+										<input type="date" name="birthday" style="height: 30px; width: 143px;">
 									</td>
 								</tr>
 								<tr>
@@ -123,12 +96,11 @@
 								<tr>
 									<td style="width: 180px;">
 										<font face="Gill Sans MT Condensed" size="5" color="black">
-											Tempat, Tanggal Lahir
+											No. Telepon
 										</font>
 									</td>
 									<td style="width: 300px;">
-										<input type="text" name="birthday_place" placeholder="Birthday_place" style="width: 130px; height: 30px;">
-										<input type="date" name="birthday" style="height: 30px; width: 143px;">
+										<input type="text" name="telp" placeholder="Phone Number" class="inputlogin">
 									</td>
 								</tr>
 								<tr>
@@ -142,17 +114,6 @@
 									</td>
 								</tr>
 								<tr>
-								<tr>
-									<td style="width: 180px;">
-										<font face="Gill Sans MT Condensed" size="5" color="black">
-											No. Telepon
-										</font>
-									</td>
-									<td style="width: 300px;">
-										<input type="text" name="telp" placeholder="Phone Number" class="inputlogin">
-									</td>
-								</tr>
-								
 									<td style="width: 180px;">
 										<font face="Gill Sans MT Condensed" size="5" color="black">
 											Email
@@ -175,15 +136,67 @@
 								<tr>
 									<td></td>
 									<td style="width: 180px;">
-<<<<<<< HEAD
-										<input type="image"><img src="css/images/button_reset.png" style="height: 40px;"></img></input>
-=======
-										<img src="css/images/button_signup.png" style="height: 40px;">
->>>>>>> 4ef310431e8686563e0917d5e295795c165dae65
+										<img src="css/images/button_reset.png" style="height: 40px;">
 									</td>
 								</tr>
-								</form>
 							</table>
+						</div>
+						<div class="garis">
+						&nbsp;
+						</div>
+						<div class="judul-kanan">
+							<font face="Pristina" size="10" color="black">Payment Method</font>
+						</div>
+						<div class="con-kanan">
+							<fieldset style="height: 150px; width: 300px;">
+								<table border="0" style="height: 130px; width: 300px;">
+									<tr>
+										<td style="height: 3px;">
+											<input type="radio" name="pembayaran" value="cod">
+										</td>
+										<td style="height: 3px;">
+											<font face="rockwell" color="black" size="3">Bayar Ditempat (COD)</font>
+										</td>
+									</tr>
+									<tr>
+										<td style="height: 5px;">
+										
+										</td>
+										<td style="height: 5px;">
+											<font face="rockwell" size="2" color="black"><br>Pembayaran Tunai Saat Barang Diterima.<br>Gratis Ongkos Pengantaran Barang<font>
+										</td>
+									</tr>
+									<tr>
+										<td colspan="2" style="height: 3px;">
+											<hr style="width: 280px;"></hr>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<input type="radio" name="pembayaran" value="tb">
+										</td>
+										<td>
+											<font face="rockwell" size="3" color="black">Transfer Bank</font>
+										</td>
+									</tr>
+									<tr>
+										<td colspan="2" style="height: 3px;">
+											<hr style="width: 280px;"></hr>
+										</td>
+									</tr>
+									<tr>
+										<td style="height: 5px;">
+											<input type="radio" name="pembayaran" value="kk">
+										</td>
+										<td style="height: 5px;">
+											<font face="rockwell" size="3" color="black">Kartu Kredit</font>
+										</td>
+									</tr>
+								</table>
+							</fieldset>
+							<div class="bnext">
+								<img src="css/images/button_next.png" style="height: 40px;">
+							</div>
 						</div>
 					</div>
 					
