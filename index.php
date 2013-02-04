@@ -9,8 +9,6 @@ echo "Anda Login Sebagai ";
 echo $_SESSION[email];
 echo "<br><a href='pages/logout.php'>logout</a>";
 //jika tidak ada session
-}else{
-header("location: login.php");
 }
 ?>
 <!DOCTYPE html>
@@ -45,7 +43,17 @@ include 'pages/config.php';
 						<li><a href="pages/logout.php" title="Logout">Logout</a></li>
 						<?php }?>
 						<li><a href="profile.php" title="My Account">My Account</a></li>
-					    <li class="nobg"><a href="#" class="bag" title="My Bag">My Bag</a></li>
+					    <li class="nobg"><a href="shoppingcart.php" class="bag" title="My Bag">My Bag
+							 <?php
+include "pages/config.php";
+	$sid = session_id();
+	$sql = mysql_query("SELECT * FROM shoppingcart");
+	$row = mysql_num_rows($sql);
+	$jml = mysql_fetch_array($sql);
+	
+	echo "<span class='KetCart'>$row item</span>";
+		?>
+						</a></li>
 					</ul>
 				</div>
 				<div id="search">
@@ -128,81 +136,60 @@ include 'pages/config.php';
 						<!-- Row -->
 						<div class="row">
 							<ul>
-							    <li>
-									<a href="#" class="product" title="Product 1">
-										<img src="css/images/product-1.jpg" alt="Product Image 1" />
-										<span class="order model">IPhone 3G</span>
-										<span class="order">catalog number: <span class="number">1</span></span>
-										<span class="order"><span class="buy-text">Buy Now</span><span class="price"><span class="dollar">$</span>599<span class="sub-text">.99</span></span></span>
-									</a>
-							    </li>
-							    <li>
-									<a href="#" class="product" title="Product 2">
-										<img src="css/images/product-2.jpg" alt="Product Image 2" />
-										<span class="order model">Mac Book</span>
-										<span class="order">catalog number: <span class="number">2</span></span>
-										<span class="order"><span class="buy-text">Buy Now</span><span class="price"><span class="dollar">$</span>1999<span class="sub-text">.99</span></span></span>
-									</a>	
-							    </li>
-							    <li>
-									<a href="#" class="product" title="Product 3">
-										<img src="css/images/product-3.jpg" alt="Product Image 3" />
-										<span class="order model">IPhone 4s</span>
-										<span class="order">catalog number: <span class="number">3</span></span>
-										<span class="order"><span class="buy-text">Buy Now</span><span class="price"><span class="dollar">$</span>15<span class="sub-text">.99</span></span></span>
-									</a>	
-							    </li>
-							    <li>
-									<a href="#" class="product" title="Product 4">
-										<img src="css/images/product-4.jpg" alt="Product Image 4" />
-										<span class="order model">Mac OS</span>
-										<span class="order">catalog number: <span class="number">4</span></span>
-										<span class="order"><span class="buy-text">Buy Now</span><span class="price"><span class="dollar">$</span>1999<span class="sub-text">.99</span></span></span>
-									</a>	
-							    </li>
+							    <?php
+                                    include 'pages/config.php';
+                                    include 'pages/fungsi_paging.php';
+
+                                    $p = new Paging;
+                                    $batas = 20;
+                                    $posisi = $p->cariPosisi($batas);
+                                    switch ($_GET[act]) {
+                                        default:
+
+                                            $tampil = mysql_query("select *from product limit $posisi, $batas ");
+                                            $no = $posisi + 1;
+                                            while ($r = mysql_fetch_array($tampil)) {
+                                                ?>
+                                                <li style="height: 300px;">
+                                                    <a href="product.php?&act=product&detail=<?php echo $r[id_product]; ?>" class="product" title="<?php echo $r[nm_product]; ?>">
+                                                        <img src="<?php echo $r[image]; ?>" alt="Product Image 1" />
+                                                        <span class="order model"><?php echo $r[nm_product]; ?></span>
+                                                        <span class="order"><span class="buy-text">Buy Now</span><span class="price"><span class="dollar">IDR</span><?php echo $r[price]; ?><span class="sub-text">.00</span></span></span>
+                                                    </a>
+                                                </li>
+                                                <?php
+                                            }
+                                            $jmldata = mysql_num_rows(mysql_query("select *from product"));
+                                            $jmlhalaman = $p->jumlahHalaman($jmldata, $batas);
+                                            $linkHalaman = $p->navHalaman($_GET[halaman], $jmlhalaman);
+
+                                        case 'product':
+                                            include 'pages/config.php';
+                                            if (isset($_GET['detail'])) {
+                                                $productId = $_GET['detail'];
+                                                $detailproduct = mysql_query("SELECT * FROM product WHERE id_product='$productId' ORDER by id_product asc");
+                                                if ($tampildong = mysql_fetch_array($detailproduct)) {
+                                                    ?>
+                                                    <li style="margin-left: 350px; ">
+                                                        <a href="pages/input.php?input=add&id=<?php echo $tampildong[id_product]; ?>" class="product" title="<?php echo $tampildong[nm_product]; ?>">
+                                                            <img src="<?php echo $tampildong[image]; ?>" alt="Product Image 1" />
+                                                            <span class="order model"><?php echo $tampildong[nm_product]; ?></span>
+                                                            <span class="number"><?php echo $tampildong[desc]; ?></span>
+                                                            <span class="order"><span class="buy-text">Buy Now</span><span class="price"><span class="dollar">IDR</span><?php echo $tampildong[price]; ?><span class="sub-text">.00</span></span></span>
+                                                        </a>
+                                                    </li>
+                                                    <?php
+                                                }
+                                            }
+                                    }
+                                    echo "<div class='cl'>&nbsp;</div>";
+                                    echo "<div class='pagination'><center>$linkHalaman</center></div>";
+                                    ?>
 							</ul>
 							<div class="cl">&nbsp;</div>
 						</div>
 						<!-- End Row -->
-						<!-- Row -->
-						<div class="row last-row">
-							<ul>
-							    <li>
-									<a href="#" class="product" title="Product 5">
-										<img src="css/images/product-5.jpg" alt="Product Image 5" />
-										<span class="order model">IPhone 5</span>
-										<span class="order">catalog number: <span class="number">5</span></span>
-										<span class="order"><span class="buy-text">Buy Now</span><span class="price"><span class="dollar">$</span>874<span class="sub-text">.99</span></span></span>
-									</a>
-							    </li>
-							    <li>
-									<a href="#" class="product" title="Product 6">
-										<img src="css/images/product-6.jpg" alt="Product Image 6" />
-										<span class="order model">Mac Book Pro</span>
-										<span class="order">catalog number: <span class="number">6</span></span>
-										<span class="order"><span class="buy-text">Buy Now</span><span class="price"><span class="dollar">$</span>1199<span class="sub-text">.99</span></span></span>
-									</a>	
-							    </li>
-							    <li>
-									<a href="#" class="product" title="Product 7">
-										<img src="css/images/product-7.jpg" alt="Product Image 7" />
-										<span class="order model">IPhone Casing/span>
-										<span class="order">catalog number: <span class="number">7</span></span>
-										<span class="order"><span class="buy-text">Buy Now</span><span class="price"><span class="dollar">$</span>27<span class="sub-text">.99</span></span></span>
-									</a>	
-							    </li>
-							    <li>
-									<a href="#" class="product" title="Product 8">
-										<img src="css/images/product-8.jpg" alt="Product Image 8" />
-										<span class="order model">Handphone Stuff</span>
-										<span class="order">catalog number: <span class="number">8</span></span>
-										<span class="order"><span class="buy-text">Buy Now</span><span class="price"><span class="dollar">$</span>4<span class="sub-text">.99</span></span></span>
-									</a>	
-							    </li>
-							</ul>
-							<div class="cl">&nbsp;</div>
-						</div>
-						<!-- End Row -->
+						
 					</div>
 					<!-- End Case -->
 					<!-- Case -->

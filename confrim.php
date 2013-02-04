@@ -1,3 +1,6 @@
+<?php 
+	session_start();
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html lang="en-US" xmlns="http://www.w3.org/1999/xhtml" dir="ltr">
 <head>
@@ -23,10 +26,24 @@
 				<div class="top-nav">
 					<ul>
 					    <li class="first nobg"><h1>Indosat M2 - Shopping Partner</h1></li>
+					    <?php if($_SESSION[email]==NULL){?>
 					    <li><a href="login.php" title="Login">Login</a></li>
+					    <?php } else{ ?>
+						<li><a href="pages/logout.php" title="Logout">Logout</a></li>
+						<?php }?>
 					    <li><a href="profile.php" title="My Account">My Account</a></li>
-					    <li><a href="contact.php" title="My Wishlist">Contact Us</a></li>
-					    <li class="nobg"><a href="#" class="bag" title="My Bag">My Bag</a></li>
+					    <li><a href="contact.php" title="Contact Us">Contact Us</a></li>
+					    <li class="nobg"><a href="#" class="bag" title="My Bag">My Bag
+							 <?php
+include "pages/config.php";
+	$sid = session_id();
+	$sql = mysql_query("SELECT * FROM shoppingcart");
+	$row = mysql_num_rows($sql);
+	$jml = mysql_fetch_array($sql);
+	
+	echo "<span class='KetCart'>$row item</span>";
+	?>
+						</a></li>
 					</ul>
 				</div>				<div id="search">
 					<form action="" method="post">
@@ -64,8 +81,8 @@
 										</font>
 									</td>
 									<td style="width: 300px;">
-										<input type="text" name="f_name" placeholder="First Name" style="width: 100px; height: 30px;">
-										<input type="text" name="l_name" placeholder="Last Name" style="width: 173px; height: 30px;">
+										<input type="text" name="f_name" placeholder="First Name" style="width: 100px; height: 30px;" required>
+										<input type="text" name="l_name" placeholder="Last Name" style="width: 173px; height: 30px;" required>
 									</td>
 								</tr>
 								<tr>
@@ -75,8 +92,8 @@
 										</font>
 									</td>
 									<td style="width: 300px;">
-										<input type="text" name="birthday_place" placeholder="Birthday_place" style="width: 130px; height: 30px;">
-										<input type="date" name="birthday" style="height: 30px; width: 143px;">
+										<input type="text" name="birthday_place" placeholder="Birthday_place" style="width: 130px; height: 30px;" required >
+										<input type="date" name="birthday" style="height: 30px; width: 143px;" required>
 									</td>
 								</tr>
 								<tr>
@@ -86,7 +103,7 @@
 										</font>
 									</td>
 									<td style="width: 300px;">
-										<select class="inputlogin" name="gender" style="width: 284px;">
+										<select class="inputlogin" name="gender" style="width: 284px;" required>
 											<option selected="selected">Gender</option>
 											<option value="l">Male</option>
 											<option value="p">Female</option>
@@ -100,7 +117,7 @@
 										</font>
 									</td>
 									<td style="width: 300px;">
-										<input type="text" name="telp" placeholder="Phone Number" class="inputlogin">
+										<input type="text" name="telp" placeholder="Phone Number" class="inputlogin" required>
 									</td>
 								</tr>
 								<tr>
@@ -110,7 +127,7 @@
 										</font>
 									</td>
 									<td style="width: 300px;">
-										<input type="text" name="addres" placeholder="Addres" class="inputlogin">
+										<input type="text" name="addres" placeholder="Addres" class="inputlogin" required>
 									</td>
 								</tr>
 								<tr>
@@ -120,7 +137,7 @@
 										</font>
 									</td>
 									<td style="width: 300px;">
-										<input type="text" name="email" placeholder="Email" class="inputlogin">
+										<input type="text" name="email" placeholder="Email" class="inputlogin" required>
 									</td>
 								</tr>
 								<tr>
@@ -130,7 +147,7 @@
 										</font>
 									</td>
 									<td style="width: 300px;">
-										<input type="password" name="password" placeholder="Password" class="inputlogin">
+										<input type="password" name="password" placeholder="Password" class="inputlogin" required>
 									</td>
 								</tr>
 								<tr>

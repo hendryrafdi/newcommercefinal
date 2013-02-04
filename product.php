@@ -25,9 +25,13 @@ session_start();
                     <div class="top-nav">
                         <ul>
                             <li class="first nobg"><h1>Indosat M2 - Shopping Partner</h1></li>
-                            <li><a href="login.php" title="Login">Login</a></li>
+                            <?php if($_SESSION[email]==NULL){?>
+					    <li><a href="login.php" title="Login">Login</a></li>
+					    <?php } else{ ?>
+						<li><a href="pages/logout.php" title="Logout">Logout</a></li>
+						<?php }?>
                             <li><a href="profile.php" title="My Account">My Account</a></li>
-                            <li><a href="channel.php" title="My Wishlist">Channel</a></li>
+                            <li><a href="contact.php" title="Contact Us">Contact Us</a></li>
                             <li class="nobg"><a href="shoppingcart.php" class="bag" title="My Bag">My Bag <?php
 include "pages/config.php";
 	$sid = session_id();

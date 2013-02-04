@@ -27,9 +27,13 @@ include 'pages/config.php';
 			  <div class="top-nav">
 				  <ul>
 					    <li class="first nobg"><h1>Indosat M2 - Shopping Partner</h1></li>
+					    <?php if($_SESSION[email]==NULL){?>
 					    <li><a href="login.php" title="Login">Login</a></li>
+					    <?php } else{ ?>
+						<li><a href="pages/logout.php" title="Logout">Logout</a></li>
+						<?php }?>
 					    <li><a href="profile.php" title="My Account">My Account</a></li>
-					    <li><a href="channel.php" title="My Wishlist">Channel</a></li>
+					    <li><a href="contact.php" title="Contact Us">Contact Us</a></li>
 					    <li class="nobg"><a href="shoppingcart.php" class="bag" title="My Bag">My Bag <?php
 include "pages/config.php";
 	$sid = session_id();
@@ -97,7 +101,14 @@ include "pages/config.php";
 						</table>
 						<a id="btnblue" href="product.php">Add more items</a>
 						<a id="btnred" href="pages/cancel.php">Cancel</a>
-						<a id="btngreen" href="#">Next</a>
+						<?php if($_SESSION[email]){
+						echo"<a id='btngreen' href='confrim.php'>Next</a>";	
+						}
+						else{
+							echo"<a id='btngreen' href='login.php'>Next</a>";	
+						}?>
+						
+						
 					
 				</div>
 				<!-- End Slider -->

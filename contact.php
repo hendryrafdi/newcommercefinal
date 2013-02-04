@@ -1,3 +1,6 @@
+<?php 
+	session_start();
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html lang="en-US" xmlns="http://www.w3.org/1999/xhtml" dir="ltr">
 <head>
@@ -23,10 +26,24 @@
 				<div class="top-nav">
 					<ul>
 					    <li class="first nobg"><h1>Indosat M2 - Shopping Partner</h1></li>
+					    <?php if($_SESSION[email]==NULL){?>
 					    <li><a href="login.php" title="Login">Login</a></li>
+					    <?php } else{ ?>
+						<li><a href="pages/logout.php" title="Logout">Logout</a></li>
+						<?php }?>
 					    <li><a href="profile.php" title="My Account">My Account</a></li>
-					    <li><a href="channel.php" title="My Wishlist">Channel</a></li>
-					    <li class="nobg"><a href="#" class="bag" title="My Bag">My Bag</a></li>
+					    <li><a href="contact.php" title="Contact Us">Contact Us</a></li>
+					    <li class="nobg"><a href="shoppingcart.php" class="bag" title="My Bag">My Bag
+							 <?php
+include "pages/config.php";
+	$sid = session_id();
+	$sql = mysql_query("SELECT * FROM shoppingcart");
+	$row = mysql_num_rows($sql);
+	$jml = mysql_fetch_array($sql);
+	
+	echo "<span class='KetCart'>$row item</span>";
+	?>
+						</a></li>
 					</ul>
 				</div>				<div id="search">
 					<form action="" method="post">
