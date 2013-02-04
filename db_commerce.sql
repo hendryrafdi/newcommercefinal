@@ -128,7 +128,7 @@ CREATE TABLE `shoppingcart` (
   PRIMARY KEY (`id_shopping`),
   KEY `id_product` (`id_product`),
   CONSTRAINT `shoppingcart_ibfk_1` FOREIGN KEY (`id_product`) REFERENCES `product` (`id_product`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -137,7 +137,6 @@ CREATE TABLE `shoppingcart` (
 
 LOCK TABLES `shoppingcart` WRITE;
 /*!40000 ALTER TABLE `shoppingcart` DISABLE KEYS */;
-INSERT INTO `shoppingcart` VALUES (1,2,'i8mggl26mt8k76eatmtm441sl2','2013-02-01 17:00:24',1),(2,2,'3nmj3t2el7e336thc7olqbq0q3','2013-02-03 17:00:24',3),(3,1,'3nmj3t2el7e336thc7olqbq0q3','2013-02-03 17:00:24',1),(4,5,'3nmj3t2el7e336thc7olqbq0q3','2013-02-03 17:00:24',1),(5,4,'3nmj3t2el7e336thc7olqbq0q3','2013-02-03 17:00:24',1);
 /*!40000 ALTER TABLE `shoppingcart` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -160,7 +159,7 @@ CREATE TABLE `user` (
   `email` varchar(40) NOT NULL,
   `password` varchar(20) NOT NULL,
   PRIMARY KEY (`id_user`,`email`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -169,6 +168,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
+INSERT INTO `user` VALUES (1,'Hendry','Rafdi','l','Depok','1996-01-25','',12321930,'hendry.rafdi@live.com','amoeba123'),(2,'Rizqi','Fadilla','l','jakarta','1996-10-22','Condet City',901920901,'dilafadila48@yahoo.com','bebas');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -181,4 +181,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2013-02-04  9:40:03
+-- Dump completed on 2013-02-04 16:51:56
