@@ -65,10 +65,10 @@ include "pages/config.php";
                         <h1 class="h1"><a href="#" ><br>Shopping Partner</a></h1>
                         <div id="navigation">
                             <ul>
-                                <li><a href="#" title="All" class="active"><span>All</span></a></li>
-                                <li><a href="#" title="Gadget"><span>Gadget</span></a></li>
-                                <li><a href="#" title="Fashion"><span>Fashion</span></a></li>
-                                <li><a href="#" title="Computer"><span>Computer</span></a></li>
+                                <li><a href="product.php" title="All" class="active"><span>All</span></a></li>
+                                <li><a href="product.php?cat=3" title="Gadget"><span>Gadget</span></a></li>
+                                <li><a href="product.php?cat=2" title="Fashion"><span>Fashion</span></a></li>
+                                <li><a href="product.php?cat=1" title="Computer"><span>Computer</span></a></li>
                             </ul>
                         </div>
                         <div class="cl">&nbsp;</div>
@@ -134,9 +134,10 @@ include "pages/config.php";
                                     $p = new Paging;
                                     $batas = 20;
                                     $posisi = $p->cariPosisi($batas);
-                                    switch ($_GET[act]) {
-                                        default:
-
+									if(!isset($_GET['cat'])){
+										switch ($_GET[act]) {
+											default:
+											
                                             $tampil = mysql_query("select *from product limit $posisi, $batas ");
                                             $no = $posisi + 1;
                                             while ($r = mysql_fetch_array($tampil)) {
@@ -172,7 +173,134 @@ include "pages/config.php";
                                                     <?php
                                                 }
                                             }
-                                    }
+										}
+									}
+									else{
+										$param = $_GET['cat'];
+										if($param == '1'){
+											switch ($_GET[act]) {
+												default:
+											
+                                            $tampil = mysql_query("select *from product where id_category='$param' limit $posisi, $batas ");
+                                            $no = $posisi + 1;
+                                            while ($r = mysql_fetch_array($tampil)) {
+                                                ?>
+                                                <li style="height: 300px;">
+                                                    <a href="product.php?&act=product&detail=<?php echo $r[id_product]; ?>" class="product" title="<?php echo $r[nm_product]; ?>">
+                                                        <img src="<?php echo $r[image]; ?>" alt="Product Image 1" />
+                                                        <span class="order model"><?php echo $r[nm_product]; ?></span>
+                                                        <span class="order"><span class="buy-text">Buy Now</span><span class="price"><span class="dollar">IDR</span><?php echo $r[price]; ?><span class="sub-text">.00</span></span></span>
+                                                    </a>
+                                                </li>
+                                                <?php
+                                            }
+                                            $jmldata = mysql_num_rows(mysql_query("select *from product"));
+                                            $jmlhalaman = $p->jumlahHalaman($jmldata, $batas);
+                                            $linkHalaman = $p->navHalaman($_GET[halaman], $jmlhalaman);
+
+											case 'product':
+                                            include 'pages/config.php';
+                                            if (isset($_GET['detail'])) {
+                                                $productId = $_GET['detail'];
+                                                $detailproduct = mysql_query("SELECT * FROM product WHERE id_product='$productId' ORDER by id_product asc");
+                                                if ($tampildong = mysql_fetch_array($detailproduct)) {
+                                                    ?>
+                                                    <li style="margin-left: 350px; ">
+                                                        <a href="pages/input.php?input=add&id=<?php echo $tampildong[id_product]; ?>" class="product" title="<?php echo $tampildong[nm_product]; ?>">
+                                                            <img src="<?php echo $tampildong[image]; ?>" alt="Product Image 1" />
+                                                            <span class="order model"><?php echo $tampildong[nm_product]; ?></span>
+                                                            <span class="number"><?php echo $tampildong[desc]; ?></span>
+                                                            <span class="order"><span class="buy-text">Buy Now</span><span class="price"><span class="dollar">IDR</span><?php echo $tampildong[price]; ?><span class="sub-text">.00</span></span></span>
+                                                        </a>
+                                                    </li>
+                                                    <?php
+                                                }
+                                            }
+											}
+										}
+										else if($param == '2'){
+											switch ($_GET[act]) {
+												default:
+											
+                                            $tampil = mysql_query("select *from product where id_category='$param' limit $posisi, $batas ");
+                                            $no = $posisi + 1;
+                                            while ($r = mysql_fetch_array($tampil)) {
+                                                ?>
+                                                <li style="height: 300px;">
+                                                    <a href="product.php?&act=product&detail=<?php echo $r[id_product]; ?>" class="product" title="<?php echo $r[nm_product]; ?>">
+                                                        <img src="<?php echo $r[image]; ?>" alt="Product Image 1" />
+                                                        <span class="order model"><?php echo $r[nm_product]; ?></span>
+                                                        <span class="order"><span class="buy-text">Buy Now</span><span class="price"><span class="dollar">IDR</span><?php echo $r[price]; ?><span class="sub-text">.00</span></span></span>
+                                                    </a>
+                                                </li>
+                                                <?php
+                                            }
+                                            $jmldata = mysql_num_rows(mysql_query("select *from product"));
+                                            $jmlhalaman = $p->jumlahHalaman($jmldata, $batas);
+                                            $linkHalaman = $p->navHalaman($_GET[halaman], $jmlhalaman);
+
+											case 'product':
+                                            include 'pages/config.php';
+                                            if (isset($_GET['detail'])) {
+                                                $productId = $_GET['detail'];
+                                                $detailproduct = mysql_query("SELECT * FROM product WHERE id_product='$productId' ORDER by id_product asc");
+                                                if ($tampildong = mysql_fetch_array($detailproduct)) {
+                                                    ?>
+                                                    <li style="margin-left: 350px; ">
+                                                        <a href="pages/input.php?input=add&id=<?php echo $tampildong[id_product]; ?>" class="product" title="<?php echo $tampildong[nm_product]; ?>">
+                                                            <img src="<?php echo $tampildong[image]; ?>" alt="Product Image 1" />
+                                                            <span class="order model"><?php echo $tampildong[nm_product]; ?></span>
+                                                            <span class="number"><?php echo $tampildong[desc]; ?></span>
+                                                            <span class="order"><span class="buy-text">Buy Now</span><span class="price"><span class="dollar">IDR</span><?php echo $tampildong[price]; ?><span class="sub-text">.00</span></span></span>
+                                                        </a>
+                                                    </li>
+                                                    <?php
+                                                }
+                                            }
+											}
+										}
+										else if($param == '3'){
+											switch ($_GET[act]) {
+												default:
+											
+                                            $tampil = mysql_query("select *from product where id_category='$param' limit $posisi, $batas ");
+                                            $no = $posisi + 1;
+                                            while ($r = mysql_fetch_array($tampil)) {
+                                                ?>
+                                                <li style="height: 300px;">
+                                                    <a href="product.php?&act=product&detail=<?php echo $r[id_product]; ?>" class="product" title="<?php echo $r[nm_product]; ?>">
+                                                        <img src="<?php echo $r[image]; ?>" alt="Product Image 1" />
+                                                        <span class="order model"><?php echo $r[nm_product]; ?></span>
+                                                        <span class="order"><span class="buy-text">Buy Now</span><span class="price"><span class="dollar">IDR</span><?php echo $r[price]; ?><span class="sub-text">.00</span></span></span>
+                                                    </a>
+                                                </li>
+                                                <?php
+                                            }
+                                            $jmldata = mysql_num_rows(mysql_query("select *from product"));
+                                            $jmlhalaman = $p->jumlahHalaman($jmldata, $batas);
+                                            $linkHalaman = $p->navHalaman($_GET[halaman], $jmlhalaman);
+
+											case 'product':
+                                            include 'pages/config.php';
+                                            if (isset($_GET['detail'])) {
+                                                $productId = $_GET['detail'];
+                                                $detailproduct = mysql_query("SELECT * FROM product WHERE id_product='$productId' ORDER by id_product asc");
+                                                if ($tampildong = mysql_fetch_array($detailproduct)) {
+                                                    ?>
+                                                    <li style="margin-left: 350px; ">
+                                                        <a href="pages/input.php?input=add&id=<?php echo $tampildong[id_product]; ?>" class="product" title="<?php echo $tampildong[nm_product]; ?>">
+                                                            <img src="<?php echo $tampildong[image]; ?>" alt="Product Image 1" />
+                                                            <span class="order model"><?php echo $tampildong[nm_product]; ?></span>
+                                                            <span class="number"><?php echo $tampildong[desc]; ?></span>
+                                                            <span class="order"><span class="buy-text">Buy Now</span><span class="price"><span class="dollar">IDR</span><?php echo $tampildong[price]; ?><span class="sub-text">.00</span></span></span>
+                                                        </a>
+                                                    </li>
+                                                    <?php
+                                                }
+                                            }
+											}
+										}
+									}
                                     echo "<div class='cl'>&nbsp;</div>";
                                     echo "<div class='pagination'><center>$linkHalaman</center></div>";
                                     ?>
