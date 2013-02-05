@@ -16,6 +16,30 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `category`
+--
+
+DROP TABLE IF EXISTS `category`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `category` (
+  `id_category` int(11) NOT NULL AUTO_INCREMENT,
+  `nm_category` varchar(30) NOT NULL,
+  PRIMARY KEY (`id_category`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `category`
+--
+
+LOCK TABLES `category` WRITE;
+/*!40000 ALTER TABLE `category` DISABLE KEYS */;
+INSERT INTO `category` VALUES (1,'computer'),(2,'fashion'),(3,'gadget');
+/*!40000 ALTER TABLE `category` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `message`
 --
 
@@ -52,7 +76,6 @@ CREATE TABLE `orders` (
   `id_order` int(11) NOT NULL AUTO_INCREMENT,
   `id_user` int(11) NOT NULL,
   `id_product` int(11) NOT NULL,
-  `product_name` varchar(40) NOT NULL,
   `customer_name` varchar(40) NOT NULL,
   `customer_company` varchar(40) DEFAULT NULL,
   `address` text NOT NULL,
@@ -61,6 +84,7 @@ CREATE TABLE `orders` (
   `state` varchar(30) NOT NULL,
   `country` varchar(30) NOT NULL,
   `telp` int(12) NOT NULL,
+  `qty` int(11) NOT NULL,
   `payment_method` varchar(30) NOT NULL,
   `date_purchased` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `last_modify` timestamp NULL DEFAULT NULL,
@@ -69,7 +93,7 @@ CREATE TABLE `orders` (
   KEY `id_product` (`id_product`),
   KEY `id_product_2` (`id_product`),
   KEY `id_product_3` (`id_product`),
-  CONSTRAINT `orders_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`) ON DELETE CASCADE ON UPDATE CASCADE
+  CONSTRAINT `orders_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -91,14 +115,16 @@ DROP TABLE IF EXISTS `product`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `product` (
   `id_product` int(11) NOT NULL AUTO_INCREMENT,
+  `id_category` int(11) NOT NULL,
   `nm_product` varchar(40) NOT NULL,
   `image` varchar(255) NOT NULL,
   `desc` varchar(255) NOT NULL,
-  `category` varchar(30) NOT NULL,
   `price` int(255) NOT NULL,
   `product_added` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `product_last_modify` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id_product`)
+  PRIMARY KEY (`id_product`),
+  KEY `id_category` (`id_category`),
+  CONSTRAINT `product_ibfk_1` FOREIGN KEY (`id_category`) REFERENCES `category` (`id_category`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -108,7 +134,7 @@ CREATE TABLE `product` (
 
 LOCK TABLES `product` WRITE;
 /*!40000 ALTER TABLE `product` DISABLE KEYS */;
-INSERT INTO `product` VALUES (1,'Mac Book Pro','images/product/product-6.jpg','Apple notebook with pink skin','Computer',6000000,'2013-01-31 12:51:26','2013-01-31 12:51:26'),(2,'Apple Mac PC','images/product/product-4.jpg','Apple PC Desktop with Pink Skin','Computer',4800000,'2013-02-01 01:48:08',NULL),(3,'iPhone5','images/product/product-5.jpg','New iPhone 5','Gadget',5000000,'2013-02-01 01:48:08',NULL),(4,'Apple Mac PC','images/product/product-2.jpg','Apple PC Desktop','Computer',4800000,'2013-02-01 01:55:39','2013-02-01 01:57:19'),(5,'iPhone4','images/product/product-12.jpg','iPhone4 3G','Gadget',4000000,'2013-02-01 01:55:39','2013-02-01 01:55:39');
+INSERT INTO `product` VALUES (1,1,'Mac Book Pro','images/product/product-6.jpg','Apple notebook with pink skin',6000000,'2013-01-31 12:51:26','2013-01-31 12:51:26'),(2,1,'Apple Mac PC','images/product/product-4.jpg','Apple PC Desktop with Pink Skin',4800000,'2013-02-01 01:48:08',NULL),(3,3,'iPhone5','images/product/product-5.jpg','New iPhone 5',5000000,'2013-02-01 01:48:08',NULL),(4,1,'Apple Mac PC','images/product/product-2.jpg','Apple PC Desktop',4800000,'2013-02-01 01:55:39','2013-02-01 01:57:19'),(5,3,'iPhone4','images/product/product-12.jpg','iPhone4 3G',4000000,'2013-02-01 01:55:39','2013-02-01 01:55:39');
 /*!40000 ALTER TABLE `product` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -127,8 +153,8 @@ CREATE TABLE `shoppingcart` (
   `qty` int(10) NOT NULL,
   PRIMARY KEY (`id_shopping`),
   KEY `id_product` (`id_product`),
-  CONSTRAINT `shoppingcart_ibfk_1` FOREIGN KEY (`id_product`) REFERENCES `product` (`id_product`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  CONSTRAINT `shoppingcart_ibfk_1` FOREIGN KEY (`id_product`) REFERENCES `product` (`id_product`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -150,7 +176,7 @@ DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user` (
   `id_user` int(11) NOT NULL AUTO_INCREMENT,
   `f_name` varchar(20) NOT NULL,
-  `l_name` varchar(20) NOT NULL,
+  `l_name` varchar(20) DEFAULT NULL,
   `gender` varchar(1) NOT NULL,
   `birthday_place` varchar(30) NOT NULL,
   `birthday` varchar(20) NOT NULL,
@@ -158,8 +184,9 @@ CREATE TABLE `user` (
   `telp` int(12) NOT NULL,
   `email` varchar(40) NOT NULL,
   `password` varchar(20) NOT NULL,
-  PRIMARY KEY (`id_user`,`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+  PRIMARY KEY (`id_user`,`email`),
+  UNIQUE KEY `email` (`email`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -168,7 +195,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (1,'Hendry','Rafdi','l','Depok','1996-01-25','',12321930,'hendry.rafdi@live.com','amoeba123'),(2,'Rizqi','Fadilla','l','jakarta','1996-10-22','Condet City',901920901,'dilafadila48@yahoo.com','bebas');
+INSERT INTO `user` VALUES (1,'Hendry','Rafdi','l','Depok','1996-01-25','',12321930,'hendry.rafdi@live.com','amoeba123'),(2,'Rizqi','Fadilla','l','jakarta','1996-10-22','Condet City',901920901,'dilafadila48@yahoo.com','bebas'),(3,'Depok','City','l','Depok','1999-01-02','Depok',1293123,'depok@city.co.id','depok'),(6,'Momo','Pedro','p','Jakarta','2013-02-04','Jakarta',901920901,'momo@gmail.com','momo'),(7,'Ambon','Eric','l','Ambon','1995-12-01','Jakarta',19023123,'ambon@capricornboy.tk','123456'),(8,'Geisha','','p','jakarta','1991-01-01','Jakarta',2109312,'geisha@momo.com','123');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -181,4 +208,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2013-02-04 16:51:56
+-- Dump completed on 2013-02-05  9:09:50

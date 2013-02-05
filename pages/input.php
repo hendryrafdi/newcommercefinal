@@ -62,7 +62,7 @@ elseif ($input=='inputform'){
 											qty,
 											date_purchased,
 											id_order) 
-									VALUES ('$_POST[f_name]' '$_POST[l_name]',
+									VALUES ('$_POST[f_name]',
 											'$_POST[company]',
 											'$_POST[birthday_place]',
 											'$_POST[birthday]',
