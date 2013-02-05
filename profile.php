@@ -44,53 +44,108 @@ include 'pages/config.php';
 			<div class="shell">
 				<!-- Header -->
 				<div id="header">
-					<h1 class="h1"><a href="#" ><br>Shopping Partner</a></h1>
+					<h1 class="h1"><a href="#" ><br>My Account</a></h1>
 					<div class="cl">&nbsp;</div>
 				</div>
 				<!-- End Header -->
 				<!-- Slider -->
 				<div id="main-slider">
 					<div id="slider-holder">
-						<center><h2 class="h2">About Your Account</h2></center>
-						<fieldset style="width:300px; height:300px; margin-left:330px; margin-top:30px;">
-						<table>
-						
-                                    <?php
+					
+						<div class="con2-kiri">
+						<form method="post" action="pages/saveuser.php">
+							<table border="0">
+								<?php
                                     include "pages/config.php";
 
                                     $query = mysql_query("select *from user");
                                     $tampil = mysql_fetch_array($query)
-                                        ?><tr>
-                                        <td>First Name :<?php echo "$tampil[f_name]"; ?></td>
-                                        </tr>
-										<tr>
-										<td>Last Name:<?php echo "$tampil[l_name]"; ?></td>
-										</tr>
-										<tr>
-										<td>Gender : <?php echo "$tampil[gender]"; ?></td>
-										</tr>
-										<tr>
-										<td>Birthday Place : <?php echo "$tampil[birthday_place]"; ?></td>
-										</tr>
-										<tr>
-										<td>Birthday Date : <?php echo "$tampil[birthday]"; ?></td>
-										</tr>
-										<tr>
-										<td>Address : <?php echo "$tampil[address]"; ?></td>
-										</tr>
-										<tr>
-										<td>Telephone : <?php echo "$tampil[telp]"; ?></td>
-                                        </tr>
-										<tr>
-										<td>Email : <?php echo "$tampil[email]"; ?></td>
-										</tr>
-										<tr>
-										<td>Password : <?php echo "$tampil[password]"; ?></td>
-                                        </tr></fieldset>
-
-                                    
-                                <?php  ?>
-								</table>  	
+                                        ?>
+								<tr>
+									<td style="width: 180px;">
+										<font face="Gill Sans MT Condensed" size="5" color="black">
+											Username
+										</font>
+									</td>
+									<td style="width: 300px;">
+										<input type="text" value="<?php echo"$tampil[f_name]"; ?>" style="width: 100px; height: 30px;">
+										<input type="text" value="<?php echo"$tampil[l_name]"; ?>" style="width: 173px; height: 30px;">
+									</td>
+								</tr>
+								<tr>
+									<td style="width: 180px;">
+										<font face="Gill Sans MT Condensed" size="5" color="black">
+											Tempat, Tanggal Lahir
+										</font>
+									</td>
+									<td style="width: 300px;">
+										<input type="text" name="birthday_place" value="<?php echo"$tampil[birthday_place]"; ?>" style="width: 130px; height: 30px;">
+										<input type="date" name="birthday" value="<?php echo"$tampil[birthday]"; ?>" style="height: 30px; width: 143px;">
+									</td>
+								</tr>
+								<tr>
+									<td style="width: 180px;">
+										<font face="Gill Sans MT Condensed" size="5" color="black">
+											Jenis Kelamin
+										</font>
+									</td>
+									<td style="width: 300px;">
+										<select class="inputlogin" name="gender" style="width: 284px;">
+											<option value="<?php echo"$tampil[gender]"; ?>">Gender</option>
+											<option value="l">Male</option>
+											<option value="p">Female</option>
+										</select>
+									</td>
+								</tr>
+								<tr>
+									<td style="width: 180px;">
+										<font face="Gill Sans MT Condensed" size="5" color="black">
+											No. Telepon
+										</font>
+									</td>
+									<td style="width: 300px;">
+										<input type="text" name="telp" value="<?php echo"$tampil[telp]"; ?>" class="inputlogin">
+									</td>
+								</tr>
+								<tr>
+									<td style="width: 180px;">
+										<font face="Gill Sans MT Condensed" size="5" color="black">
+											Alamat
+										</font>
+									</td>
+									<td style="width: 300px;">
+										<input type="text" name="addres" value="<?php echo"$tampil[address]"; ?>" class="inputlogin">
+									</td>
+								</tr>
+								<tr>
+									<td style="width: 180px;">
+										<font face="Gill Sans MT Condensed" size="5" color="black">
+											Email
+										</font>
+									</td>
+									<td style="width: 300px;">
+										<input type="text" name="email" value="<?php echo"$tampil[email]"?>" class="inputlogin">
+									</td>
+								</tr>
+								<tr>
+									<td style="width: 180px;">
+										<font face="Gill Sans MT Condensed" size="5" color="black">
+											Password
+										</font>
+									</td>
+									<td style="width: 300px;">
+										<input type="password" name="password" value="<?php echo"$tampil[password]";?>" class="inputlogin">
+									</td>
+								</tr>
+								<tr>
+									<td></td>
+									<td style="width: 180px;">
+										<input type="submit" value="Update"/>
+									</td>
+								</tr>
+							</table>
+                                     </fieldset>   
+								 	
 					</div>
 					
 				</div>

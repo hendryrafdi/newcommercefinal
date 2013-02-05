@@ -4,7 +4,7 @@ body {
     font-size: 13px;
     line-height: 15px;
     font-family: arial, sans-serif;
-    color: #fff;
+    color: #00CCCC;
     background: #e1dcc6 url(images/bg.jpg) repeat 0 0;
     min-width: 980px;
 }
@@ -301,4 +301,13 @@ th {
 	margin-left: 280px;
 	margin-top: 130px;
 	position: absolute;
+}
+.gaya1 {
+bgcolor: #9E0091;
+}
+.gaya2{
+bgcolor: #00A6FF;
+}
+.list {
+list-style-type: none;
 }
