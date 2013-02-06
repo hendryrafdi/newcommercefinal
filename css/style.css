@@ -191,33 +191,6 @@ h1#logo a { display: block; no-repeat 0 0; height: 63px;}
 	margin-left: 520px;
 	margin-top: 10px;
 }
-.gariskiri{
-	width: 1px; 
-	height: 370px;
-	display: block; 
-	background-color: black; 
-	position: absolute; 
-	margin-left: 230px;
-	margin-top: 20px;
-}
-.gariskanan{
-	width: 1px; 
-	height: 370px;
-	display: block; 
-	background-color: black; 
-	position: absolute; 
-	margin-left: 700px;
-	margin-top: 5px;
-}
-.garisV{
-	width: 420px; 
-	height: 1px;
-	display: block; 
-	background-color: black; 
-	position: absolute; 
-	margin-left: 260px;
-	margin-top: 60px;
-}
 .garis2{
 	width: 1px; 
 	height: 350px;
@@ -351,4 +324,31 @@ list-style-type: none;
 	margin-top: 50px;
 	margin-left: 270px;
 	position: absolute;
+}
+.gariskiri{
+	width: 1px; 
+	height: 370px;
+	display: block; 
+	background-color: black; 
+	position: absolute; 
+	margin-left: 230px;
+	margin-top: 20px;
+}
+.gariskanan{
+	width: 1px; 
+	height: 370px;
+	display: block; 
+	background-color: black; 
+	position: absolute; 
+	margin-left: 700px;
+	margin-top: 5px;
+}
+.garisV{
+	width: 420px; 
+	height: 1px;
+	display: block; 
+	background-color: black; 
+	position: absolute; 
+	margin-left: 260px;
+	margin-top: 60px;
 }
