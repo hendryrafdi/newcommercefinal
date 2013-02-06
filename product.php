@@ -65,10 +65,35 @@ include "pages/config.php";
                         <h1 class="h1"><a href="#" ><br>Shopping Partner</a></h1>
                         <div id="navigation">
                             <ul>
-                                <li><a href="product.php" title="All" class="active"><span>All</span></a></li>
-                                <li><a href="product.php?cat=3" title="Gadget"><span>Gadget</span></a></li>
+							<?php 
+							$active = $_GET['cat'];
+							if($active==NULL){ ?>
+								<li><a href="product.php" title="All" class="active"><span>All</span></a></li>
+								<li><a href="product.php?cat=3" title="Gadget"><span>Gadget</span></a></li>
                                 <li><a href="product.php?cat=2" title="Fashion"><span>Fashion</span></a></li>
                                 <li><a href="product.php?cat=1" title="Computer"><span>Computer</span></a></li>
+							<?php } ?>
+							<?php 
+							if($active=='1'){ ?>
+								<li><a href="product.php" title="All"><span>All</span></a></li>
+								<li><a href="product.php?cat=3" title="Gadget"><span>Gadget</span></a></li>
+                                <li><a href="product.php?cat=2" title="Fashion"><span>Fashion</span></a></li>
+                                <li><a href="product.php?cat=1" title="Computer" class="active"><span>Computer</span></a></li>
+							<?php } ?>
+							<?php 
+							if($active=='2'){ ?>
+								<li><a href="product.php" title="All"><span>All</span></a></li>
+								<li><a href="product.php?cat=3" title="Gadget"><span>Gadget</span></a></li>
+                                <li><a href="product.php?cat=2" title="Fashion" class="active"><span>Fashion</span></a></li>
+                                <li><a href="product.php?cat=1" title="Computer"><span>Computer</span></a></li>
+							<?php } ?>
+							<?php 
+							if($active=='3'){ ?>
+								<li><a href="product.php" title="All"><span>All</span></a></li>
+								<li><a href="product.php?cat=3" title="Gadget" class="active"><span>Gadget</span></a></li>
+                                <li><a href="product.php?cat=2" title="Fashion"><span>Fashion</span></a></li>
+                                <li><a href="product.php?cat=1" title="Computer"><span>Computer</span></a></li>
+							<?php } ?>
                             </ul>
                         </div>
                         <div class="cl">&nbsp;</div>

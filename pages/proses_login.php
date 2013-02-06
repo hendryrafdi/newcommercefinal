@@ -11,6 +11,14 @@
 	
 	if($ketemu > 0){
 		session_start();
+		$_SESSION[id_user] = $r[id_user];
+		$_SESSION[f_name] = $r[f_name];
+		$_SESSION[l_name] = $r[l_name];
+		$_SESSION[gender] = $r[gender];
+		$_SESSION[birthday_place] = $r[birthday_place];
+		$_SESSION[birthday] = $r[birthday];
+		$_SESSION[address] = $r[address];
+		$_SESSION[telp] = $r[telp];
 		$_SESSION[email] = $r[email];
 		$_SESSION[password] = $r[password];
 		$shop = mysql_query("select *from shoppingcart");

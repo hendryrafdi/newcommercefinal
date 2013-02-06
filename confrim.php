@@ -100,17 +100,6 @@ include "pages/config.php";
 								<tr>
 									<td style="width: 180px;">
 										<font face="Gill Sans MT Condensed" size="5" color="black">
-											Tempat, Tanggal Lahir
-										</font>
-									</td>
-									<td style="width: 300px;">
-										<input type="text" name="birthday_place" placeholder="Birthday_place" style="width: 130px; height: 30px;" required >
-										<input type="date" name="birthday" style="height: 30px; width: 143px;" required>
-									</td>
-								</tr>
-								<tr>
-									<td style="width: 180px;">
-										<font face="Gill Sans MT Condensed" size="5" color="black">
 											No. Telepon
 										</font>
 									</td>

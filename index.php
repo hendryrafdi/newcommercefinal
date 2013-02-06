@@ -77,9 +77,10 @@ include "pages/config.php";
 					<h1 class="h1"><a href="#" ><br>Shopping Partner</a></h1>
 					<div id="navigation">
 						<ul>
-						    <li><a href="#" class="active" title="Gadget"><span>Gadget</span></a></li>
-						    <li><a href="#" title="Fashion"><span>Fashion</span></a></li>
-						    <li><a href="#" title="Computer"><span>Computer</span></a></li>
+						    <li><a href="product.php" title="All" class="active"><span>All</span></a></li>
+                                <li><a href="product.php?cat=3" title="Gadget"><span>Gadget</span></a></li>
+                                <li><a href="product.php?cat=2" title="Fashion"><span>Fashion</span></a></li>
+                                <li><a href="product.php?cat=1" title="Computer"><span>Computer</span></a></li>
 						</ul>
 					</div>
 					<div class="cl">&nbsp;</div>
@@ -122,11 +123,11 @@ include "pages/config.php";
 						</ul>
 					</div>
 					<div class="nav">
-						<a href="#" title="First Slide">&nbsp;</a>
-						<a href="#" title="Second Slide">&nbsp;</a>
-						<a href="#" title="Third Slide">&nbsp;</a>
-						<a href="#" title="Fourth Slide">&nbsp;</a>
-						<a href="#" title="Fifth Slide">&nbsp;</a>
+						<a href="#" title="Happy Shopping">&nbsp;</a>
+                        <a href="#" title="Mac Book Apple">&nbsp;</a>
+                        <a href="#" title="Iphone 4 3G">&nbsp;</a>
+                        <a href="#" title="Iphone 5">&nbsp;</a>
+                        <a href="#" title="Iphone Inovation">&nbsp;</a>
 					</div>
 				</div>
 				<!-- End Slider -->
