@@ -1,3 +1,6 @@
+<?php
+	session_start();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -67,104 +70,161 @@ include "pages/config.php";
 				<!-- Slider -->
 				<div id="main-slider">
 					<div id="slider-holder">
-					
+						<div class="gariskiri">
+						&nbsp;
+						</div>
+						<div>
+							<font face="rockwell" size="6" color="darkblue" style="position: absolute; margin-left: 400px; margin-top: 30px;">Member</font>
+						</div>
+						<div class="garisV" style="">
+						&nbsp;
+						</div>
 						<div class="con2-kiri">
-						<form method="post" action="pages/saveuser.php">
-							<table border="0">
+								<div>
+									<font face="rockwell" size="4" color="black">Hallo <?php echo"<u><font face='rockwell' size='3' color='black'>$_SESSION[f_name] </font></u>";?></font>
+								</div>
 								<?php
-                                    include "pages/config.php";
-
-                                    $query = mysql_query("select *from user");
-                                    $tampil = mysql_fetch_array($query)
-                                        ?>
-								<tr>
-									<td style="width: 180px;">
-										<font face="Gill Sans MT Condensed" size="5" color="black">
-											Username
-										</font>
-									</td>
-									<td style="width: 300px;">
-										<input type="text" value="<?php echo"$tampil[f_name]"; ?>" style="width: 100px; height: 30px;">
-										<input type="text" value="<?php echo"$tampil[l_name]"; ?>" style="width: 173px; height: 30px;">
-									</td>
-								</tr>
-								<tr>
-									<td style="width: 180px;">
-										<font face="Gill Sans MT Condensed" size="5" color="black">
-											Tempat, Tanggal Lahir
-										</font>
-									</td>
-									<td style="width: 300px;">
-										<input type="text" name="birthday_place" value="<?php echo"$tampil[birthday_place]"; ?>" style="width: 130px; height: 30px;">
-										<input type="date" name="birthday" value="<?php echo"$tampil[birthday]"; ?>" style="height: 30px; width: 143px;">
-									</td>
-								</tr>
-								<tr>
-									<td style="width: 180px;">
-										<font face="Gill Sans MT Condensed" size="5" color="black">
-											Jenis Kelamin
-										</font>
-									</td>
-									<td style="width: 300px;">
-										<select class="inputlogin" name="gender" style="width: 284px;">
-											<option value="<?php echo"$tampil[gender]"; ?>">Gender</option>
-											<option value="l">Male</option>
-											<option value="p">Female</option>
-										</select>
-									</td>
-								</tr>
-								<tr>
-									<td style="width: 180px;">
-										<font face="Gill Sans MT Condensed" size="5" color="black">
-											No. Telepon
-										</font>
-									</td>
-									<td style="width: 300px;">
-										<input type="text" name="telp" value="<?php echo"$tampil[telp]"; ?>" class="inputlogin">
-									</td>
-								</tr>
-								<tr>
-									<td style="width: 180px;">
-										<font face="Gill Sans MT Condensed" size="5" color="black">
-											Alamat
-										</font>
-									</td>
-									<td style="width: 300px;">
-										<input type="text" name="addres" value="<?php echo"$tampil[address]"; ?>" class="inputlogin">
-									</td>
-								</tr>
-								<tr>
-									<td style="width: 180px;">
-										<font face="Gill Sans MT Condensed" size="5" color="black">
-											Email
-										</font>
-									</td>
-									<td style="width: 300px;">
-										<input type="text" name="email" value="<?php echo"$tampil[email]"?>" class="inputlogin">
-									</td>
-								</tr>
-								<tr>
-									<td style="width: 180px;">
-										<font face="Gill Sans MT Condensed" size="5" color="black">
-											Password
-										</font>
-									</td>
-									<td style="width: 300px;">
-										<input type="password" name="password" value="<?php echo"$tampil[password]";?>" class="inputlogin">
-									</td>
-								</tr>
-								<tr>
-									<td></td>
-									<td style="width: 180px;">
-										<input type="submit" value="Update"/>
-									</td>
-								</tr>
-							</table>
-                                     </fieldset>   
-								 	
+									include 'pages/config.php';
+										
+									$id = $_SESSION[id_user];
+									$tampil = mysql_query("select *from user where id_user='$id'");
+									$manggil = mysql_fetch_array($tampil);
+								?>
+								<div class="isitable">
+									<table border="0" style="width: 500px; height: 300px;">
+										<tr>
+											<td class="td1">
+												<font face="rockwell" size="3" color="black">First Name</font>
+											</td>
+											<td class="">
+												<font face="rockwell" size="3" color="black">:</font>
+											</td>
+											<td class="td2">
+												<?php echo"<u><font face='rockwell' size='3' color='black'>$_SESSION[f_name] </font></u>";?>
+											</td>
+											<td class="td3">
+												<img src="css/images/reply.png" title="change">
+											</td>
+										</tr>
+										<tr>
+											<td class="td1">
+												<font face="rockwell" size="3" color="black">Last Name</font>
+											</td>
+											<td class="">
+												<font face="rockwell" size="3" color="black">:</font>
+											</td>
+											<td class="td2">
+												<?php echo"<u><font face='rockwell' size='3' color='black'>$_SESSION[l_name] </font></u>";?>
+											</td>
+											<td class="td3">
+												<img src="css/images/reply.png" title="change">
+											</td>
+										</tr>
+										<tr>
+											<td class="td1">
+												<font face="rockwell" size="3" color="black">Gender</font>
+											</td>
+											<td class="">
+												<font face="rockwell" size="3" color="black">:</font>
+											</td>
+											<td class="td2">
+												<?php echo"<u><font face='rockwell' size='3' color='black'>$_SESSION[gender]</font></u>";?>
+											</td>
+											<td class="td1">
+												<img src="css/images/reply.png" title="change">
+											</td>
+										</tr>
+										<tr>
+											<td class="td1">
+												<font face="rockwell" size="3" color="black">Birthday Place</font>
+											</td>
+											<td class="">
+												<font face="rockwell" size="3" color="black">:</font>
+											</td>
+											<td class="td2">
+												<?php echo"<u><font face='rockwell' size='3' color='black'>$_SESSION[birthday_place] </font></u>";?>
+											</td>
+											<td class="td3">
+												<img src="css/images/reply.png" title="change">
+											</td>
+										</tr>
+										<tr>
+											<td class="td1">
+												<font face="rockwell" size="3" color="black">Birthday</font>
+											</td>
+											<td class="">
+												<font face="rockwell" size="3" color="black">:</font>
+											</td>
+											<td class="td2">
+												<?php echo"<u><font face='rockwell' size='3' color='black'>$_SESSION[birthday] </font></u>";?>
+											</td>
+											<td class="td3">
+												<img src="css/images/reply.png" title="change">
+											</td>
+										</tr>
+										<tr>
+											<td class="td1">
+												<font face="rockwell" size="3" color="black">Addres</font>
+											</td>
+											<td class="">
+												<font face="rockwell" size="3" color="black">:</font>
+											</td>
+											<td class="td2">
+												<?php echo"<u><font face='rockwell' size='3' color='black'>$_SESSION[address] </font></u>";?>
+											</td>
+											<td class="td3">
+												<img src="css/images/reply.png" title="change">
+											</td>
+										</tr>
+										<tr>
+											<td class="td1">
+												<font face="rockwell" size="3" color="black">Telp</font>
+											</td>
+											<td class="">
+												<font face="rockwell" size="3" color="black">:</font>
+											</td>
+											<td class="td2">
+												<?php echo"<u><font face='rockwell' size='3' color='black'>$_SESSION[telp] </font></u>";?>
+											</td>
+											<td class="td3">
+												<img src="css/images/reply.png" title="change">
+											</td>
+										</tr>
+										<tr>
+											<td class="td1">
+												<font face="rockwell" size="3" color="black">Email</font>
+											</td>
+											<td class="">
+												<font face="rockwell" size="3" color="black">:</font>
+											</td>
+											<td class="td2">
+												<?php echo"<u><font face='rockwell' size='3' color='black'>$_SESSION[email] </font></u>";?>
+											</td>
+											<td class="td3">
+												<img src="css/images/reply.png" title="change">
+											</td>
+										</tr>
+										<tr>
+											<td class="td1">
+												<font face="rockwell" size="3" color="black">Password</font>
+											</td>
+											<td class="">
+												<font face="rockwell" size="3" color="black">:</font>
+											</td>
+											<td class="td2">
+												<?php echo"<u><font face='rockwell' size='3' color='black'>$_SESSION[password] </font></u>";?>
+											</td>
+											<td class="td3">
+												<img src="css/images/reply.png" title="change">
+											</td>
+										</tr>
+									</table>
+								</div>	
+							</div>
+							<div class="gariskanan">
+							&nbsp;
+						</div>
 					</div>
-					
-				</div>
 				</div>
 					<!-- End Case -->
 				</div>
