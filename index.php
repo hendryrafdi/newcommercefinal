@@ -59,9 +59,9 @@ include "pages/config.php";
 					</ul>
 				</div>
 				<div id="search">
-					<form action="" method="post">
-						<input type="text" class="field" value="Quick search..." title="Quick search..." />
-					</form>
+					<form action="pages/search.php" method="post">
+                            <input type="text" class="field" value="Quick search..." title="Quick search..." name="keyword" /><input type="hidden" value="Search" name="search" />
+                        </form>
 				</div>
 				<div class="cl">&nbsp;</div>
 			</div>
