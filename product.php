@@ -153,6 +153,7 @@ include "pages/config.php";
                             <div class="row">
                                 <ul>
                                     <?php
+									
                                     include 'pages/config.php';
                                     include 'pages/fungsi_paging.php';
 
@@ -370,6 +371,7 @@ include "pages/config.php";
 									}
 									else {
 										$tampil = $_SESSION['search'];
+										unset($_SESSION['search']);
 									}
 										$query	= mysql_query($tampil);
 										while ($r = mysql_fetch_array($query)) {
