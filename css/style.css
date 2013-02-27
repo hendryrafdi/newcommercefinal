@@ -73,7 +73,7 @@ h1#logo a { display: block; no-repeat 0 0; height: 63px;}
 #main-slider .cnt h4 { font-size: 24px; line-height: 22px; color: #1898d6; font-style: italic; font-weight: normal; padding: 0 0 17px 0; }
 #main-slider .cnt h2 { text-transform: uppercase; }
 #main-slider .cnt p { padding: 36px 0 22px 0; width: 335px; font-size: 18px; line-height: 22px; color: #979798; }
-#main-slider .cnt .price { font-size: 53px; line-height: 75px; color: #ff7800; font-weight: bold; float: left; display: inline; }
+#main-slider .cnt .price { font-size: 53px; line-height: 75px; color: #ff7800; font-weight: bold; float: left; display: inline; margin-top: 100px; }
 #main-slider .cnt .dollar { font-size: 35px; color: #1898d6; font-weight: normal; letter-spacing: -1px; }
 #main-slider .cnt .sub-text { vertical-align: super; font-size: 32px; }
 #main-slider .cnt a.btn { float: right; display: inline; background: url(images/order-btn.png) no-repeat 0 0; width: 215px; height: 62px; margin: 31px 0 0 0; }
@@ -100,7 +100,7 @@ h1#logo a { display: block; no-repeat 0 0; height: 63px;}
 .product .model { font-size: 16px; color: #1898d6; padding: 0 0 2px 0; }
 .product .number { font-family: arial, sans-serif; font-style: normal; }
 .product .buy-text { font-size: 18px; line-height: 30px; color: #ffba00; font-style: normal; font-weight: bold; letter-spacing: -1px; float: left; display: inline; padding: 8px 0 0 0; }
-.product .price { font-size: 24px; line-height: 40px; float: right; display: inline; font-style: normal; color: #1898d6; font-weight: bold; }
+.product .price { font-size: 24px; line-height: 40px; float: right; display: inline; font-style: normal; color: #1898d6; font-weight: bold; margin-top: -10px; }
 .product .sub-text { font-size: 20px; line-height: 20px; vertical-align: super; }
 .product .dollar { font-size: 14px; }
 .product:hover,
@@ -229,7 +229,7 @@ h1#logo a { display: block; no-repeat 0 0; height: 63px;}
 }
 #btnred {
 	background-color: rgba(230,37,37,1);
-	width: 78px;
+	width: 120px;
 	display: inline-block;
 	font-family: Segoe UI Semilight;
 	line-height: 28px;
@@ -237,7 +237,7 @@ h1#logo a { display: block; no-repeat 0 0; height: 63px;}
 	color: rgba(255,255,255,1);
 	text-transform: uppercase;
 	position: absolute;
-	left: 785px;
+	left: 740px;
 	top: 225px;
 }
 #btnred:hover {
@@ -276,7 +276,7 @@ h1#logo a { display: block; no-repeat 0 0; height: 63px;}
 	color: rgba(255,255,255,1);
 	text-transform: uppercase;
 	position: absolute;
-	left: 644px;
+	left: 595px;
 	top: 225px;
 }
 #btnblue:hover {
@@ -352,3 +352,42 @@ list-style-type: none;
 	margin-left: 260px;
 	margin-top: 60px;
 }
+.nambar{
+	margin-top: 20px;
+	margin-left: 250px;
+	position: absolute;
+}
+.css3button {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #ffffff;
+	padding: 0px 0px;
+	width: 60px;
+	height: 25px;
+	background: -moz-linear-gradient(
+		top,
+		#42aaff 0%,
+		#003366);
+	background: -webkit-gradient(
+		linear, left top, left bottom, 
+		from(#42aaff),
+		to(#003366));
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	border: 1px solid #003366;
+	-moz-box-shadow:
+		0px 1px 3px rgba(000,000,000,0.5),
+		inset 0px 0px 1px rgba(255,255,255,0.5);
+	-webkit-box-shadow:
+		0px 1px 3px rgba(000,000,000,0.5),
+		inset 0px 0px 1px rgba(255,255,255,0.5);
+	box-shadow:
+		0px 1px 3px rgba(000,000,000,0.5),
+		inset 0px 0px 1px rgba(255,255,255,0.5);
+	text-shadow:
+		0px -1px 0px rgba(000,000,000,0.7),
+		0px 1px 0px rgba(255,255,255,0.3);
+}
+
+
