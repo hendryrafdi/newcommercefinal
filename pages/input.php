@@ -1,12 +1,13 @@
 <?php
 
 session_start();
-error_reporting(0);
 include "config.php";
 include "tanggal.php";
 
 $input = $_GET[input];
+$edit = $_GET[edit];
 $sid = session_id();
+
 $inputform = $_GET[inputform];
 
 if ($input == 'add') {
@@ -23,6 +24,12 @@ if ($input == 'add') {
 } elseif ($input == 'delete') {
     mysql_query("DELETE FROM shoppingcart WHERE id_shopping='$_GET[id]'");
     header('location:../shoppingcart.php');
+}
+else if($input == 'edit'){
+	$update = $_POST[qtyupd];
+	mysql_query("UPDATE `commerce_final`.`shoppingcart` SET  `qty` = '$update' WHERE  `shoppingcart`.`id_shopping` = '$_GET[id]';");
+	header('location:../shoppingcart.php');
+	
 } elseif ($input == 'inputform') {
 
     function cart_content() {
