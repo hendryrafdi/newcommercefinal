@@ -69,6 +69,8 @@ h1#logo a { display: block; no-repeat 0 0; height: 63px;}
 #slider-holder ul,
 #slider-holder ul li { width: 953px; height: 429px; position: relative; overflow: hidden; }
 
+#slide{ width: 953px; height: 410px; border-radius: 5px 5px 5px 5px; }
+
 #main-slider .cnt { width: 440px; position: absolute; top: 46px; right: 27px; font-family: Georgia, serif; }
 #main-slider .cnt h4 { font-size: 24px; line-height: 22px; color: #1898d6; font-style: italic; font-weight: normal; padding: 0 0 17px 0; }
 #main-slider .cnt h2 { text-transform: uppercase; }

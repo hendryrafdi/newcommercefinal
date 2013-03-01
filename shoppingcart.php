@@ -103,10 +103,10 @@ session_start();
 												
 										}
 										else{
-											echo"
-												<td align='center'><input type='number' name='qtyupd' value='$tian[qty]'><a href='pages/input.php?input=edit&id=$tian[id_shopping]'>&nbsp;&nbsp;&nbsp;<img src='css/images/ok.png'></a></td>
+											echo"<form method='post' action='pages/input.php?input=edit&id=$tian[id_shopping]'>
+												<td align='center'><input type='number' name='qtyupd' value='$tian[qty]'>&nbsp;&nbsp;&nbsp;<input type='image' src='css/images/ok.png'></td>
 												<td align='center'> "; echo number_format($tian[price]);echo"</td>
-												<td align='center'><a href=pages/input.php?input=delete&id=$tian[id_shopping]><img src='css/images/sign_cross.png'></a></td></tr>";
+												<td align='center'><a href=pages/input.php?input=delete&id=$tian[id_shopping]><img src='css/images/sign_cross.png'></a></td></tr></form>";
 												$no++;
 										}
 										

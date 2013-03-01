@@ -1,5 +1,16 @@
 <?php
 session_start();
+include 'pages/config.php';
+if($_SESSION[email]==NULL){
+    header("location: login.php");
+}
+else if(!$_SESSION[email]==NULL){
+    $shop = mysql_query("select *from shoppingcart");
+    $isi = mysql_num_rows($shop);
+    if($isi < 1){
+        header("location: product.php");
+    }
+}
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html lang="en-US" xmlns="http://www.w3.org/1999/xhtml" dir="ltr">

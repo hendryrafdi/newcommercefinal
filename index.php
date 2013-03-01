@@ -90,44 +90,30 @@ if (ISSET($_SESSION[email])) {
                     <div id="main-slider">
                         <div id="slider-holder">
                             <ul>
-                                <li>
-                                    <img src="css/images/slider-image-1.jpg" alt="Slider Image 1" />
-                                    <div class="cnt">
-                                        <div class="cl">&nbsp;</div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <img style="width:1200px;" src="css/images/Apple Macbook Air.jpg" alt="Slider Image 2" />
-                                    <div class="cnt">
-                                        <div class="cl">&nbsp;</div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <img style="width:1000px; height:500px;"src="css/images/iphone.jpg" alt="Slider Image 3" />
-                                    <div class="cnt">
-                                        <div class="cl">&nbsp;</div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <img style="width:1000px; height:500px;"src="css/images/iphone5.jpg" alt="Slider Image 4" />
-                                    <div class="cnt">
-                                        <div class="cl">&nbsp;</div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <img style="width:1000px; height:450px;"src="css/images/iphone-5.jpg" alt="Slider Image 5" />
-                                    <div class="cnt">
-                                        <div class="cl">&nbsp;</div>
-                                    </div>
-                                </li>
+                                <?php
+                                $que = mysql_query("select *from slideshow");
+                                while ($r = mysql_fetch_array($que)) {
+                                    ?>
+                                    <li>
+                                        <img id="slide" src="<?php echo $r[link]; ?>" alt="<?php echo $r[nm_slide]; ?>" />
+                                        <div class="cnt">
+                                            <div class="cl">&nbsp;</div>
+                                        </div>
+                                    </li>
+                                    <?php
+                                }
+                                ?>
                             </ul>
                         </div>
                         <div class="nav">
-                            <a href="#" title="Happy Shopping">&nbsp;</a>
-                            <a href="#" title="Mac Book Apple">&nbsp;</a>
-                            <a href="#" title="Iphone 4 3G">&nbsp;</a>
-                            <a href="#" title="Iphone 5">&nbsp;</a>
-                            <a href="#" title="Iphone Inovation">&nbsp;</a>
+                            <?php
+                            $que = mysql_query("select *from slideshow");
+                            while ($r = mysql_fetch_array($que)) {
+                                ?>
+                                <a href="#" title="<?php echo $r[nm_slide]; ?>">&nbsp;</a>
+                                <?php
+                            }
+                            ?>
                         </div>
                     </div>
                     <!-- End Slider -->
@@ -146,45 +132,25 @@ if (ISSET($_SESSION[email])) {
                                     $p = new Paging;
                                     $batas = 20;
                                     $posisi = $p->cariPosisi($batas);
-                                    switch ($_GET[act]) {
-                                        default:
 
-                                            $tampil = mysql_query("select *from product order by product_added desc limit 0,20 ");
-                                            $no = $posisi + 1;
-                                            while ($r = mysql_fetch_array($tampil)) {
-                                                ?>
-                                                <li style="height: 300px;">
-                                                    <a href="product.php?&act=product&detail=<?php echo $r[id_product]; ?>" class="product" title="<?php echo $r[nm_product]; ?>">
-                                                        <img src="<?php echo $r[image]; ?>" alt="Product Image 1" />
-                                                        <span class="order model"><?php echo $r[nm_product]; ?></span>
-                                                        <span class="order"><span class="buy-text">Buy Now</span><span class="price"><span class="dollar">IDR</span><?php ?><span class="sub-text">.00</span></span></span>
-                                                    </a>
-                                                </li>
-                                                <?php
-                                            }
-                                            $jmldata = mysql_num_rows(mysql_query("select *from product"));
-                                            $jmlhalaman = $p->jumlahHalaman($jmldata, $batas);
-                                            $linkHalaman = $p->navHalaman($_GET[halaman], $jmlhalaman);
 
-                                        case 'product':
-                                            include 'pages/config.php';
-                                            if (isset($_GET['detail'])) {
-                                                $productId = $_GET['detail'];
-                                                $detailproduct = mysql_query("SELECT * FROM product WHERE id_product='$productId' ORDER by id_product asc");
-                                                if ($tampildong = mysql_fetch_array($detailproduct)) {
-                                                    ?>
-                                                    <li style="margin-left: 350px; ">
-                                                        <a href="pages/input.php?input=add&id=<?php echo $tampildong[id_product]; ?>" class="product" title="<?php echo $tampildong[nm_product]; ?>">
-                                                            <img src="<?php echo $tampildong[image]; ?>" alt="Product Image 1" />
-                                                            <span class="order model"><?php echo $tampildong[nm_product]; ?></span>
-                                                            <span class="number"><?php echo $tampildong[desc]; ?></span>
-                                                            <span class="order"><span class="buy-text">Buy Now</span><span class="price"><span class="dollar">IDR</span><?php echo $tampildong[price]; ?><span class="sub-text">.00</span></span></span>
-                                                        </a>
-                                                    </li>
-                                                    <?php
-                                                }
-                                            }
+                                    $tampil = mysql_query("select *from product order by product_added desc limit 0,20 ");
+                                    $no = $posisi + 1;
+                                    while ($r = mysql_fetch_array($tampil)) {
+                                        ?>
+                                        <li style="height: 300px;">
+                                            <a href="product.php?&act=product&detail=<?php echo $r[id_product]; ?>" class="product" title="<?php echo $r[nm_product]; ?>">
+                                                <img src="<?php echo $r[image]; ?>" alt="Product Image 1" />
+                                                <span class="order model"><?php echo $r[nm_product]; ?></span>
+                                                <span class="order"><span class="buy-text">Buy Now</span><span class="price"><span class="dollar">IDR</span><?php echo number_format($r[price]); ?><span class="sub-text">.00</span></span></span>
+                                            </a>
+                                        </li>
+                                        <?php
                                     }
+                                    $jmldata = mysql_num_rows(mysql_query("select *from product"));
+                                    $jmlhalaman = $p->jumlahHalaman($jmldata, $batas);
+                                    $linkHalaman = $p->navHalaman($_GET[halaman], $jmlhalaman);
+                                    
                                     ?>
                                 </ul>
                                 <div class="cl">&nbsp;</div>
