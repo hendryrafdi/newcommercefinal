@@ -1,3 +1,9 @@
+<?php 
+session_start();
+if($_SESSION['email']==NULL){
+    echo "<script>window.location=('login.html')</script>";
+}
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -21,7 +27,10 @@
         <div class="content">
             <div class="wrapper">
                 <div class="main">
-                    <div id="welc"><h1>Welcome Administator</h1></div>
+                    <div id="welc">
+                        <h1>Welcome Administator</h1>
+                        <p><?php echo "Admin name : <b>$_SESSION[f_name] $_SESSION[l_name]</b>"; ?></p>
+                    </div>
                 </div>
             </div>
         </div>

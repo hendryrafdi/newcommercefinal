@@ -138,7 +138,7 @@ nav ul ul li a:hover{
 .box2 caption{
     padding: 5px 0;
 }
-.box2 th, td{
+.box2 table th, td{
     border:1px solid #999;
 }
 .box2 th{
