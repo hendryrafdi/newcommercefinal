@@ -6,14 +6,21 @@
         <link rel="stylesheet" type="css/text" href="../css/style.css"/>
     </head>
     <body style="background-image: url(../images/images.jpg);">
+		<?php
+			include '../../pages/config.php';
+			
+			$get = $_GET[edt];
+			$query = mysql_query("select *from product where id_product = '$get'");
+			$tampil = mysql_fetch_array($query);
+		?>
         <div class="menu">
             <center>
                 <nav>
                     <ul>
-                        <li><a href="index.php">Home</a></li>
-                        <li><a href="product.php">Product</a></li>
+                        <li><a href="../index.php">Home</a></li>
+                        <li><a href="../product.php">Product</a></li>
                         <li><a href="#">Setting</a></li>
-                        <li><a href="inc/logout.php">Logout</a></li>
+                        <li><a href="../inc/logout.php">Logout</a></li>
                     </ul>
                 </nav>
             </center>
@@ -21,42 +28,37 @@
         <div class="content">
             <div class="wrapper">
                 <div class="main">
-                    <form>
+                    <form action="../../pages/proses_edit.php" method="post">
                         <table>
                             <tr>
                                 <td>Product ID</td>
                                 <td>:</td>
-                                <td><input type="text" name="id_product"/></td>
+                                <td><input type="text" name="id_product" value="<?php echo $tampil[id_product]?>"/></td>
                             </tr>
                             <tr>
-                                <td>Product Category</td>
+                                <td>Id Category</td>
                                 <td>:</td>
-                                <td><input type="text" name="id_category"/></td>
+                                <td><input type="text" name="id_category" value="<?php echo $tampil[id_category]?>"/></td>
                             </tr>
                             <tr>
                                 <td>Product Name</td>
                                 <td>:</td>
-                                <td><input type="text" name=""/></td>
-                            </tr>
-                            <tr>
-                                <td>Category</td>
-                                <td>:</td>
-                                <td><input type="text" name=""/></td>
-                            </tr>
-                            <tr>
-                                <td>Image</td>
-                                <td>:</td>
-                                <td><input type="file" name=""/></td>
+                                <td><input type="text" name="nm_product" value="<?php echo $tampil[nm_product]?>"/></td>
                             </tr>
                             <tr>
                                 <td>Desc</td>
                                 <td>:</td>
-                                <td><input type="text" name=""/></td>
+                                <td><input type="text" name="desc" value="<?php echo $tampil[desc]?>"/></td>
                             </tr>
                             <tr>
                                 <td>Price</td>
                                 <td>:</td>
-                                <td><input type="text" name=""/></td>
+                                <td>Rp. <input type="text" name="price" value="<?php echo $tampil[price]?>"/></td>
+                            </tr>
+							<tr>
+                                <td>Image</td>
+                                <td>:</td>
+                                <td><input type="file" name="image" value="<?php echo $tampil[image]?>"></td>
                             </tr>
                             <tr>
                                 <td colspan="2"></td>

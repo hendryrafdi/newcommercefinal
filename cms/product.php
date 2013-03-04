@@ -75,7 +75,7 @@ include 'inc/config.php';
                                             <td><?php echo number_format($row[price]); ?></td>
                                             <td><?php echo $row[product_added]; ?></td>
                                             <td><?php echo $row[product_last_modify]; ?></td>
-                                            <td align="center"><a href="product.php?edt=<?php echo $row[id_product] ?>"><img src="../css/images/reply.png"/></a></td>
+                                            <td align="center"><a href="lib/edit.php?edt=<?php echo $row[id_product] ?>"><img src="../css/images/reply.png"/></a></td>
                                             <td align="center"><a href="#"><img src="../css/images/sign_cross.png"/></a></td>
                                         </tr>
                                         <?php
