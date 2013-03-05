@@ -1,6 +1,5 @@
 <?php
 	include 'config.php';
-	$get = $_GET[edt];
 	
 	$alamat		= "../images/product/";
 	$namafolder	= $alamat;
@@ -19,7 +18,7 @@
 				$image = $namafolder . basename($_FILES['upload']['name']);       
 				if (move_uploaded_file($_FILES['upload']['tmp_name'], $image)) {
 				echo "Gambar berhasil dikirim ".$image;
-				$sql="update product set (id_product,id_category,nm_product,desc,price,image) values ('$ip','$ic','$np','$d','$p','$image')";
+				$sql="update product set id_product='$ip', id_category='$ic', nm_product='$np', desc='$d', price='$p' image='$image' where id_product='$ip'";
 				$res=mysql_query($sql) or die (mysql_error());
 				} else {
 				echo "Gambar gagal dikirim";

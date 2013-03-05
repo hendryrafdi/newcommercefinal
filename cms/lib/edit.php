@@ -28,9 +28,8 @@
         <div class="content">
             <div class="wrapper">
                 <div class="main">
-                    <form action="../../pages/proses_edit.php" method="post">
+                    <form action="../../pages/proses_edit.php" method="post" enctype="multipart/form-data">
                         <table>
-                            <tr>
                                 <td>Product ID</td>
                                 <td>:</td>
                                 <td><input type="text" name="id_product" value="<?php echo $tampil[id_product]?>"/></td>
@@ -58,7 +57,7 @@
 							<tr>
                                 <td>Image</td>
                                 <td>:</td>
-                                <td><input type="file" name="image" value="<?php echo $tampil[image]?>"></td>
+                                <td><input type="file" name="upload" value="<?php echo $tampil[image]?>"></td>
                             </tr>
                             <tr>
                                 <td colspan="2"></td>
