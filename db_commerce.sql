@@ -94,7 +94,7 @@ CREATE TABLE `orders` (
   KEY `id_product_2` (`id_product`),
   KEY `id_product_3` (`id_product`),
   CONSTRAINT `orders_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -103,7 +103,7 @@ CREATE TABLE `orders` (
 
 LOCK TABLES `orders` WRITE;
 /*!40000 ALTER TABLE `orders` DISABLE KEYS */;
-INSERT INTO `orders` VALUES (1,1,2,'Hendry','Software Transformator','Jl. Kutilang 4 No.41','Depok',16432,'Jawa Barat','Indonesia',2147483647,1,'cod','2013-02-05 17:00:24',NULL),(2,1,4,'Hendry Rafdi','Software Transformator','Jl. Kutilang 4 No.41','Depok',16432,'Jawa Barat','Indonesia',2147483647,1,'cod','2013-02-05 17:00:24',NULL),(3,1,1,'Hendry Rafdi','Software Transformator','Jl. Kutilang 4 No.41','Depok',16432,'Jawa Barat','Indonesia',2147483647,1,'cod','2013-02-05 17:00:24',NULL),(4,7,5,'Frets Eric','Capricornboy','Jl. Raya Bogor','Jakarta Timur',13425,'DKI Jakarta','Indonesia',901920901,1,'cod','2013-02-05 17:00:24',NULL),(5,9,1,'alsolendski prakoso','','Jl. Raya Bogor','Depok',16432,'Jawa Barat','Indonesia',818898983,1,'cod','2013-02-07 17:00:24',NULL),(6,9,3,'alsolendski prakoso','','Jl. Raya Bogor','Depok',16432,'Jawa Barat','Indonesia',818898983,1,'cod','2013-02-07 17:00:24',NULL);
+INSERT INTO `orders` VALUES (1,1,2,'Hendry','Software Transformator','Jl. Kutilang 4 No.41','Depok',16432,'Jawa Barat','Indonesia',2147483647,1,'cod','2013-02-05 17:00:24',NULL),(2,1,4,'Hendry Rafdi','Software Transformator','Jl. Kutilang 4 No.41','Depok',16432,'Jawa Barat','Indonesia',2147483647,1,'cod','2013-02-05 17:00:24',NULL),(3,1,1,'Hendry Rafdi','Software Transformator','Jl. Kutilang 4 No.41','Depok',16432,'Jawa Barat','Indonesia',2147483647,1,'cod','2013-02-05 17:00:24',NULL),(4,7,5,'Frets Eric','Capricornboy','Jl. Raya Bogor','Jakarta Timur',13425,'DKI Jakarta','Indonesia',901920901,1,'cod','2013-02-05 17:00:24',NULL),(5,9,1,'alsolendski prakoso','','Jl. Raya Bogor','Depok',16432,'Jawa Barat','Indonesia',818898983,1,'cod','2013-02-07 17:00:24',NULL),(6,9,3,'alsolendski prakoso','','Jl. Raya Bogor','Depok',16432,'Jawa Barat','Indonesia',818898983,1,'cod','2013-02-07 17:00:24',NULL),(7,2,1,'Rizqi Fadilla','jksjdsk','Condet City','Jakarta Timur',13520,'Jawa Barat','Indonesia',901920901,1,'cod','2013-03-11 17:00:24',NULL),(8,2,3,'Rizqi Fadilla','jksjdsk','Condet City','Jakarta Timur',13520,'Jawa Barat','Indonesia',901920901,1,'cod','2013-03-11 17:00:24',NULL);
 /*!40000 ALTER TABLE `orders` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -119,8 +119,8 @@ CREATE TABLE `product` (
   `id_category` int(11) NOT NULL,
   `nm_product` varchar(40) NOT NULL,
   `image` varchar(255) NOT NULL,
-  `desc` varchar(255) NOT NULL,
-  `price` int(255) NOT NULL,
+  `description` varchar(255) NOT NULL,
+  `price` varchar(255) NOT NULL,
   `product_added` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `product_last_modify` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id_product`),
@@ -135,7 +135,7 @@ CREATE TABLE `product` (
 
 LOCK TABLES `product` WRITE;
 /*!40000 ALTER TABLE `product` DISABLE KEYS */;
-INSERT INTO `product` VALUES (1,1,'Mac Book Pro','images/product/product-6.jpg','Apple notebook with pink skin',6000000,'2013-01-31 12:51:26','2013-01-31 12:51:26'),(2,1,'Apple Mac PC','images/product/product-4.jpg','Apple PC Desktop with Pink Skin',4800000,'2013-02-01 01:48:08',NULL),(3,3,'iPhone5','images/product/product-5.jpg','New iPhone 5',5000000,'2013-02-01 01:48:08',NULL),(4,1,'Apple Mac PC','images/product/product-2.jpg','Apple PC Desktop',4800000,'2013-02-01 01:55:39','2013-02-01 01:57:19'),(5,3,'iPhone4','images/product/product-12.jpg','iPhone4 3G',4000000,'2013-02-01 01:55:39','2013-02-01 01:55:39');
+INSERT INTO `product` VALUES (1,1,'Mac Book Pro','images/product/08 Form Laporan Data Pendafta Per Jurusan.jpg','Apple notebook with pink skin','6000000','2013-01-31 12:51:26','2013-01-31 12:51:26'),(2,1,'Apple Mac PCC','../images/product/05 Form Input Biodata.jpg','Apple PC Desktop with Pink Skin','4800000','2013-02-01 01:48:08',NULL),(3,3,'iPhone5','images/product/product-5.jpg','New iPhone 5','5000000','2013-02-01 01:48:08',NULL),(4,1,'Apple Mac PC','images/product/product-2.jpg','Apple PC Desktop','4800000','2013-02-01 01:55:39','2013-02-01 01:57:19'),(5,3,'iPhone4','images/product/product-12.jpg','iPhone4 3G','4000000','2013-02-01 01:55:39','2013-02-01 01:55:39');
 /*!40000 ALTER TABLE `product` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -235,4 +235,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2013-03-01  9:09:38
+-- Dump completed on 2013-03-13 11:30:30

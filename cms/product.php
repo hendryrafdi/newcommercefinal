@@ -62,7 +62,7 @@ include 'inc/config.php';
                                 </thead>
                                 <tbody>
                                     <?php
-                                    $all = mysql_query("select product.id_product, category.id_category, category.nm_category, product.nm_product, product.image, product.desc, product.price, product.product_added, product.product_last_modify from category inner join product on category.id_category=product.id_category");
+                                    $all = mysql_query("select product.id_product, category.id_category, category.nm_category, product.nm_product, product.image, product.description, product.price, product.product_added, product.product_last_modify from category inner join product on category.id_category=product.id_category");
                                     while ($row = mysql_fetch_array($all)) {
                                         ?>
                                         <tr>
@@ -71,7 +71,7 @@ include 'inc/config.php';
                                             <td><?php echo $row[nm_product]; ?></td>
                                             <td><?php echo $row[nm_category]; ?></td>
                                             <td><img src="../<?php echo $row[image]; ?>"  style="height: 50px; width: 50px;"/></td>
-                                            <td><?php echo $row[desc]; ?></td>
+                                            <td><?php echo $row[description]; ?></td>
                                             <td><?php echo number_format($row[price]); ?></td>
                                             <td><?php echo $row[product_added]; ?></td>
                                             <td><?php echo $row[product_last_modify]; ?></td>
@@ -115,7 +115,7 @@ include 'inc/config.php';
                                                 <td><?php echo $r1[nm_product]; ?></td>
                                                 <td><?php echo $r1[nm_category]; ?></td>
                                                 <td><img src="../<?php echo $r1[image]; ?>"  style="height: 50px; width: 50px;"/></td>
-                                                <td><?php echo $r1[desc]; ?></td>
+                                                <td><?php echo $r1[description]; ?></td>
                                                 <td><?php echo number_format($r1[price]); ?></td>
                                                 <td><?php echo $r1[product_added]; ?></td>
                                                 <td><?php echo $r1[product_last_modify]; ?></td>
@@ -157,7 +157,7 @@ include 'inc/config.php';
                                                 <td><?php echo $r2[nm_product]; ?></td>
                                                 <td><?php echo $r2[nm_category]; ?></td>
                                                 <td><img src="../<?php echo $r2[image]; ?>"  style="height: 50px; width: 50px;"/></td>
-                                                <td><?php echo $r2[desc]; ?></td>
+                                                <td><?php echo $r2[description]; ?></td>
                                                 <td><?php echo number_format($r2[price]); ?></td>
                                                 <td><?php echo $r2[product_added]; ?></td>
                                                 <td><?php echo $r2[product_last_modify]; ?></td>
@@ -199,7 +199,7 @@ include 'inc/config.php';
                                                 <td><?php echo $r3[nm_product]; ?></td>
                                                 <td><?php echo $r3[nm_category]; ?></td>
                                                 <td><img src="../<?php echo $r3[image]; ?>"  style="height: 50px; width: 50px;"/></td>
-                                                <td><?php echo $r3[desc]; ?></td>
+                                                <td><?php echo $r3[description]; ?></td>
                                                 <td><?php echo number_format($r3[price]); ?></td>
                                                 <td><?php echo $r3[product_added]; ?></td>
                                                 <td><?php echo $r3[product_last_modify]; ?></td>
