@@ -1,13 +1,10 @@
 <?php
 	include 'config.php';
 	
-	$alamat		= "../images/product/";
+	$alamat		= "../../images/slideshow/";
 	$namafolder	= $alamat;
-	$ip = $_POST[id_product];
-	$ic = $_POST[id_category];
-	$np = $_POST[nm_product];
-	$d = $_POST[desc];
-	$p = $_POST[price];
+	$id = $_POST[id_slide];
+	$desc = $_POST[desc];
 	
 	if(!empty($_FILES["upload"]["tmp_name"])){
 			
@@ -15,7 +12,8 @@
 			
 		if($jenis_gambar=="image/jpeg" || $jenis_gambar=="image/jpg" || $jenis_gambar=="image/gif" || $jenis_gambar=="image/x-png"){
 				$image = $namafolder . basename($_FILES['upload']['name']);  
-					$string = "update product set id_product='$ip', id_category='$ic', nm_product='$np', description='$d', price='$p', image='$image' where id_product='$ip'";
+					$string = "update slideshow set nm_slide='$desc', link='$image' where id_slide='$id' ";
+                                        echo $string;
 					$sql = mysql_query($string);
 					if($sql){
 						echo "<script>alert('Data Berhasil Diubah'); window.location:'../cms/product.php'</script>";
