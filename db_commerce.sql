@@ -110,9 +110,10 @@ CREATE TABLE `orders` (
   `postcode` int(10) NOT NULL,
   `state` varchar(30) NOT NULL,
   `country` varchar(30) NOT NULL,
-  `telp` int(12) NOT NULL,
+  `telp` bigint(12) NOT NULL,
   `qty` int(11) NOT NULL,
   `payment_method` varchar(30) NOT NULL,
+  `status` varchar(20) NOT NULL,
   `date_purchased` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `last_modify` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id_order`),
@@ -130,7 +131,7 @@ CREATE TABLE `orders` (
 
 LOCK TABLES `orders` WRITE;
 /*!40000 ALTER TABLE `orders` DISABLE KEYS */;
-INSERT INTO `orders` VALUES (1,1,2,'Hendry','Software Transformator','Jl. Kutilang 4 No.41','Depok',16432,'Jawa Barat','Indonesia',2147483647,1,'cod','2013-02-05 17:00:24',NULL),(2,1,4,'Hendry Rafdi','Software Transformator','Jl. Kutilang 4 No.41','Depok',16432,'Jawa Barat','Indonesia',2147483647,1,'cod','2013-02-05 17:00:24',NULL),(3,1,1,'Hendry Rafdi','Software Transformator','Jl. Kutilang 4 No.41','Depok',16432,'Jawa Barat','Indonesia',2147483647,1,'cod','2013-02-05 17:00:24',NULL),(4,7,5,'Frets Eric','Capricornboy','Jl. Raya Bogor','Jakarta Timur',13425,'DKI Jakarta','Indonesia',901920901,1,'cod','2013-02-05 17:00:24',NULL),(5,9,1,'alsolendski prakoso','','Jl. Raya Bogor','Depok',16432,'Jawa Barat','Indonesia',818898983,1,'cod','2013-02-07 17:00:24',NULL),(6,9,3,'alsolendski prakoso','','Jl. Raya Bogor','Depok',16432,'Jawa Barat','Indonesia',818898983,1,'cod','2013-02-07 17:00:24',NULL),(7,2,1,'Rizqi Fadilla','jksjdsk','Condet City','Jakarta Timur',13520,'Jawa Barat','Indonesia',901920901,1,'cod','2013-03-11 17:00:24',NULL),(8,2,3,'Rizqi Fadilla','jksjdsk','Condet City','Jakarta Timur',13520,'Jawa Barat','Indonesia',901920901,1,'cod','2013-03-11 17:00:24',NULL);
+INSERT INTO `orders` VALUES (1,1,2,'Hendry','Software Transformator','Jl. Kutilang 4 No.41','Depok',16432,'Jawa Barat','Indonesia',2147483647,1,'cod','pending','2013-02-05 17:00:24',NULL),(2,1,4,'Hendry Rafdi','Software Transformator','Jl. Kutilang 4 No.41','Depok',16432,'Jawa Barat','Indonesia',2147483647,1,'cod','pending','2013-02-05 17:00:24',NULL),(3,1,1,'Hendry Rafdi','Software Transformator','Jl. Kutilang 4 No.41','Depok',16432,'Jawa Barat','Indonesia',2147483647,1,'cod','pending','2013-02-05 17:00:24',NULL),(4,7,5,'Frets Eric','Capricornboy','Jl. Raya Bogor','Jakarta Timur',13425,'DKI Jakarta','Indonesia',901920901,1,'cod','pending','2013-02-05 17:00:24',NULL),(5,9,1,'alsolendski prakoso','','Jl. Raya Bogor','Depok',16432,'Jawa Barat','Indonesia',818898983,1,'cod','pending','2013-02-07 17:00:24',NULL),(6,9,3,'alsolendski prakoso','','Jl. Raya Bogor','Depok',16432,'Jawa Barat','Indonesia',818898983,1,'cod','pending','2013-02-07 17:00:24',NULL),(7,2,1,'Rizqi Fadilla','jksjdsk','Condet City','Jakarta Timur',13520,'Jawa Barat','Indonesia',901920901,1,'cod','pending','2013-03-11 17:00:24',NULL),(8,2,3,'Rizqi Fadilla','jksjdsk','Condet City','Jakarta Timur',13520,'Jawa Barat','Indonesia',901920901,1,'cod','pending','2013-03-11 17:00:24',NULL);
 /*!40000 ALTER TABLE `orders` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -262,4 +263,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2013-03-14  9:21:45
+-- Dump completed on 2013-03-14  9:25:36
