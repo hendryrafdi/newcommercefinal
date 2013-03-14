@@ -399,12 +399,17 @@ margin-top:60px;
 height:190px;
 border-radius:10px 10px 10px 10px;
 margin-left:70px;
+color:#000000;
 }
 .box h3{
 color:#000000; 
 size:10px;
 margin-left:5px;
 margin-top:5px;
+}
+.box div{
+margin-left:10px;
+margin-top:10px;
 }
 .box2
 {

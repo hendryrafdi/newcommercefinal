@@ -88,31 +88,15 @@ if($_SESSION[email]==NULL){
 							
 						
 
-  <div class="box">
-	<h3>Informasi Kontak</h3>
+  <div style="margin-left:290px;"class="box">
+	<h3>Ubah Kata Sandi</h3>
 	<hr></hr>
-	<div>Velin Caliandra</div>
-	<div>velincaliandra@gmail.com - </div> <div style="margin-left:175px; margin-top:-15px;"><a href="">Ganti Email</a></div>
-	<div><a href="">Ganti Password</a></div>
-	<div style="float:right; margin-right:10px;"><a href="">Ubah</a></div>
+	<div>Kata Sandi <input style="margin-left:100px; width:200px;" type="text" /></div>
+	<div>Ketik Ulang Kata Sandi	   <input style="margin-left:30px; width:200px;" type="text" /></div>
+	<input style="float:right; margin-right:10px; margin-top:50px;" type="submit" />
 	
 	
 	</div>
-  
-  <div class="box2">
-	<h3>Buku Alamat</h3>
-	<hr></hr>
-  </div>
-  
-  <div class="box3">
-	<h3>Daftar Pesanan</h3>
-	<hr></hr>
-  </div>
-
-			
-                           
-                        
-                  
         <div id="footer-push" class="cl">&nbsp;</div>
     </div>
     <div style="margin-top:-200px;" id="footer">
