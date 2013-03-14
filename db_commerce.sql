@@ -40,6 +40,33 @@ INSERT INTO `category` VALUES (1,'Computer'),(2,'Fashion'),(3,'Gadget');
 UNLOCK TABLES;
 
 --
+-- Table structure for table `contact`
+--
+
+DROP TABLE IF EXISTS `contact`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `contact` (
+  `id_contact` int(11) NOT NULL AUTO_INCREMENT,
+  `telp` bigint(30) NOT NULL,
+  `alamat` text NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `fax` varchar(30) NOT NULL,
+  PRIMARY KEY (`id_contact`)
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `contact`
+--
+
+LOCK TABLES `contact` WRITE;
+/*!40000 ALTER TABLE `contact` DISABLE KEYS */;
+INSERT INTO `contact` VALUES (1,6285692535495,'Jl. Kegausan Raya , No.36 Keluarahan Ragunan \r\nKecamatan Pasar Minggu','Carpink@Cingprung.krik','1404512');
+/*!40000 ALTER TABLE `contact` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `message`
 --
 
@@ -235,4 +262,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2013-03-13 11:30:30
+-- Dump completed on 2013-03-14  9:21:45
