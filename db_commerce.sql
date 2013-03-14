@@ -40,6 +40,33 @@ INSERT INTO `category` VALUES (1,'Computer'),(2,'Fashion'),(3,'Gadget');
 UNLOCK TABLES;
 
 --
+-- Table structure for table `contact`
+--
+
+DROP TABLE IF EXISTS `contact`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `contact` (
+  `id_contact` int(11) NOT NULL AUTO_INCREMENT,
+  `telp` bigint(30) NOT NULL,
+  `alamat` text NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `fax` varchar(30) NOT NULL,
+  PRIMARY KEY (`id_contact`)
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `contact`
+--
+
+LOCK TABLES `contact` WRITE;
+/*!40000 ALTER TABLE `contact` DISABLE KEYS */;
+INSERT INTO `contact` VALUES (1,6285692535495,'Jl. Kegausan Raya , No.36 Keluarahan Ragunan \r\nKecamatan Pasar Minggu','Carpink@Cingprung.krik','1404512');
+/*!40000 ALTER TABLE `contact` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `message`
 --
 
@@ -83,9 +110,10 @@ CREATE TABLE `orders` (
   `postcode` int(10) NOT NULL,
   `state` varchar(30) NOT NULL,
   `country` varchar(30) NOT NULL,
-  `telp` int(12) NOT NULL,
+  `telp` bigint(12) NOT NULL,
   `qty` int(11) NOT NULL,
   `payment_method` varchar(30) NOT NULL,
+  `status` varchar(20) NOT NULL,
   `date_purchased` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `last_modify` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id_order`),
@@ -103,7 +131,7 @@ CREATE TABLE `orders` (
 
 LOCK TABLES `orders` WRITE;
 /*!40000 ALTER TABLE `orders` DISABLE KEYS */;
-INSERT INTO `orders` VALUES (1,1,2,'Hendry','Software Transformator','Jl. Kutilang 4 No.41','Depok',16432,'Jawa Barat','Indonesia',2147483647,1,'cod','2013-02-05 17:00:24',NULL),(2,1,4,'Hendry Rafdi','Software Transformator','Jl. Kutilang 4 No.41','Depok',16432,'Jawa Barat','Indonesia',2147483647,1,'cod','2013-02-05 17:00:24',NULL),(3,1,1,'Hendry Rafdi','Software Transformator','Jl. Kutilang 4 No.41','Depok',16432,'Jawa Barat','Indonesia',2147483647,1,'cod','2013-02-05 17:00:24',NULL),(4,7,5,'Frets Eric','Capricornboy','Jl. Raya Bogor','Jakarta Timur',13425,'DKI Jakarta','Indonesia',901920901,1,'cod','2013-02-05 17:00:24',NULL),(5,9,1,'alsolendski prakoso','','Jl. Raya Bogor','Depok',16432,'Jawa Barat','Indonesia',818898983,1,'cod','2013-02-07 17:00:24',NULL),(6,9,3,'alsolendski prakoso','','Jl. Raya Bogor','Depok',16432,'Jawa Barat','Indonesia',818898983,1,'cod','2013-02-07 17:00:24',NULL),(7,2,1,'Rizqi Fadilla','jksjdsk','Condet City','Jakarta Timur',13520,'Jawa Barat','Indonesia',901920901,1,'cod','2013-03-11 17:00:24',NULL),(8,2,3,'Rizqi Fadilla','jksjdsk','Condet City','Jakarta Timur',13520,'Jawa Barat','Indonesia',901920901,1,'cod','2013-03-11 17:00:24',NULL);
+INSERT INTO `orders` VALUES (1,1,2,'Hendry','Software Transformator','Jl. Kutilang 4 No.41','Depok',16432,'Jawa Barat','Indonesia',2147483647,1,'cod','pending','2013-02-05 17:00:24',NULL),(2,1,4,'Hendry Rafdi','Software Transformator','Jl. Kutilang 4 No.41','Depok',16432,'Jawa Barat','Indonesia',2147483647,1,'cod','pending','2013-02-05 17:00:24',NULL),(3,1,1,'Hendry Rafdi','Software Transformator','Jl. Kutilang 4 No.41','Depok',16432,'Jawa Barat','Indonesia',2147483647,1,'cod','pending','2013-02-05 17:00:24',NULL),(4,7,5,'Frets Eric','Capricornboy','Jl. Raya Bogor','Jakarta Timur',13425,'DKI Jakarta','Indonesia',901920901,1,'cod','pending','2013-02-05 17:00:24',NULL),(5,9,1,'alsolendski prakoso','','Jl. Raya Bogor','Depok',16432,'Jawa Barat','Indonesia',818898983,1,'cod','pending','2013-02-07 17:00:24',NULL),(6,9,3,'alsolendski prakoso','','Jl. Raya Bogor','Depok',16432,'Jawa Barat','Indonesia',818898983,1,'cod','pending','2013-02-07 17:00:24',NULL),(7,2,1,'Rizqi Fadilla','jksjdsk','Condet City','Jakarta Timur',13520,'Jawa Barat','Indonesia',901920901,1,'cod','pending','2013-03-11 17:00:24',NULL),(8,2,3,'Rizqi Fadilla','jksjdsk','Condet City','Jakarta Timur',13520,'Jawa Barat','Indonesia',901920901,1,'cod','pending','2013-03-11 17:00:24',NULL);
 /*!40000 ALTER TABLE `orders` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -188,7 +216,7 @@ CREATE TABLE `slideshow` (
 
 LOCK TABLES `slideshow` WRITE;
 /*!40000 ALTER TABLE `slideshow` DISABLE KEYS */;
-INSERT INTO `slideshow` VALUES (1,'Apple Macbook Air','images/slideshow/Apple Macbook Air.jpg'),(2,'Iphone','images/slideshow/iphone.jpg'),(3,'Iphone5','images/slideshow/iphone5.jpg'),(4,'iphone-5','images/slideshow/iphone-5.jpg');
+INSERT INTO `slideshow` VALUES (1,'Apple Macbook Air','../../images/slideshow/Apple Macbook Air.jpg'),(2,'Iphone','../../images/slideshow/iphone.jpg'),(3,'Iphone5','../../images/slideshow/iphone5.jpg'),(4,'iphone-5','../../images/slideshow/iphone-5.jpg');
 /*!40000 ALTER TABLE `slideshow` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -235,4 +263,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2013-03-13 11:30:30
+-- Dump completed on 2013-03-14  9:31:24
