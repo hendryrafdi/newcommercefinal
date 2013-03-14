@@ -148,3 +148,74 @@ nav ul ul li a:hover{
 .box2 td{
     padding:0 1px;
 }
+.pos{
+	position: relative;
+	top: 170px;
+	left: -140px;
+}
+.pos2{
+	position: relative;
+	top: 160px;
+	left: -143px;
+}
+.apaan nav ul ul{
+    display: none;
+}
+.apaan nav ul li:hover > ul{
+    display: block;
+}
+.apaan nav ul{
+    background: #efefef;
+    background: linear-gradient(top, #efefef 0%, #bbbbbb 100%);
+    background: -moz-linear-gradient(top, #efefef 0%, #bbbbbb 100%);
+    background: -webkit-linear-gradient(top, #efefef 0%, #bbbbbb 100%);
+    box-shadow: 0px 0px 9px rgba(0,0,0,0.15);
+    padding: 0 400px;
+    border-radius: 10px;
+    list-style: none;
+    position: relative;
+    display: inline-table;
+}
+.apaan nav ul:after{
+    content: ""; 
+    clear: both;
+    display: block;
+}
+.apaan nav ul li{
+    float: left;
+}
+.apaan nav ul li:hover{
+    background: #4b545f;
+    background: linear-gradient(top, #4f5964 0%, #5f6975 40%);
+    background: -moz-linear-gradient(top, #4f5964 0%, #5f6975 40%);
+    background: -webkit-linear-gradient(top, #4f5964 0%, #5f6975 40%);
+}
+.apaan nav ul li a{
+    color: #000;
+    text-decoration: none;
+    display: block;
+    padding: 10px 30px;
+}
+.apaan nav ul li a:hover{
+    color: #fff;
+}
+.apaan nav ul ul{
+    background: #5f6975;
+    border-radius: 0px;
+    padding: 0;
+    position: absolute;
+    top: 100%;
+}
+.apaan nav ul ul li{
+    float: none;
+    border-top: 1px solid #6b727c;
+    border-bottom: 1px solid #575f6a;
+    position: relative;
+}
+.apaan nav ul ul li a{
+    color: #fff;
+    padding: 15px 40px;
+}
+.apaan nav ul ul li a:hover{
+    background: #4b545f;
+}
