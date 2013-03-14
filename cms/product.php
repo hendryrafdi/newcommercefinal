@@ -37,6 +37,9 @@ include 'inc/config.php';
                                 <?php
                             }
                             ?>
+							<li>
+								<a href="product.php?id=new">New Product</a>
+							</li>
                         </ul>
                     </div>
                     <div class="sperator">&nbsp;</div>
@@ -84,7 +87,37 @@ include 'inc/config.php';
                                 </tbody>
                             </table>
                             <?php
-                        } else {
+                        }
+						else if($_GET[id] == 'new'){
+						?>
+							<form action="../pages/proses_save.php" method="post"  enctype="multipart/form-data">
+							 <table>
+                                <caption><h3>Add New Product</h3></caption>
+                                <thead>
+                                    <tr>
+                                        <th>Category ID</th> 
+                                        <th>Product Name</th> 
+                                        <th>Category Name</th> 
+                                        <th>Image</th> 
+                                        <th>Desc</th> 
+                                        <th>Price</th> 
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                        <tr>
+                                            <td><input type="text" name="category_id" style="width: 90px;"></td>
+                                            <td><input type="text" name="product_name"></td>
+                                            <td><input type="text" name="category_name"></td>
+                                            <td><input type="file" name="upload"></td>
+                                            <td><input type="text" name="descripion"></td>
+                                            <td><input type="text" name="price"></td>
+                                        </tr>
+                                </tbody>
+                            </table>
+							<input type="submit" name="button" value="save">
+						<?php
+						}
+						else {
                             $param = abs((int) $_GET['id']);
                             if ($param == '1') {
                                 ?>
@@ -127,6 +160,7 @@ include 'inc/config.php';
                                         ?>
                                     </tbody>
                                 </table>
+								
                                 <?php
                             } else if ($param == '2') {
                                 ?>
@@ -213,6 +247,7 @@ include 'inc/config.php';
                                 </table>
                                 <?php
                             }
+							
                         }
                         ?>
                     </div>
