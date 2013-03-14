@@ -18,7 +18,7 @@ if($_SESSION['email']==NULL){
                     <ul>
                         <li><a href="index.php">Home</a></li>
                         <li><a href="product.php">Product</a></li>
-                        <li><a href="#">Setting</a></li>
+                        <li><a href="setting">Setting</a></li>
                         <li><a href="inc/logout.php">Logout</a></li>
                     </ul>
                 </nav>
