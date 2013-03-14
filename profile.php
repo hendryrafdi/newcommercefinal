@@ -1,5 +1,8 @@
 <?php
 session_start();
+if($_SESSION[email]==NULL){
+    echo "<script>window.location=('login.php');</script>";
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -70,8 +73,7 @@ session_start();
                     <!-- Slider -->
                             <div class="con2-kiri">
                                 <div>
-                                    <font face="rockwell" size="4" color="black">Hallo <?php echo"<u><font face='rockwell' size='3' color='black'>$_SESSION[f_name] </font></u>"; ?></font>
-                                </div>
+                                    
                                 <?php
                                 include 'pages/config.php';
 
@@ -79,6 +81,8 @@ session_start();
                                 $tampil = mysql_query("select *from user where id_user='$id'");
                                 $manggil = mysql_fetch_array($tampil);
                                 ?>
+                                    <font face="rockwell" size="4" color="black">Hallo <?php echo"<u><font face='rockwell' size='3' color='black'>$manggil[f_name] </font></u>"; ?></font>
+                                </div>
                                 
                             </div>
 							

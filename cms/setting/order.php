@@ -30,8 +30,8 @@ include '../inc/config.php';
             <div class="wrapper">
                 <div class="main">
                     <center>
-                        <table>
-                            <tr>
+                        <table border="1">
+                            <tr align="center">
                                 <td>ID Order</td>
                                 <td>ID User</td>
                                 <td>ID Product</td>
@@ -45,9 +45,38 @@ include '../inc/config.php';
                                 <td>Phone</td>
                                 <td>Quantity</td>
                                 <td>Payment</td>
-                                <td>Status</td>
                                 <td>Date Purchased</td>
+                                <td>Status</td>
+                                <td colspan="2">Modify</td>
                             </tr>
+
+                            <?php
+                            $qorder = mysql_query("select *from orders");
+                            while ($row = mysql_fetch_array($qorder)) {
+                                ?>
+                                <tr>
+                                    <td align="center"><?php echo $row[id_order] ?></td>
+                                    <td align="center"><?php echo $row[id_user] ?></td>
+                                    <td align="center"><?php echo $row[id_product] ?></td>
+                                    <td><?php echo $row[customer_name] ?></td>
+                                    <td><?php echo $row[customer_company] ?></td>
+                                    <td><?php echo $row[address] ?></td>
+                                    <td><?php echo $row[city] ?></td>
+                                    <td><?php echo $row[postcode] ?></td>
+                                    <td><?php echo $row[state] ?></td>
+                                    <td><?php echo $row[country] ?></td>
+                                    <td><?php echo $row[telp] ?></td>
+                                    <td align="center"><?php echo $row[qty] ?></td>
+                                    <td><?php echo $row[payment_method] ?></td>
+                                    <td><?php echo $row[date_purchased] ?></td>
+                                    <td><?php echo $row[status] ?></td>
+                                    <td><a href="../inc/status.php?stats=active&id=<?php echo $row[id_order]?>"><img src="../../css/images/checklist.png" style="width: 25px; height: 25px;"/></a></td>
+                                    <td><a href="../inc/status.php?stats=deactive&id=<?php echo $row[id_order]?>"><img src="../../css/images/sign_cross.png" style="width: 25px; height: 25px;"/></a></td>
+                                </tr>
+
+                                <?php
+                            }
+                            ?>
                         </table>
                     </center>
                 </div>
