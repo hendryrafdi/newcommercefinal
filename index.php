@@ -95,7 +95,7 @@ if (ISSET($_SESSION[email])) {
                                 while ($r = mysql_fetch_array($que)) {
                                     ?>
                                     <li>
-                                        <img id="slide" src="<?php echo $r[link]; ?>" alt="<?php echo $r[nm_slide]; ?>" />
+                                        <img id="slide" src="<?php echo "cms/setting/$r[link]"; ?>" alt="<?php echo $r[nm_slide]; ?>" />
                                         <div class="cnt">
                                             <div class="cl">&nbsp;</div>
                                         </div>

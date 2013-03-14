@@ -32,7 +32,7 @@
                         <table>
                                 <td>Product ID</td>
                                 <td>:</td>
-                                <td><input type="text" name="id_product" value="<?php echo $tampil[id_product]?>"/></td>
+                                <td><input type="text" name="id_product" value="<?php echo $tampil[id_product]?>" readonly/></td>
                             </tr>
                             <tr>
                                 <td>Id Category</td>
@@ -55,13 +55,13 @@
                                 <td>Rp. <input type="text" name="price" value="<?php echo $tampil[price]?>"/></td>
                             </tr>
 							<tr>
-                                <td>Image</td>
+                                <td><label for="upload">Image</label></td>
                                 <td>:</td>
                                 <td><input type="file" name="upload" value="<?php echo $tampil[image]?>"></td>
                             </tr>
                             <tr>
                                 <td colspan="2"></td>
-                                <td><input type="submit"/></td>
+                                <td><input type="submit" name="submit" value="Save"/></td>
                             </tr>
                         </table>
                     </form>

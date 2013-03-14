@@ -74,6 +74,10 @@ session_start();
                             <div class="con-kiri1">
                                 <table border="0">
                                     <tr>
+                                        <?php 
+                                        $l = mysql_query("select *from contact where id_contact='1'");
+                                        $muncul = mysql_fetch_array($l);
+                                        ?>
                                         <td>
                                             <img src="css/images/logo_phone.png" style="width: 30px; height: 30px;">
                                         </td>
@@ -87,7 +91,7 @@ session_start();
                                         </td>
                                         <td style="height: 40px; width: 260px;">
                                             <font face="Gill Sans MT Condensed" size="4" color="black">
-                                                085692535495
+                                                <?php echo "+$muncul[telp]"?>
                                             </font>
                                         </td>
                                     </tr>
@@ -105,7 +109,7 @@ session_start();
                                         </td>
                                         <td style="height: 40px; width: 260px;">
                                             <font face="Gill Sans MT Condensed" size="4" color="black">
-                                                Jl. Kegausan Raya , No.36 Keluarahan Ragunan </br>Kecamatan Pasar Minggu
+                                                <?php echo $muncul[alamat]?>
                                             </font>
                                         </td>
                                     </tr>
@@ -123,7 +127,7 @@ session_start();
                                         </td>
                                         <td style="height: 40px; width: 260px;">
                                             <font face="Gill Sans MT Condensed" size="4" color="black">
-                                                Carpink@Cingprung.krik
+                                                <?php echo $muncul[email]?>
                                             </font>
                                         </td>
                                     </tr>
@@ -141,7 +145,7 @@ session_start();
                                         </td>
                                         <td style="height: 40px; width: 260px;">
                                             <font face="Gill Sans MT Condensed" size="4" color="black">
-                                                14045
+                                                <?php echo $muncul[fax]?>
                                             </font>
                                         </td>
                                     </tr>
