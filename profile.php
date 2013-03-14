@@ -68,17 +68,6 @@ session_start();
                     </div>
                     <!-- End Header -->
                     <!-- Slider -->
-                    <div id="main-slider">
-                        <div id="slider-holder">
-                            <div class="gariskiri">
-                                &nbsp;
-                            </div>
-                            <div>
-                                <font face="rockwell" size="6" color="darkblue" style="position: absolute; margin-left: 400px; margin-top: 30px;">Member</font>
-                            </div>
-                            <div class="garisV" style="">
-                                &nbsp;
-                            </div>
                             <div class="con2-kiri">
                                 <div>
                                     <font face="rockwell" size="4" color="black">Hallo <?php echo"<u><font face='rockwell' size='3' color='black'>$_SESSION[f_name] </font></u>"; ?></font>
@@ -90,154 +79,33 @@ session_start();
                                 $tampil = mysql_query("select *from user where id_user='$id'");
                                 $manggil = mysql_fetch_array($tampil);
                                 ?>
-                                <div class="isitable">
-                                    <table border="0" style="width: 500px; height: 300px;">
-                                        <tr>
-                                            <td class="td1">
-                                                <font face="rockwell" size="3" color="black">First Name</font>
-                                            </td>
-                                            <td class="">
-                                                <font face="rockwell" size="3" color="black">:</font>
-                                            </td>
-                                            <td class="td2">
-                                                <?php echo"<u><font face='rockwell' size='3' color='black'>$_SESSION[f_name] </font></u>"; ?>
-                                            </td>
-                                            <td class="td3">
-                                                <img src="css/images/reply.png" title="change">
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="td1">
-                                                <font face="rockwell" size="3" color="black">Last Name</font>
-                                            </td>
-                                            <td class="">
-                                                <font face="rockwell" size="3" color="black">:</font>
-                                            </td>
-                                            <td class="td2">
-                                                <?php echo"<u><font face='rockwell' size='3' color='black'>$_SESSION[l_name] </font></u>"; ?>
-                                            </td>
-                                            <td class="td3">
-                                                <img src="css/images/reply.png" title="change">
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="td1">
-                                                <font face="rockwell" size="3" color="black">Gender</font>
-                                            </td>
-                                            <td class="">
-                                                <font face="rockwell" size="3" color="black">:</font>
-                                            </td>
-                                            <td class="td2">
-                                                <?php echo"<u><font face='rockwell' size='3' color='black'>$_SESSION[gender]</font></u>"; ?>
-                                            </td>
-                                            <td class="td1">
-                                                <img src="css/images/reply.png" title="change">
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="td1">
-                                                <font face="rockwell" size="3" color="black">Birthday Place</font>
-                                            </td>
-                                            <td class="">
-                                                <font face="rockwell" size="3" color="black">:</font>
-                                            </td>
-                                            <td class="td2">
-                                                <?php echo"<u><font face='rockwell' size='3' color='black'>$_SESSION[birthday_place] </font></u>"; ?>
-                                            </td>
-                                            <td class="td3">
-                                                <img src="css/images/reply.png" title="change">
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="td1">
-                                                <font face="rockwell" size="3" color="black">Birthday</font>
-                                            </td>
-                                            <td class="">
-                                                <font face="rockwell" size="3" color="black">:</font>
-                                            </td>
-                                            <td class="td2">
-                                                <?php echo"<u><font face='rockwell' size='3' color='black'>$_SESSION[birthday] </font></u>"; ?>
-                                            </td>
-                                            <td class="td3">
-                                                <img src="css/images/reply.png" title="change">
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="td1">
-                                                <font face="rockwell" size="3" color="black">Addres</font>
-                                            </td>
-                                            <td class="">
-                                                <font face="rockwell" size="3" color="black">:</font>
-                                            </td>
-                                            <td class="td2">
-                                                <?php echo"<u><font face='rockwell' size='3' color='black'>$_SESSION[address] </font></u>"; ?>
-                                            </td>
-                                            <td class="td3">
-                                                <img src="css/images/reply.png" title="change">
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="td1">
-                                                <font face="rockwell" size="3" color="black">Telp</font>
-                                            </td>
-                                            <td class="">
-                                                <font face="rockwell" size="3" color="black">:</font>
-                                            </td>
-                                            <td class="td2">
-                                                <?php echo"<u><font face='rockwell' size='3' color='black'>$_SESSION[telp] </font></u>"; ?>
-                                            </td>
-                                            <td class="td3">
-                                                <img src="css/images/reply.png" title="change">
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="td1">
-                                                <font face="rockwell" size="3" color="black">Email</font>
-                                            </td>
-                                            <td class="">
-                                                <font face="rockwell" size="3" color="black">:</font>
-                                            </td>
-                                            <td class="td2">
-                                                <?php echo"<u><font face='rockwell' size='3' color='black'>$_SESSION[email] </font></u>"; ?>
-                                            </td>
-                                            <td class="td3">
-                                                <img src="css/images/reply.png" title="change">
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="td1">
-                                                <font face="rockwell" size="3" color="black">Password</font>
-                                            </td>
-                                            <td class="">
-                                                <font face="rockwell" size="3" color="black">:</font>
-                                            </td>
-                                            <td class="td2">
-                                                <?php echo"<u><font face='rockwell' size='3' color='black'>$_SESSION[password] </font></u>"; ?>
-                                            </td>
-                                            <td class="td3">
-                                                <img src="css/images/reply.png" title="change">
-                                            </td>
-                                        </tr>
-                                    </table>
-                                </div>	
+                                
                             </div>
-                            <div class="gariskanan">
-                                &nbsp;
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Case -->
-                </div>
-                <!-- End Content -->
-            </div>
-            <!-- End Shell -->
-        </div>
-        <!-- End Main -->
+							
+						
+
+  <div class="box">
+	<h3>Informasi Kontak</h3>
+	<hr></hr>
+  </div>
+  
+  <div class="box2">
+	<h3>Buku Alamat</h3>
+	<hr></hr>
+  </div>
+  
+  <div class="box3">
+	<h3>Daftar Pesanan</h3>
+	<hr></hr>
+  </div>
+
+			
+                           
+                        
+                  
         <div id="footer-push" class="cl">&nbsp;</div>
     </div>
-    <!-- End Wrapper -->
-    <!-- Footer -->
-    <div id="footer">
+    <div style="margin-top:-200px;" id="footer">
         <!-- Shell -->
         <div class="shell">
             <!-- Cols -->
