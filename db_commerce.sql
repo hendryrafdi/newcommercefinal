@@ -216,7 +216,7 @@ CREATE TABLE `slideshow` (
 
 LOCK TABLES `slideshow` WRITE;
 /*!40000 ALTER TABLE `slideshow` DISABLE KEYS */;
-INSERT INTO `slideshow` VALUES (1,'Apple Macbook Air','images/slideshow/Apple Macbook Air.jpg'),(2,'Iphone','images/slideshow/iphone.jpg'),(3,'Iphone5','images/slideshow/iphone5.jpg'),(4,'iphone-5','images/slideshow/iphone-5.jpg');
+INSERT INTO `slideshow` VALUES (1,'Apple Macbook Air','../../images/slideshow/Apple Macbook Air.jpg'),(2,'Iphone','../../images/slideshow/iphone.jpg'),(3,'Iphone5','../../images/slideshow/iphone5.jpg'),(4,'iphone-5','../../images/slideshow/iphone-5.jpg');
 /*!40000 ALTER TABLE `slideshow` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -263,4 +263,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2013-03-14  9:25:36
+-- Dump completed on 2013-03-14  9:31:24
