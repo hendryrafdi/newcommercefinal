@@ -1,7 +1,7 @@
 <?php
 session_start();
 if ($_SESSION['email'] == NULL) {
-    echo "<script>window.location=('login.html')</script>";
+    echo "<script>window.location=('../login.html')</script>";
 }
 include '../inc/config.php';
 ?>
