@@ -17,12 +17,12 @@ if ($save) {
     $shop = mysql_query("select *from shoppingcart");
 		$isi = mysql_num_rows($shop);
 		if($isi > 0){
-			header("location: ../confrim.php");
+			echo "<script>alert('Register success'); window.location=('../confirm.php')</script>";
 		}
 		else{
-			header('location:../index.php');
+			echo "<script>alert('Register success'); window.location=('../index.php')</script>";
 		}
 } else {
-    header("location:../login.php?link=failed");
+    echo "<script>alert('Register failed'); window.location=('../login.php')</script>";
 }
 ?>

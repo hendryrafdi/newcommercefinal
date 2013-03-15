@@ -73,13 +73,13 @@ include 'inc/config.php';
                                             <td align="center"><?php echo $row[id_category]; ?></td>
                                             <td><?php echo $row[nm_product]; ?></td>
                                             <td><?php echo $row[nm_category]; ?></td>
-                                            <td><img src="../<?php echo $row[image]; ?>"  style="height: 50px; width: 50px;"/></td>
+                                            <td><img src="<?php echo $row[image]; ?>"  style="height: 50px; width: 50px;"/></td>
                                             <td><?php echo $row[description]; ?></td>
                                             <td><?php echo number_format($row[price]); ?></td>
                                             <td><?php echo $row[product_added]; ?></td>
                                             <td><?php echo $row[product_last_modify]; ?></td>
                                             <td align="center"><a href="lib/edit.php?edt=<?php echo $row[id_product] ?>"><img src="../css/images/reply.png"/></a></td>
-                                            <td align="center"><a href="#"><img src="../css/images/sign_cross.png"/></a></td>
+                                            <td align="center"><a href="inc/delete_product.php?del=<?php echo $row[id_product] ?>"><img src="../css/images/sign_cross.png"/></a></td>
                                         </tr>
                                         <?php
                                     }
@@ -147,13 +147,13 @@ include 'inc/config.php';
                                                 <td align="center"><?php echo $r1[id_category]; ?></td>
                                                 <td><?php echo $r1[nm_product]; ?></td>
                                                 <td><?php echo $r1[nm_category]; ?></td>
-                                                <td><img src="../<?php echo $r1[image]; ?>"  style="height: 50px; width: 50px;"/></td>
+                                                <td><img src="<?php echo $r1[image]; ?>"  style="height: 50px; width: 50px;"/></td>
                                                 <td><?php echo $r1[description]; ?></td>
                                                 <td><?php echo number_format($r1[price]); ?></td>
                                                 <td><?php echo $r1[product_added]; ?></td>
                                                 <td><?php echo $r1[product_last_modify]; ?></td>
-                                                <td align="center"><a href="#"><img src="../css/images/reply.png"/></a></td>
-                                                <td align="center"><a href="#"><img src="../css/images/sign_cross.png"/></a></td>
+                                                <td align="center"><a href="lib/edit.php?edt=<?php echo $r1[id_product] ?>"><img src="../css/images/reply.png"/></a></td>
+                                                <td align="center"><a href="inc/delete_product.php?del=<?php echo $r1[id_product] ?>"><img src="../css/images/sign_cross.png"/></a></td>
                                             </tr>
                                             <?php
                                         }
@@ -190,13 +190,13 @@ include 'inc/config.php';
                                                 <td align="center"><?php echo $r2[id_category]; ?></td>
                                                 <td><?php echo $r2[nm_product]; ?></td>
                                                 <td><?php echo $r2[nm_category]; ?></td>
-                                                <td><img src="../<?php echo $r2[image]; ?>"  style="height: 50px; width: 50px;"/></td>
+                                                <td><img src="<?php echo $r2[image]; ?>"  style="height: 50px; width: 50px;"/></td>
                                                 <td><?php echo $r2[description]; ?></td>
                                                 <td><?php echo number_format($r2[price]); ?></td>
                                                 <td><?php echo $r2[product_added]; ?></td>
                                                 <td><?php echo $r2[product_last_modify]; ?></td>
-                                                <td align="center"><a href="#"><img src="../css/images/reply.png"/></a></td>
-                                                <td align="center"><a href="#"><img src="../css/images/sign_cross.png"/></a></td>
+                                                <td align="center"><a href="lib/edit.php?edt=<?php echo $r2[id_product] ?>"><img src="../css/images/reply.png"/></a></td>
+                                                <td align="center"><a href="inc/delete_product.php?del=<?php echo $r2[id_product] ?>"><img src="../css/images/sign_cross.png"/></a></td>
                                             </tr>
                                             <?php
                                         }
@@ -232,13 +232,13 @@ include 'inc/config.php';
                                                 <td align="center"><?php echo $r3[id_category]; ?></td>
                                                 <td><?php echo $r3[nm_product]; ?></td>
                                                 <td><?php echo $r3[nm_category]; ?></td>
-                                                <td><img src="../<?php echo $r3[image]; ?>"  style="height: 50px; width: 50px;"/></td>
+                                                <td><img src="<?php echo $r3[image]; ?>"  style="height: 50px; width: 50px;"/></td>
                                                 <td><?php echo $r3[description]; ?></td>
                                                 <td><?php echo number_format($r3[price]); ?></td>
                                                 <td><?php echo $r3[product_added]; ?></td>
                                                 <td><?php echo $r3[product_last_modify]; ?></td>
-                                                <td align="center"><a href="#"><img src="../css/images/reply.png"/></a></td>
-                                                <td align="center"><a href="#"><img src="../css/images/sign_cross.png"/></a></td>
+                                                <td align="center"><a href="lib/edit.php?edt=<?php echo $r3[id_product] ?>"><img src="../css/images/reply.png"/></a></td>
+                                                <td align="center"><a href="inc/delete_product.php?del=<?php echo $r3[id_product] ?>"><img src="../css/images/sign_cross.png"/></a></td>
                                             </tr>
                                             <?php
                                         }
