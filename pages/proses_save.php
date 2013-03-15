@@ -10,19 +10,20 @@
 	$des = $_POST[description];
 	$price = $_POST[price];
 	
+	
 	if(!empty($_FILES["upload"]["tmp_name"])){
 			
 			$jenis_gambar = $_FILES['upload']['type'];
 			
 		if($jenis_gambar=="image/jpeg" || $jenis_gambar=="image/jpg" || $jenis_gambar=="image/gif" || $jenis_gambar=="image/x-png"){
 				$image = $namafolder . basename($_FILES['upload']['name']);  
-					$string = "insert into product values (null, $ci, $pn, $image, $des, $price, CURRENT_TIMESTAMP, null)";
-					$sql = mysql_query($string);
+					$string = "insert into product values (null, '$ci', '$pn', '$image', '$des', '$price', now(), null)";
+					$sql = mysql_query($string) or die(mysql_error(0));
 					if($sql){
-						echo "<script>alert('Data Berhasil Diubah'); window.location:'../cms/product.php'</script>";
+						echo "<script>alert('Data Berhasil Disimpan'); window.location=('../cms/product.php')</script>";
 					}
 					else{
-						echo " Tapi Data Kabur2an";
+						echo " <script>alert('Data Gagal Disimpan'); window.location=('../cms/product.php')</script>";
 					}
 				if (move_uploaded_file($_FILES['upload']['tmp_name'], $image)) {
 				

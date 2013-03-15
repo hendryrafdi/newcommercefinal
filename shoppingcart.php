@@ -91,7 +91,7 @@ session_start();
                                 } else {
                                     while ($tian = mysql_fetch_array($sql)) {
                                         echo"<tr><td align='center'>$no</td>
-										<td align='center'><img width=50 src=$tian[image]></td>
+										<td align='center'><img width=50 src=cms/$tian[image]></td>
 										<td align='center'>$tian[nm_product]</td>";
 										if(!isset($_GET[upd])){
 											echo"

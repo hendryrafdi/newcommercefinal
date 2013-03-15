@@ -155,6 +155,7 @@ session_start();
                                 &nbsp;
                             </div>
                             <div class="con-kiri2">
+							<form method="post" action="pages/message.php">
                                 <table border="0">
 
                                     <tr>
@@ -208,11 +209,11 @@ session_start();
                                         </td>
                                         <td>
                                             <td>
-                                                <img src="css/images/button_send.png" style="height: 40px;">
-                                                    <img src="css/images/button_reset.png" style="height: 40px;">
+                                                <input type="image" src="css/images/button_send.png" style="height: 40px;"/>
                                                         </td>
                                                         </tr>
                                                         </table>
+														</form>
                                                         </div>
                                                         <div style="margin-top: 25px; margin-left: 550px; position: absolute;">
                                                             <font face="rockwell" color="black" size="5">Where to find us</font> 

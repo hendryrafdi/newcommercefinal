@@ -171,7 +171,7 @@ session_start();
                                                             ?>
                                                             <li style="height: 300px;">
                                                                 <a href="product.php?&act=product&detail=<?php echo $r[id_product]; ?>" class="product" title="<?php echo $r[nm_product]; ?>">
-                                                                    <img src="<?php echo $r[image]; ?>" alt="Product Image 1" />
+                                                                    <img class="size-img" src="cms/<?php echo $r[image]; ?>" alt="Product Image 1" />
                                                                     <span class="order model"><?php echo $r[nm_product]; ?></span>
                                                                     <span class="order"><span class="buy-text">Buy Now</span><span class="price"><span class="dollar">IDR</span><?php echo number_format($r[price]); ?><span class="sub-text">.00</span></span></span>
                                                                 </a>
@@ -191,7 +191,7 @@ session_start();
                                                                 ?>
                                                                 <li style="margin-left: 10px; ">
                                                                     <a href="pages/input.php?input=add&id=<?php echo $tampildong[id_product]; ?>" class="product" title="<?php echo $tampildong[nm_product]; ?>">
-                                                                        <img style="width: 100%; height: 80%;" src="<?php echo $tampildong[image]; ?>" alt="Product Image 1" />
+                                                                        <img style="width: 100%; height: 80%;" src="cms/<?php echo $tampildong[image]; ?>" alt="Product Image 1" />
                                                                         <font face='rockwell' size='3' color='darkblue'><?php echo"$tampildong[nm_product]" ?></font>
                                                                     </a>
                                                                 </li>
@@ -205,7 +205,7 @@ session_start();
                                                                                 <font face="rockwell" size="4" color="darkblue">:</font>
                                                                             </td>
                                                                             <td style="height: 30px; width: 500px;">
-                                                                                <font face="rockwell" size="4" color="darkblue"><?php echo"$tampildong[desc]" ?></font>
+                                                                                <font face="rockwell" size="4" color="darkblue"><?php echo"$tampildong[description]" ?></font>
                                                                             </td>
                                                                         </tr>
                                                                         <tr>
@@ -238,8 +238,8 @@ session_start();
 
                                                                             </td>
                                                                             <td style="height: 30px; width: 5;">
-                                                                                <input type="submit" name="submit" value="Buy" class="css3button">
-                                                                                <input type="submit" name="submit" value="Cancel" class="css3button">
+                                                                                <a href="pages/input.php?input=add&id=<?php echo $tampildong[id_product]; ?>" class="css3button">Buy Now</a>
+                                                                                <a href="product.php" class="css3button">Back</a>
                                                                             </td>
                                                                         </tr>
                                                                     </table>
@@ -260,7 +260,7 @@ session_start();
                                                                 ?>
                                                                 <li style="height: 300px;">
                                                                     <a href="product.php?&act=product&detail=<?php echo $r[id_product]; ?>" class="product" title="<?php echo $r[nm_product]; ?>">
-                                                                        <img src="<?php echo $r[image]; ?>" alt="Product Image 1" />
+                                                                        <img src="cms/<?php echo $r[image]; ?>" alt="Product Image 1" />
                                                                         <span class="order model"><?php echo $r[nm_product]; ?></span>
                                                                         <span class="order"><span class="buy-text">Buy Now</span><span class="price"><span class="dollar">IDR</span><?php echo number_format($r[price]); ?><span class="sub-text">.00</span></span></span>
                                                                     </a>
@@ -280,9 +280,9 @@ session_start();
                                                                     ?>
                                                                     <li style="margin-left: 350px; ">
                                                                         <a href="pages/input.php?input=add&id=<?php echo $tampildong[id_product]; ?>" class="product" title="<?php echo $tampildong[nm_product]; ?>">
-                                                                            <img src="<?php echo $tampildong[image]; ?>" alt="Product Image 1" />
+                                                                            <img src="cms/<?php echo $tampildong[image]; ?>" alt="Product Image 1" />
                                                                             <span class="order model"><?php echo $tampildong[nm_product]; ?></span>
-                                                                            <span class="number"><?php echo $tampildong[desc]; ?></span>
+                                                                            <span class="number"><?php echo $tampildong[description]; ?></span>
                                                                             <span class="order"><span class="buy-text">Buy Now</span><span class="price"><span class="dollar">IDR</span><?php echo number_format($tampildong[price]); ?><span class="sub-text">.00</span></span></span>
                                                                         </a>
                                                                     </li>
@@ -296,7 +296,7 @@ session_start();
                                                                                     <font face="rockwell" size="4" color="darkblue">:</font>
                                                                                 </td>
                                                                                 <td style="height: 30px; width: 500px;">
-                                                                                    <font face="rockwell" size="4" color="darkblue"><?php echo"$tampildong[desc]" ?></font>
+                                                                                    <font face="rockwell" size="4" color="darkblue"><?php echo"$tampildong[description]" ?></font>
                                                                                 </td>
                                                                             </tr>
                                                                             <tr>
@@ -326,7 +326,7 @@ session_start();
                                                                 ?>
                                                                 <li style="height: 300px;">
                                                                     <a href="product.php?&act=product&detail=<?php echo $r[id_product]; ?>" class="product" title="<?php echo $r[nm_product]; ?>">
-                                                                        <img src="<?php echo $r[image]; ?>" alt="Product Image 1" />
+                                                                        <img src="cms/<?php echo $r[image]; ?>" alt="Product Image 1" />
                                                                         <span class="order model"><?php echo $r[nm_product]; ?></span>
                                                                         <span class="order"><span class="buy-text">Buy Now</span><span class="price"><span class="dollar">IDR</span><?php echo number_format($r[price]); ?><span class="sub-text">.00</span></span></span>
                                                                     </a>
@@ -346,9 +346,9 @@ session_start();
                                                                     ?>
                                                                     <li style="margin-left: 350px; ">
                                                                         <a href="pages/input.php?input=add&id=<?php echo $tampildong[id_product]; ?>" class="product" title="<?php echo $tampildong[nm_product]; ?>">
-                                                                            <img src="<?php echo $tampildong[image]; ?>" alt="Product Image 1" />
+                                                                            <img src="cms/<?php echo $tampildong[image]; ?>" alt="Product Image 1" />
                                                                             <span class="order model"><?php echo $tampildong[nm_product]; ?></span>
-                                                                            <span class="number"><?php echo $tampildong[desc]; ?></span>
+                                                                            <span class="number"><?php echo $tampildong[description]; ?></span>
                                                                             <span class="order"><span class="buy-text">Buy Now</span><span class="price"><span class="dollar">IDR</span><?php echo number_format($tampildong[price]); ?><span class="sub-text">.00</span></span></span>
                                                                         </a>
                                                                     </li>
@@ -362,7 +362,7 @@ session_start();
                                                                                     <font face="rockwell" size="4" color="darkblue">:</font>
                                                                                 </td>
                                                                                 <td style="height: 30px; width: 500px;">
-                                                                                    <font face="rockwell" size="4" color="darkblue"><?php echo"$tampildong[desc]" ?></font>
+                                                                                    <font face="rockwell" size="4" color="darkblue"><?php echo"$tampildong[description]" ?></font>
                                                                                 </td>
                                                                             </tr>
                                                                             <tr>
@@ -392,7 +392,7 @@ session_start();
                                                                 ?>
                                                                 <li style="height: 300px;">
                                                                     <a href="product.php?&act=product&detail=<?php echo $r[id_product]; ?>" class="product" title="<?php echo $r[nm_product]; ?>">
-                                                                        <img src="<?php echo $r[image]; ?>" alt="Product Image 1" />
+                                                                        <img src="cms/<?php echo $r[image]; ?>" alt="Product Image 1" />
                                                                         <span class="order model"><?php echo $r[nm_product]; ?></span>
                                                                         <span class="order"><span class="buy-text">Buy Now</span><span class="price"><span class="dollar">IDR</span><?php echo number_format($r[price]); ?><span class="sub-text">.00</span></span></span>
                                                                     </a>
@@ -412,9 +412,9 @@ session_start();
                                                                     ?>
                                                                     <li style="margin-left: 350px; ">
                                                                         <a href="pages/input.php?input=add&id=<?php echo $tampildong[id_product]; ?>" class="product" title="<?php echo $tampildong[nm_product]; ?>">
-                                                                            <img src="<?php echo $tampildong[image]; ?>" alt="Product Image 1" />
+                                                                            <img src="cms/<?php echo $tampildong[image]; ?>" alt="Product Image 1" />
                                                                             <span class="order model"><?php echo $tampildong[nm_product]; ?></span>
-                                                                            <span class="number"><?php echo $tampildong[desc]; ?></span>
+                                                                            <span class="number"><?php echo $tampildong[description]; ?></span>
                                                                             <span class="order"><span class="buy-text">Buy Now</span><span class="price"><span class="dollar">IDR</span><?php echo number_fromat($tampildong[price]); ?><span class="sub-text">.00</span></span></span>
                                                                         </a>
                                                                     </li>
@@ -428,7 +428,7 @@ session_start();
                                                                                     <font face="rockwell" size="4" color="darkblue">:</font>
                                                                                 </td>
                                                                                 <td style="height: 30px; width: 500px;">
-                                                                                    <font face="rockwell" size="4" color="darkblue"><?php echo"$tampildong[desc]" ?></font>
+                                                                                    <font face="rockwell" size="4" color="darkblue"><?php echo"$tampildong[description]" ?></font>
                                                                                 </td>
                                                                             </tr>
                                                                             <tr>
@@ -459,7 +459,7 @@ session_start();
                                                             ?>
                                                             <li style="height: 300px;">
                                                                 <a href="product.php?&act=product&detail=<?php echo $r[id_product]; ?>" class="product" title="<?php echo $r[nm_product]; ?>">
-                                                                    <img src="<?php echo $r[image]; ?>" alt="Product Image 1" />
+                                                                    <img src="cms/<?php echo $r[image]; ?>" alt="Product Image 1" />
                                                                     <span class="order model"><?php echo $r[nm_product]; ?></span>
                                                                     <span class="order"><span class="buy-text">Buy Now</span><span class="price"><span class="dollar">IDR</span><?php echo number_format($r[price]); ?><span class="sub-text">.00</span></span></span>
                                                                 </a>
@@ -479,9 +479,9 @@ session_start();
                                                                 ?>
                                                                 <li style="margin-left: 350px; ">
                                                                     <a href="pages/input.php?input=add&id=<?php echo $tampildong[id_product]; ?>" class="product" title="<?php echo $tampildong[nm_product]; ?>">
-                                                                        <img src="<?php echo $tampildong[image]; ?>" alt="Product Image 1" />
+                                                                        <img src="cms/<?php echo $tampildong[image]; ?>" alt="Product Image 1" />
                                                                         <span class="order model"><?php echo $tampildong[nm_product]; ?></span>
-                                                                        <span class="number"><?php echo $tampildong[desc]; ?></span>
+                                                                        <span class="number"><?php echo $tampildong[description]; ?></span>
                                                                         <span class="order"><span class="buy-text">Buy Now</span><span class="price"><span class="dollar">IDR</span><?php echo $tampildong[price]; ?><span class="sub-text">.00</span></span></span>
                                                                     </a>
                                                                 </li>
@@ -495,7 +495,7 @@ session_start();
                                                                                 <font face="rockwell" size="4" color="darkblue">:</font>
                                                                             </td>
                                                                             <td style="height: 30px; width: 500px;">
-                                                                                <font face="rockwell" size="4" color="darkblue"><?php echo"$tampildong[desc]" ?></font>
+                                                                                <font face="rockwell" size="4" color="darkblue"><?php echo"$tampildong[description]" ?></font>
                                                                             </td>
                                                                         </tr>
                                                                         <tr>
@@ -526,7 +526,7 @@ session_start();
                                             ?>
                                             <li style="height: 300px;">
                                                 <a href="product.php?&act=product&detail=<?php echo $r[id_product]; ?>" class="product" title="<?php echo $r[nm_product]; ?>">
-                                                    <img src="<?php echo $r[image]; ?>" alt="Product Image 1" />
+                                                    <img src="cms/<?php echo $r[image]; ?>" alt="Product Image 1" />
                                                     <span class="order model"><?php echo $r[nm_product]; ?></span>
                                                     <span class="order"><span class="buy-text">Buy Now</span><span class="price"><span class="dollar">IDR</span><?php echo $r[price]; ?><span class="sub-text">.00</span></span></span>
                                                 </a>

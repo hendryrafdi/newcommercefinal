@@ -98,8 +98,7 @@
                                         <tr>
                                             <td></td>
                                             <td style="width: 180px;">
-                                                <input type="submit" value="login"/>
-                                                <img src="css/images/button_reset.png" style="height: 40px;">
+                                                <input type="image" value="login" src="css/images/button_login.png" style="height: 40px;"/>
                                             </td>
                                         </tr>
                                     </table>
@@ -121,7 +120,7 @@
                                                 </font>
                                             </td>
                                             <td style="width: 300px;">
-                                                <input type="text" name="f_name" placeholder="First Name" style="width: 100px; height: 30px;">
+                                                <input type="text" name="f_name" placeholder="First Name" style="width: 100px; height: 30px;" required>
                                                     <input type="text" name="l_name" placeholder="Last Name" style="width: 173px; height: 30px;">
                                                         </td>
                                                         </tr>
@@ -132,7 +131,7 @@
                                                                 </font>
                                                             </td>
                                                             <td style="width: 300px;">
-                                                                <input type="text" name="birthday_place" placeholder="Birthday_place" style="width: 130px; height: 30px;">
+                                                                <input type="text" name="birthday_place" placeholder="Birthday_place" style="width: 130px; height: 30px;" required>
                                                                     <input type="date" name="birthday" style="height: 30px; width: 143px;">
                                                                         </td>
                                                                         </tr>
@@ -143,7 +142,7 @@
                                                                                 </font>
                                                                             </td>
                                                                             <td style="width: 300px;">
-                                                                                <select class="inputlogin" name="gender" style="width: 284px;">
+                                                                                <select class="inputlogin" name="gender" style="width: 284px;" required>
                                                                                     <option selected="selected">Gender</option>
                                                                                     <option value="l">Male</option>
                                                                                     <option value="p">Female</option>
@@ -157,7 +156,7 @@
                                                                                 </font>
                                                                             </td>
                                                                             <td style="width: 300px;">
-                                                                                <input type="text" name="telp" placeholder="Phone Number" class="inputlogin">
+                                                                                <input type="text" name="telp" placeholder="Phone Number" class="inputlogin" required>
                                                                             </td>
                                                                         </tr>
                                                                         <tr>
@@ -167,7 +166,7 @@
                                                                                 </font>
                                                                             </td>
                                                                             <td style="width: 300px;">
-                                                                                <input type="text" name="addres" placeholder="Addres" class="inputlogin">
+                                                                                <input type="text" name="addres" placeholder="Addres" class="inputlogin" required>
                                                                             </td>
                                                                         </tr>
                                                                         <tr>
@@ -177,7 +176,7 @@
                                                                                 </font>
                                                                             </td>
                                                                             <td style="width: 300px;">
-                                                                                <input type="text" name="email" placeholder="Email" class="inputlogin">
+                                                                                <input type="text" name="email" placeholder="Email" class="inputlogin" required>
                                                                             </td>
                                                                         </tr>
                                                                         <tr>
@@ -187,13 +186,13 @@
                                                                                 </font>
                                                                             </td>
                                                                             <td style="width: 300px;">
-                                                                                <input type="password" name="password" placeholder="Password" class="inputlogin">
+                                                                                <input type="password" name="password" placeholder="Password" class="inputlogin" required>
                                                                             </td>
                                                                         </tr>
                                                                         <tr>
                                                                             <td></td>
                                                                             <td style="width: 180px;">
-                                                                                <input type="submit" value="Register"/>
+                                                                                <input type="image" value="Sign Up" src="css/images/button_signup.png" style="height: 40px;"/>
                                                                             </td>
                                                                         </tr>
                                                                         </table>
