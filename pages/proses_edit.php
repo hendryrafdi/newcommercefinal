@@ -6,7 +6,7 @@
 	$ip = $_POST[id_product];
 	$ic = $_POST[id_category];
 	$np = $_POST[nm_product];
-	$d = $_POST[desc];
+	$d = $_POST[description];
 	$p = $_POST[price];
 	
 	if(!empty($_FILES["upload"]["tmp_name"])){
@@ -18,7 +18,7 @@
 					$string = "update product set id_product='$ip', id_category='$ic', nm_product='$np', description='$d', price='$p', image='$image' where id_product='$ip'";
 					$sql = mysql_query($string);
 					if($sql){
-						echo "<script>alert('Data Berhasil Diubah'); window.location:'../cms/product.php'</script>";
+						echo "<script>alert('Data Berhasil Diubah'); window.location=('../cms/product.php')</script>";
 					}
 					else{
 						echo " Tapi Data Kabur2an";

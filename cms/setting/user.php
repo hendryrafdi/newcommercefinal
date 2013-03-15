@@ -125,7 +125,7 @@ include '../inc/config.php';
                             </table>
 							</br>
 											<input type="submit" name="button" value="Update"/>
-											<input type="reset" name="cungrung" value="clear"/>
+											<a href="user.php" class="css3button">Clear</a>
 							</form>
 						  </div>
 						</div>

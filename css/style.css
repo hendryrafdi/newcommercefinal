@@ -440,4 +440,7 @@ size:10px;
 margin-left:5px;
 margin-top:5px;
 }
-
+.size-img{
+	height: 150px;
+	width: 200px;
+}
