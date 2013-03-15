@@ -3,6 +3,9 @@ session_start();
 if($_SESSION['email']==NULL){
     echo "<script>window.location=('login.html')</script>";
 }
+if($_SESSION['level'] == 'u'){
+    echo "<script>window.location=('../index.php')</script>";
+}
 ?>
 <!DOCTYPE html>
 <html>
