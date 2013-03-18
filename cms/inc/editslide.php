@@ -16,7 +16,7 @@
                                         echo $string;
 					$sql = mysql_query($string);
 					if($sql){
-						echo "<script>alert('Data Berhasil Diubah'); window.location:'../cms/product.php'</script>";
+						echo "<script>alert('Data Berhasil Diubah'); window.location=('../setting/banner.php');</script>";
 					}
 					else{
 						echo " Tapi Data Kabur2an";

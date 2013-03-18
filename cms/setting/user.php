@@ -66,14 +66,36 @@ include '../inc/config.php';
                                             <td><?php echo $tampil[id_user]?></td>
                                             <td><?php echo $tampil[f_name]?></td>
                                             <td><?php echo $tampil[l_name]?></td>
-                                            <td><?php echo $tampil[gender]?></td>
+											<?php
+												$ubah = $tampil[gender];
+												
+												if($ubah == 'l'){
+												?>
+													<td>Laki-Laki</td>
+													<?php
+												}
+												else{
+													?>
+													<td>Perempuan</td>
+													<?php
+												}
+											?>
                                             <td><?php echo $tampil[birthday_place]?></td>
                                             <td><?php echo $tampil[birthday]?></td>
 											<td><?php echo $tampil[address]?></td>
 											<td><?php echo $tampil[telp]?></td>
 											<td><?php echo $tampil[email]?></td>
 											<td><?php echo $tampil[password]?></td>
-											<td><?php echo $tampil[level]?></td>
+											<?php
+												$ngubah = $tampil[level];
+												
+												if($ngubah == 'a'){
+													echo" <td>Admin</td> ";
+												}
+												else{
+													echo " <td>User</td> ";
+												}
+											?>
 											<td><a href="user.php?edit=<?php echo $tampil[id_user]?>"><img src="../../css/images/reply.png"/></td>
 											<td><a href="../../pages/proses_delete_user.php?del=<?php echo $tampil[id_user]?>"><img src="../../css/images/sign_cross.png"/></td>
                                         </tr>

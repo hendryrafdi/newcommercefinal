@@ -3,13 +3,6 @@
 include 'pages/config.php';
 //memulai session
 session_start();
-//cek adanya session
-if (ISSET($_SESSION[email])) {
-    echo "Anda Login Sebagai ";
-    echo $_SESSION[email];
-    echo "<br><a href='pages/logout.php'>logout</a>";
-//jika tidak ada session
-}
 ?>
 <!DOCTYPE html>
 

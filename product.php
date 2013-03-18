@@ -75,32 +75,32 @@ session_start();
 
                             echo"
 											<li><a href='product.php' title='All' class='active'><span>All</span></a></li>
-											<li><a href='product.php?cat=3' title='Gadget'><span>Gadget</span></a></li>
-											<li><a href='product.php?cat=2' title='Fashion'><span>Fashion</span></a></li>
+											<li><a href='product.php?cat=3' title='Gadget'><span>Phone</span></a></li>
+											<li><a href='product.php?cat=2' title='Fashion'><span>Kamera</span></a></li>
 											<li><a href='product.php?cat=1' title='Computer'><span>Computer</span></a></li>
 											";
                         }
                         if ($active == '1') {
                             echo"
 											<li><a href='product.php' title='All'><span>All</span></a></li>
-											<li><a href='product.php?cat=3' title='Gadget'><span>Gadget</span></a></li>
-											<li><a href='product.php?cat=2' title='Fashion'><span>Fashion</span></a></li>
+											<li><a href='product.php?cat=3' title='Gadget'><span>Phone</span></a></li>
+											<li><a href='product.php?cat=2' title='Fashion'><span>Kamera</span></a></li>
 											<li><a href='product.php?cat=1' title='Computer' class='active'><span>Computer</span></a></li>
 											";
                         }
                         if ($active == '2') {
                             echo"
 											<li><a href='product.php' title='All'><span>All</span></a></li>
-											<li><a href='product.php?cat=3' title='Gadget'><span>Gadget</span></a></li>
-											<li><a href='product.php?cat=2' title='Fashion' class='active'><span>Fashion</span></a></li>
+											<li><a href='product.php?cat=3' title='Gadget'><span>Phone</span></a></li>
+											<li><a href='product.php?cat=2' title='Fashion' class='active'><span>Kamera</span></a></li>
 											<li><a href='product.php?cat=1' title='Computer'><span>Computer</span></a></li>
 											";
                         }
                         if ($active == '3') {
                             echo"
 											<li><a href='product.php' title='All'><span>All</span></a></li>
-											<li><a href='product.php?cat=3' title='Gadget' class='active'><span>Gadget</span></a></li>
-											<li><a href='product.php?cat=2' title='Fashion'><span>Fashion</span></a></li>
+											<li><a href='product.php?cat=3' title='Gadget' class='active'><span>Phone</span></a></li>
+											<li><a href='product.php?cat=2' title='Fashion'><span>Kamera</span></a></li>
 											<li><a href='product.php?cat=1' title='Computer'><span>Computer</span></a></li>
 											";
                         }
@@ -216,7 +216,7 @@ session_start();
                                                                                 <font face="rockwell" size="4" color="darkblue">:</font>
                                                                             </td>
                                                                             <td style="height: 30px; width: 5;">
-                                                                                <font face="rockwell" size="4" color="darkblue"><?php echo number_format($tampildong[price]); ?></font>
+                                                                                <font face="rockwell" size="4" color="darkblue">Rp. <?php echo number_format($tampildong[price]); ?></font>
                                                                             </td>
                                                                         </tr>
                                                                         <tr>
@@ -326,7 +326,7 @@ session_start();
                                                                 ?>
                                                                 <li style="height: 300px;">
                                                                     <a href="product.php?&act=product&detail=<?php echo $r[id_product]; ?>" class="product" title="<?php echo $r[nm_product]; ?>">
-                                                                        <img src="cms/<?php echo $r[image]; ?>" alt="Product Image 1" />
+                                                                        <img style="width: 200px; height: 150px;" src="cms/<?php echo $r[image]; ?>" alt="Product Image 1" />
                                                                         <span class="order model"><?php echo $r[nm_product]; ?></span>
                                                                         <span class="order"><span class="buy-text">Buy Now</span><span class="price"><span class="dollar">IDR</span><?php echo number_format($r[price]); ?><span class="sub-text">.00</span></span></span>
                                                                     </a>
@@ -349,7 +349,7 @@ session_start();
                                                                             <img src="cms/<?php echo $tampildong[image]; ?>" alt="Product Image 1" />
                                                                             <span class="order model"><?php echo $tampildong[nm_product]; ?></span>
                                                                             <span class="number"><?php echo $tampildong[description]; ?></span>
-                                                                            <span class="order"><span class="buy-text">Buy Now</span><span class="price"><span class="dollar">IDR</span><?php echo number_format($tampildong[price]); ?><span class="sub-text">.00</span></span></span>
+                                                                            <span class="order"><span class="buy-text">Buy Now</span><span class="price"><span class="dollar">IDR</span><?php echo number_fromat($tampildong[price]); ?><span class="sub-text">.00</span></span></span>
                                                                         </a>
                                                                     </li>
                                                                     <div class="nambar">

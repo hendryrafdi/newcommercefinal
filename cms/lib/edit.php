@@ -49,7 +49,7 @@
                             <tr>
                                 <td>Desc</td>
                                 <td>:</td>
-                                <td><input type="text" name="desc" value="<?php echo $tampil[description]?>"/></td>
+                                <td><input type="text" name="description" value="<?php echo $tampil[description]?>"/></td>
                             </tr>
                             <tr>
                                 <td>Price</td>

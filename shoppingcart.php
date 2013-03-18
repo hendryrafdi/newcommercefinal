@@ -151,7 +151,7 @@ session_start();
                             <a href="#" class="more-link" title="Read More">Read More >></a>
                         </li>
                         <li class="col social">
-                            <h4>get social</h4>
+                            <h4>get social</h4>	
                             <ul>
                                 <li><a href="https://facebook.com/justmedevil" class="fb-link" title="Facebook">facebook</a></li>
                                 <li><a href="https://twitter.com/FRETSERC" class="twitter-link" title="Twitter">twitter</a></li>

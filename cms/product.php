@@ -104,7 +104,6 @@ include 'inc/config.php';
                                         <tr>
                                             <th>Category ID</th> 
                                             <th>Product Name</th> 
-                                            <th>Category Name</th> 
                                             <th>Image</th> 
                                             <th>Desc</th> 
                                             <th>Price</th> 
@@ -114,9 +113,8 @@ include 'inc/config.php';
                                         <tr>
                                             <td><input type="text" name="category_id" style="width: 90px;"></td>
                                             <td><input type="text" name="product_name"></td>
-                                            <td><input type="text" name="category_name"></td>
                                             <td><input type="file" name="upload"></td>
-                                            <td><input type="text" name="descripion"></td>
+                                            <td><input type="text" name="description"></td>
                                             <td><input type="text" name="price"></td>
                                         </tr>
                                     </tbody>

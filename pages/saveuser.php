@@ -11,7 +11,7 @@ $telp = $_POST[telp];
 $email = $_POST[email];
 $password = $_POST[password];
 
-$save = mysql_query("insert into user values(null,'$f_name', '$l_name', '$gender', '$birthday_p', '$birthday', '$adress', '$telp', '$email', '$password')");
+$save = mysql_query("insert into user values(null,'$f_name', '$l_name', '$gender', '$birthday_p', '$birthday', '$adress', '$telp', '$email', '$password','u')");
 if ($save) {
 	$_SESSION[email] = $email;
     $shop = mysql_query("select *from shoppingcart");
