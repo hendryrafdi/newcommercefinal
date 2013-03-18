@@ -91,10 +91,42 @@ if($_SESSION[email]==NULL){
   <div style="margin-left:290px;"class="box">
 	<h3>Ubah Kata Sandi</h3>
 	<hr></hr>
-	<div>Kata Sandi <input style="margin-left:100px; width:200px;" type="text" /></div>
-	<div>Ketik Ulang Kata Sandi	   <input style="margin-left:30px; width:200px;" type="text" /></div>
-	<input style="float:right; margin-right:10px; margin-top:50px;" type="submit" />
-	
+        <form method="post" action="pages/editpassword.php">
+            <?php 
+            $id=$_GET['id'];
+            $token=$_GET['token'];
+            $cek=md5(md5($id).md5('akwk12391kc192c3u19238198z3u18291n8293uc1829us1'));
+            if($token==$cek){
+                $query = mysql_query("select *from user where id_user = '$id'");
+                $show = mysql_fetch_array($query);
+            ?>
+        <table style="padding: 30px;">
+            <tr>
+                <td>Password Lama</td>
+                <td>:<input type="hidden" name="id_user" value=""/></td>
+                <td><input type="password" name="old[ass"/></td>
+            </tr>
+            <tr>
+                <td>Password Baru</td>
+                <td>:</td>
+                <td><input type="password" name="newpass"/></td>
+            </tr>
+            <tr>
+                <td>Masukkan lagi</td>
+                <td>:</td>
+                <td><input type="password" name="confirm"/></td>
+            </tr>
+            <tr>
+                <td colspan="2"></td>
+                <td><input type="submit" name="submit" value="Save"/></td>
+            </tr>
+        </table>
+            <?php
+            } else {
+                echo "SQLi Detected";
+            }
+            ?>
+        </form>
 	
 	</div>
         <div id="footer-push" class="cl">&nbsp;</div>

@@ -81,7 +81,7 @@ if($_SESSION[email]==NULL){
                                 $tampil = mysql_query("select *from user where id_user='$id'");
                                 $manggil = mysql_fetch_array($tampil);
                                 ?>
-                                    <font face="rockwell" size="4" color="black">Hallo <?php echo"<u><font face='rockwell' size='3' color='black'>$manggil[f_name] </font></u>"; ?></font>
+                                    <font face="rockwell" size="4" color="black">Hallo <?php echo"<u><font face='rockwell' size='3' color='black'>$manggil[f_name] $manggil[l_name] </font></u>"; ?></font>
                                 </div>
                                 
                             </div>
@@ -91,23 +91,52 @@ if($_SESSION[email]==NULL){
   <div class="box">
 	<h3>Informasi Kontak</h3>
 	<hr></hr>
-	<div>Velin Caliandra</div>
-	<div>velincaliandra@gmail.com - </div> <div style="margin-left:175px; margin-top:-15px;"><a href="">Ganti Email</a></div>
-	<div><a href="">Ganti Password</a></div>
-	<div style="float:right; margin-right:10px;"><a href="">Ubah</a></div>
+        <br>
+        <table style="padding: 5px 5px;">
+            <tr>
+                <td colspan="3"><?php echo "$manggil[f_name] $manggil[l_name]"?></td>
+            </tr>
+            <tr>
+                <td><?php echo $manggil[email] ?></td>
+                <td>-</td>
+                <?php 
+                $id_user = $manggil[id_user];
+                $token = md5(md5($id_user).  md5('akwk12391kc192c3u19238198z3u18291n8293uc1829us1'));
+                ?>
+                <td><a href="gantiemail.php?id=<?php echo $id_user ?>&token=<?php echo $token ?>">Ganti Email</a></td>
+            </tr>
+            <tr>
+                <td colspan="2"><a href="gantipassword.php?id=<?php echo $id_user ?>&token=<?php echo $token ?>">Ganti Password</a></td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td colspan="3">&nbsp;</td>
+            </tr>
+            <tr>
+                <td colspan="3">&nbsp;</td>
+            </tr>
+            <tr>
+                <td colspan="3">&nbsp;</td>
+            </tr>
+            <tr>
+                <td colspan="2">&nbsp;</td>
+                <td><a href="#">Ubah</a></td>
+            </tr>
+        </table>
 	
 	
 	</div>
-  
   <div class="box2">
+	<h3>Daftar Pesanan</h3>
+	<hr></hr>
+  </div>
+                    
+  <div class="box3">
 	<h3>Buku Alamat</h3>
 	<hr></hr>
   </div>
   
-  <div class="box3">
-	<h3>Daftar Pesanan</h3>
-	<hr></hr>
-  </div>
+  
 
 			
                            

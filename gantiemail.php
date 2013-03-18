@@ -91,9 +91,41 @@ if($_SESSION[email]==NULL){
   <div style="margin-left:290px;"class="box">
 	<h3>Your Email</h3>
 	<hr></hr>
-	<div>Current Email &nbsp;&nbsp;&nbsp;VelinCaliandra@gmail.com</div>
-	<div>New Email	   <input style="margin-left:30px;" type="text" /></div>
-	<input style="float:right; margin-right:10px; margin-top:50px;" type="submit" />
+        <?php
+
+        $id=$_GET['id'];
+        $token=$_GET['token'];
+        $cek=md5(md5($id).md5('akwk12391kc192c3u19238198z3u18291n8293uc1829us1'));
+        if($token==$cek){
+            $query = mysql_query("select *from user where id_user = '$id'");
+            $show = mysql_fetch_array($query);
+        ?>
+        <form method="post" action="pages/editemail.php">
+            <table style="padding: 5px">
+                <tr>
+                    <td style="padding: 5px">Current Email</td>
+                    <td style="padding: 5px">:<input type="hidden" value="<?php echo $show[id_user]; ?>" name="id_user"/></td>
+                    <td style="padding: 5px"><?php echo $show[email] ?></td>
+                </tr>
+                <tr>
+                    <td style="padding: 5px">New Email</td>
+                    <td style="padding: 5px">:</td>
+                    <td style="padding: 5px"><input type="text" name="email" required /></td>
+                </tr>
+                <tr>
+                    <td style="padding: 5px"><a href="profile.php">< Back</a></td>
+                    <td style="padding: 5px">&nbsp;</td>
+                    <td style="padding: 5px"><input type="submit" value="Save"/></td>
+                </tr>
+            </table>
+        </form>
+        <?php
+        }
+        else{
+        echo "SQL Injection detected..!!!!";
+        }
+
+        ?>
 	
 	
 	</div>
