@@ -92,21 +92,21 @@ if($_SESSION[email]==NULL){
 	<h3>Informasi Kontak</h3>
 	<hr></hr>
         <br>
-        <table style="padding: 5px 5px;">
+        <table style="padding: 5px 20px; width: auto;">
             <tr>
-                <td colspan="3"><?php echo "$manggil[f_name] $manggil[l_name]"?></td>
+                <td colspan="3" style="padding: 2px;"><?php echo "$manggil[f_name] $manggil[l_name]"?></td>
             </tr>
             <tr>
-                <td><?php echo $manggil[email] ?></td>
-                <td>-</td>
+                <td style="padding: 2px;"><?php echo $manggil[email] ?></td>
+                <td style="padding: 2px;">-</td>
                 <?php 
                 $id_user = $manggil[id_user];
                 $token = md5(md5($id_user).  md5('akwk12391kc192c3u19238198z3u18291n8293uc1829us1'));
                 ?>
-                <td><a href="gantiemail.php?id=<?php echo $id_user ?>&token=<?php echo $token ?>">Ganti Email</a></td>
+                <td style="padding: 2px;"><a href="gantiemail.php?id=<?php echo $id_user ?>&token=<?php echo $token ?>">Ganti Email</a></td>
             </tr>
             <tr>
-                <td colspan="2"><a href="gantipassword.php?id=<?php echo $id_user ?>&token=<?php echo $token ?>">Ganti Password</a></td>
+                <td style="padding: 2px;" colspan="2"><a href="gantipassword.php?id=<?php echo $id_user ?>&token=<?php echo $token ?>">Ganti Password</a></td>
                 <td>&nbsp;</td>
             </tr>
             <tr>
@@ -120,27 +120,42 @@ if($_SESSION[email]==NULL){
             </tr>
             <tr>
                 <td colspan="2">&nbsp;</td>
-                <td><a href="#">Ubah</a></td>
+                <td style="padding: 2px;"><a href="ubah.php?id=<?php echo $id_user ?>&token=<?php echo $token ?>">Ubah</a></td>
             </tr>
         </table>
 	
 	
 	</div>
-  <div class="box2">
+  <div class="box2" style="width: auto;">
 	<h3>Daftar Pesanan</h3>
-	<hr></hr>
-  </div>
-                    
-  <div class="box3">
-	<h3>Buku Alamat</h3>
-	<hr></hr>
-  </div>
-  
-  
-
-			
-                           
-                        
+	<hr>
+        
+        <table style="color: #000;">
+            <tr align="center">
+                <td>Atas Nama</td>
+                <td>Alamat</td>
+                <td>Telp</td>
+                <td>Product</td>
+                <td>Harga</td>
+                <td>Qty</td>
+            </tr>
+            <?php 
+            $sql = mysql_query("SELECT orders.id_order, product.id_product, orders.id_order, orders.customer_name, orders.address, orders.telp, product.nm_product, product.price, orders.qty  FROM orders, product, user WHERE orders.id_order=product.id_product AND orders.id_order=product.id_product  AND orders.id_order='$_SESSION[id_user]'");
+            while ($tayang = mysql_fetch_array($sql)){
+            ?>
+            <tr>
+                <td><?php echo $tayang[customer_name]?></td>
+                <td><?php echo $tayang[address]?></td>
+                <td><?php echo $tayang[telp]?></td>
+                <td><?php echo $tayang[nm_product]?></td>
+                <td>Rp <?php echo number_format($tayang[price],2,",",".")?></td>
+                <td align="center"><?php echo $tayang[qty]?></td>
+            </tr>
+            <?php
+            }
+            ?>
+        </table>
+  </div>             
                   
         <div id="footer-push" class="cl">&nbsp;</div>
     </div>

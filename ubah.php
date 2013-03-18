@@ -89,7 +89,7 @@ if($_SESSION[email]==NULL){
 						
 
   <div style="margin-left:290px;"class="box">
-	<h3>Ubah Kata Sandi</h3>
+	<h3>Ubah Data Pribadi</h3>
 	<hr></hr>
         
             <?php 
@@ -100,22 +100,40 @@ if($_SESSION[email]==NULL){
                 $query = mysql_query("select *from user where id_user = '$id'");
                 $show = mysql_fetch_array($query);
             ?>
-        <form method="post" action="pages/editpassword.php">
-        <table style="padding: 30px;">
+        <form method="post" action="pages/editprofile.php">
+        <table style="padding: 7.5px; width: 500px;">
             <tr>
-                <td>Password Lama</td>
+                <td>Email</td>
                 <td>:<input type="hidden" name="id_user" value="<?php echo $show[id_user]?>"/></td>
-                <td><input type="password" name="tuapass"/></td>
+                <td><b><?php echo $show[email]?></b></td>
             </tr>
             <tr>
-                <td>Password Baru</td>
+                <td>Jenis Kelamin</td>
                 <td>:</td>
-                <td><input type="password" name="newpass"/></td>
+                <td>
+                    <?php
+                    if($show[gender] == 'l'){
+                    ?>
+                    <select name="jk">
+                        <option value="l" selected>Laki-laki</option>
+                        <option value="p">Perempuan</option>
+                    </select>
+                    <?php
+                    } else if($show[gender] == 'p'){
+                    ?>
+                    <select name="jk">
+                        <option value="l">Laki-laki</option>
+                        <option value="p" selected>Perempuan</option>
+                    </select>
+                    <?php    
+                    }
+                    ?>
+                </td>
             </tr>
             <tr>
-                <td>Masukkan lagi</td>
+                <td>Nama</td>
                 <td>:</td>
-                <td><input type="password" name="confirm"/></td>
+                <td><input type="text" name="f_name" placeholder="First name" value="<?php echo $show[f_name] ?>"/><input type="text" name="l_name" placeholder="Last name" value="<?php echo $show[l_name] ?>"/></td>
             </tr>
             <tr>
                 <td colspan="2"></td>
