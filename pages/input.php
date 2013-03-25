@@ -28,6 +28,12 @@ if ($input == 'add') {
 else if($input == 'edit'){
 	$update = $_POST[qtyupd];
 	mysql_query("UPDATE `commerce_final`.`shoppingcart` SET  `qty` = '$update' WHERE  `shoppingcart`.`id_shopping` = '$_GET[id]';");
+	$cir = mysql_query("select *from product");
+	$harga = mysql_fetch_array($cir);
+	$car = mysql_query("select *from shoppingcart");
+	$qty = mysql_fetch_array($car);
+	
+	$hasil = $qty[qty] * $harga[price];
 	header('location:../shoppingcart.php');
 	
 } elseif ($input == 'inputform') {

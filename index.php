@@ -71,8 +71,8 @@ session_start();
                         <div id="navigation">
                             <ul>
                                 <li><a href="product.php" title="All" class="active"><span>All</span></a></li>
-                                <li><a href="product.php?cat=3" title="Gadget"><span>Gadget</span></a></li>
-                                <li><a href="product.php?cat=2" title="Fashion"><span>Fashion</span></a></li>
+                                <li><a href="product.php?cat=3" title="Gadget"><span>Phone</span></a></li>
+                                <li><a href="product.php?cat=2" title="Fashion"><span>Kamera</span></a></li>
                                 <li><a href="product.php?cat=1" title="Computer"><span>Computer</span></a></li>
                             </ul>
                         </div>

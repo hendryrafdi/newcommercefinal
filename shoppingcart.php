@@ -81,7 +81,7 @@ session_start();
                                 <th colspan="2">Delete</th>
                                 </tr>
                                 <?php
-                                $sid = session_id();
+                                $sid = session_id();	
                                 $no = 1;
                                 $sql = mysql_query("SELECT * FROM shoppingcart, product WHERE id_session='$sid' AND shoppingcart.id_product=product.id_product");
                                 $hitung = mysql_num_rows($sql);
@@ -118,7 +118,7 @@ session_start();
                         <a id="btnred" href="pages/cancel.php">Empty Cart</a>
                         <?php
                         if ($_SESSION[email]) {
-                            echo"<a id='btngreen' href='confrim.php'>Next</a>";
+                            echo"<a id='btngreen' href='confirm.php'>Next</a>";
                         } else {
                             echo"<a id='btngreen' href='login.php'>Next</a>";
                         }

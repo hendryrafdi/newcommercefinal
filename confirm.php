@@ -207,7 +207,7 @@ else if(!$_SESSION[email]==NULL){
                                                                 <table border="0" style="height: 130px; width: 300px;">
                                                                     <tr>
                                                                         <td style="height: 3px;">
-                                                                            <input type="radio" name="pembayaran" value="cod">
+                                                                            <input type="radio" name="pembayaran" value="cod" reqired>
                                                                         </td>
                                                                         <td style="height: 3px;">
                                                                             <font face="rockwell" color="black" size="3">Bayar Ditempat (COD)</font>

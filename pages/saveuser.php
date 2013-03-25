@@ -6,14 +6,18 @@ $l_name = $_POST[l_name];
 $gender = $_POST[gender];
 $birthday_p = $_POST[birthday_place];
 $birthday = $_POST[birthday];
-$adress = $_POST[addres];
+$address = $_POST[address];
 $telp = $_POST[telp];
 $email = $_POST[email];
 $password = $_POST[password];
 
-$save = mysql_query("insert into user values(null,'$f_name', '$l_name', '$gender', '$birthday_p', '$birthday', '$adress', '$telp', '$email', '$password','u')");
+$save = mysql_query("insert into user values(null,'$f_name', '$l_name', '$gender', '$birthday_p', '$birthday', '$address', '$telp', '$email', '$password','u')");
 if ($save) {
 	$_SESSION[email] = $email;
+	$_SESSION[f_name] = $f_name;
+	$_SESSION[l_name] = $l_name;
+	$_SESSION[telp] = $telp;
+	$_SESSION[address] = $address;
     $shop = mysql_query("select *from shoppingcart");
 		$isi = mysql_num_rows($shop);
 		if($isi > 0){

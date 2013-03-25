@@ -166,7 +166,7 @@
                                                                                 </font>
                                                                             </td>
                                                                             <td style="width: 300px;">
-                                                                                <input type="text" name="addres" placeholder="Addres" class="inputlogin" required>
+                                                                                <input type="text" name="address" placeholder="Address" class="inputlogin" required>
                                                                             </td>
                                                                         </tr>
                                                                         <tr>
