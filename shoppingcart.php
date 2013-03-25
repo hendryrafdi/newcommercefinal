@@ -96,16 +96,16 @@ session_start();
 										if(!isset($_GET[upd])){
 											echo"
 												<td align='center'>$tian[qty]</td>
-												<td align='center'>";echo number_format($tian[price]);echo"</td>
+												<td align='center'>";echo number_format($tian[total]);echo"</td>
 												<td align='center'><a href='shoppingcart.php?upd=1'><img src='css/images/reply.png'></a></td>
 												<td align='center'><a href=pages/input.php?input=delete&id=$tian[id_shopping]><img src='css/images/sign_cross.png'></a></td></tr>";
 												$no++;
 												
 										}
 										else{
-											echo"<form method='post' action='pages/input.php?input=edit&id=$tian[id_shopping]'>
+											echo"<form method='post' action='pages/input.php?input=edit&id=$tian[id_shopping]'><input type='hidden' name='id_product' value='$tian[id_product]'/>
 												<td align='center'><input type='number' name='qtyupd' value='$tian[qty]'>&nbsp;&nbsp;&nbsp;<input type='image' src='css/images/ok.png'></td>
-												<td align='center'> "; echo number_format($tian[price]);echo"</td>
+												<td align='center'> "; echo number_format($tian[total]);echo"</td>
 												<td align='center'><a href=pages/input.php?input=delete&id=$tian[id_shopping]><img src='css/images/sign_cross.png'></a></td></tr></form>";
 												$no++;
 										}

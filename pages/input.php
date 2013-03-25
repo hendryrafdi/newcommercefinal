@@ -15,7 +15,9 @@ if ($input == 'add') {
     $sql = mysql_query("SELECT id_product FROM shoppingcart WHERE id_product='$_GET[id]' AND id_session='$sid'");
     $num = mysql_num_rows($sql);
     if ($num == 0) {
-        mysql_query("INSERT INTO shoppingcart(id_product,id_session,shopping_date,qty)VALUES('$_GET[id]','$sid','$tgl_sekarang','1')");
+        $sql = mysql_query("select *from product where id_product = '$_GET[id]'");
+        $pancing = mysql_fetch_array($sql);
+        mysql_query("INSERT INTO shoppingcart(id_product,id_session,shopping_date,qty,total)VALUES('$_GET[id]','$sid','$tgl_sekarang','1','$pancing[price]')");
     } else {
         mysql_query("UPDATE shoppingcart SET qty = qty + 1 WHERE id_session = '$sid' AND id_product='$_GET[id]'");
     }
@@ -26,8 +28,11 @@ if ($input == 'add') {
     header('location:../shoppingcart.php');
 }
 else if($input == 'edit'){
+        $sql = mysql_query("select *from product where id_product = '$_POST[id_product]'");
+        $pancing = mysql_fetch_array($sql);
 	$update = $_POST[qtyupd];
-	mysql_query("UPDATE `commerce_final`.`shoppingcart` SET  `qty` = '$update' WHERE  `shoppingcart`.`id_shopping` = '$_GET[id]';");
+        $total = $update * $pancing[price];
+	mysql_query("UPDATE shoppingcart SET  qty = '$update', total = '$total' WHERE  id_shopping = '$_GET[id]'");
 	header('location:../shoppingcart.php');
 	
 } elseif ($input == 'inputform') {
