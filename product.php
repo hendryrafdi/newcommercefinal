@@ -260,7 +260,7 @@ session_start();
                                                                 ?>
                                                                 <li style="height: 300px;">
                                                                     <a href="product.php?&act=product&detail=<?php echo $r[id_product]; ?>" class="product" title="<?php echo $r[nm_product]; ?>">
-                                                                        <img src="cms/<?php echo $r[image]; ?>" alt="Product Image 1" />
+                                                                        <img style="width:200px; height: 150px;" src="cms/<?php echo $r[image]; ?>" alt="Product Image 1" />
                                                                         <span class="order model"><?php echo $r[nm_product]; ?></span>
                                                                         <span class="order"><span class="buy-text">Buy Now</span><span class="price"><span class="dollar">IDR</span><?php echo number_format($r[price]); ?><span class="sub-text">.00</span></span></span>
                                                                     </a>

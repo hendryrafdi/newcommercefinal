@@ -12,13 +12,16 @@
 	if($ketemu > 0){
 		session_start();
 		$_SESSION[id_user] = $r[id_user];
-                $_SESSION[level] = $r[level];
+		$_SESSION[f_name] = $r[f_name];
+        $_SESSION[l_name] = $r[l_name];
+		$_SESSION[telp] = $r[telp];
+		$_SESSION[address] = $r[address];
 		$_SESSION[email] = $r[email];
 		$_SESSION[password] = $r[password];
 		$shop = mysql_query("select *from shoppingcart");
 		$isi = mysql_num_rows($shop);
 		if($isi > 0){
-			header("location: ../confrim.php");
+			header("location: ../confirm.php");
 		}
 		else{
 			header('location:../index.php');

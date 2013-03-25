@@ -96,8 +96,8 @@ include '../inc/config.php';
 													echo " <td>User</td> ";
 												}
 											?>
-											<td><a href="user.php?edit=<?php echo $tampil[id_user]?>"><img src="../../css/images/reply.png"/></td>
-											<td><a href="../../pages/proses_delete_user.php?del=<?php echo $tampil[id_user]?>"><img src="../../css/images/sign_cross.png"/></td>
+											<td><a href="user.php?edit=<?php echo $tampil[id_user]?>"><img src="../../css/images/reply.png"/></a></td>
+											<td><a href="../../pages/proses_delete_user.php?del=<?php echo $tampil[id_user]?>"><img src="../../css/images/sign_cross.png"/></a></td>
                                         </tr>
 										<?php
 											}
