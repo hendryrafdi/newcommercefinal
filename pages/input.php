@@ -23,7 +23,7 @@ if ($input == 'add') {
         $pancing = mysql_fetch_array($sql);
         $harga = $pancing[price];
         $total = $harga + $harga;
-        mysql_query("UPDATE shoppingcart SET qty = qty + 1, total='$total' WHERE id_session = '$sid' AND id_product='$_GET[id]'");
+        mysql_query("UPDATE shoppingcart SET qty = qty + 1, total= total + '$harga' WHERE id_session = '$sid' AND id_product='$_GET[id]'");
     }
     deletecart();
     header('location:../shoppingcart.php');
