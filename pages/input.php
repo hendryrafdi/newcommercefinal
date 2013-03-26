@@ -19,7 +19,11 @@ if ($input == 'add') {
         $pancing = mysql_fetch_array($sql);
         mysql_query("INSERT INTO shoppingcart(id_product,id_session,shopping_date,qty,total)VALUES('$_GET[id]','$sid','$tgl_sekarang','1','$pancing[price]')");
     } else {
-        mysql_query("UPDATE shoppingcart SET qty = qty + 1 WHERE id_session = '$sid' AND id_product='$_GET[id]'");
+        $sql = mysql_query("select *from product where id_product = '$_GET[id]'");
+        $pancing = mysql_fetch_array($sql);
+        $harga = $pancing[price];
+        $total = $harga + $harga;
+        mysql_query("UPDATE shoppingcart SET qty = qty + 1, total='$total' WHERE id_session = '$sid' AND id_product='$_GET[id]'");
     }
     deletecart();
     header('location:../shoppingcart.php');
