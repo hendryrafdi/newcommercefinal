@@ -31,10 +31,8 @@ else if($input == 'edit'){
         $sql = mysql_query("select *from product where id_product = '$_POST[id_product]'");
         $pancing = mysql_fetch_array($sql);
 	$update = $_POST[qtyupd];
-<<<<<<< HEAD
         $total = $update * $pancing[price];
 	mysql_query("UPDATE shoppingcart SET  qty = '$update', total = '$total' WHERE  id_shopping = '$_GET[id]'");
-=======
 	mysql_query("UPDATE `commerce_final`.`shoppingcart` SET  `qty` = '$update' WHERE  `shoppingcart`.`id_shopping` = '$_GET[id]';");
 	$cir = mysql_query("select *from product");
 	$harga = mysql_fetch_array($cir);
@@ -42,7 +40,6 @@ else if($input == 'edit'){
 	$qty = mysql_fetch_array($car);
 	
 	$hasil = $qty[qty] * $harga[price];
->>>>>>> fa2b0ee029e3e08d72e7f7f229bcc55f6dd4ecc5
 	header('location:../shoppingcart.php');
 	
 } elseif ($input == 'inputform') {
