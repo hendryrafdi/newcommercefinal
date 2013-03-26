@@ -63,8 +63,8 @@ else if($input == 'edit'){
     $jml = count($ct_content);
     $now = date("Ymd");
     for ($i = 0; $i < $jml; $i++) {
-        mysql_query("INSERT INTO orders(id_order,id_user,id_product,customer_name,customer_company,address,city,postcode,state,country,telp,qty,payment_method,status,date_purchased,last_modify) 
-				VALUES (NULL,'$_SESSION[id_user]',{$ct_content[$i]['id_product']},'$_POST[f_name] $_POST[l_name]','$_POST[company]','$_POST[address]','$_POST[city]','$_POST[postcode]','$_POST[state]','$_POST[country]','$_POST[telp]',{$ct_content[$i]['qty']},'$_POST[pembayaran]','pending','$now',NULL)");
+        $order = mysql_query("INSERT INTO orders(id_order,id_user,id_product,customer_name,customer_company,address,city,postcode,state,country,telp,qty,payment_method,status,date_purchased,last_modify) 
+				VALUES (NULL,'$_SESSION[id_user]',{$ct_content[$i]['id_product']},'$_POST[f_name] $_POST[l_name]','$_POST[company]','$_POST[address]','$_POST[city]','$_POST[postcode]','$_POST[state]','$_POST[country]','$_POST[telp]',{$ct_content[$i]['qty']},'$_POST[pembayaran]','pending','$now',NULL)");                        
     }
     for ($i = 0; $i < $jml; $i++) {
         mysql_query("DELETE FROM shoppingcart WHERE id_shopping = {$ct_content[$i]['id_shopping']}");
