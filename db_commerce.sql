@@ -26,7 +26,7 @@ CREATE TABLE `category` (
   `id_category` int(11) NOT NULL AUTO_INCREMENT,
   `nm_category` varchar(30) NOT NULL,
   PRIMARY KEY (`id_category`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -80,7 +80,7 @@ CREATE TABLE `message` (
   `content` text NOT NULL,
   `date_added` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id_message`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -89,7 +89,7 @@ CREATE TABLE `message` (
 
 LOCK TABLES `message` WRITE;
 /*!40000 ALTER TABLE `message` DISABLE KEYS */;
-INSERT INTO `message` VALUES (1,'Hendry','hendry.rafdi@live.com','Test','2013-03-14 13:27:34');
+INSERT INTO `message` VALUES (1,'Hendry','hendry.rafdi@live.com','Test','2013-03-14 13:27:34'),(2,'','','','2013-03-18 06:46:33'),(3,'','','','2013-03-18 06:47:54');
 /*!40000 ALTER TABLE `message` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -132,7 +132,7 @@ CREATE TABLE `orders` (
 
 LOCK TABLES `orders` WRITE;
 /*!40000 ALTER TABLE `orders` DISABLE KEYS */;
-INSERT INTO `orders` VALUES (1,1,2,'Hendry','Software Transformator','Jl. Kutilang 4 No.41','Depok',16432,'Jawa Barat','Indonesia',2147483647,1,'cod','active','2013-02-05 17:00:24',NULL),(2,1,4,'Hendry Rafdi','Software Transformator','Jl. Kutilang 4 No.41','Depok',16432,'Jawa Barat','Indonesia',2147483647,1,'cod','active','2013-02-05 17:00:24',NULL),(3,1,1,'Hendry Rafdi','Software Transformator','Jl. Kutilang 4 No.41','Depok',16432,'Jawa Barat','Indonesia',2147483647,1,'cod','pending','2013-02-05 17:00:24',NULL),(4,7,5,'Frets Eric','Capricornboy','Jl. Raya Bogor','Jakarta Timur',13425,'DKI Jakarta','Indonesia',901920901,1,'cod','pending','2013-02-05 17:00:24',NULL),(7,2,1,'Rizqi Fadilla','jksjdsk','Condet City','Jakarta Timur',13520,'Jawa Barat','Indonesia',901920901,1,'cod','deactive','2013-03-11 17:00:24',NULL);
+INSERT INTO `orders` VALUES (1,1,2,'Hendry','Software Transformator','Jl. Kutilang 4 No.41','Depok',16432,'Jawa Barat','Indonesia',2147483647,1,'cod','active','2013-02-05 17:00:24',NULL),(2,1,4,'Hendry Rafdi','Software Transformator','Jl. Kutilang 4 No.41','Depok',16432,'Jawa Barat','Indonesia',2147483647,1,'cod','active','2013-02-05 17:00:24',NULL),(3,1,1,'Hendry Rafdi','Software Transformator','Jl. Kutilang 4 No.41','Depok',16432,'Jawa Barat','Indonesia',2147483647,1,'cod','pending','2013-02-05 17:00:24',NULL),(4,7,5,'Frets Eric','Capricornboy','Jl. Raya Bogor','Jakarta Timur',13425,'DKI Jakarta','Indonesia',901920901,1,'cod','pending','2013-02-05 17:00:24',NULL),(7,2,1,'Rizqi Fadilla','jksjdsk','Condet City','Jakarta Timur',13520,'Jawa Barat','Indonesia',901920901,1,'cod','deactive','2013-03-11 17:00:24',NULL),(8,1,7,'Cir Indomil','','Jl. Cisarua Raya','Depok',16421,'Jawa Barat','Indonesia',81238912099,1,'cod','pending','2013-03-24 17:00:24',NULL);
 /*!40000 ALTER TABLE `orders` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -155,7 +155,7 @@ CREATE TABLE `product` (
   PRIMARY KEY (`id_product`),
   KEY `id_category` (`id_category`),
   CONSTRAINT `product_ibfk_1` FOREIGN KEY (`id_category`) REFERENCES `category` (`id_category`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -181,6 +181,7 @@ CREATE TABLE `shoppingcart` (
   `id_session` varchar(100) NOT NULL,
   `shopping_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `qty` int(10) NOT NULL,
+  `total` bigint(255) NOT NULL,
   PRIMARY KEY (`id_shopping`),
   KEY `id_product` (`id_product`),
   CONSTRAINT `shoppingcart_ibfk_1` FOREIGN KEY (`id_product`) REFERENCES `product` (`id_product`)
@@ -242,7 +243,7 @@ CREATE TABLE `user` (
   `level` varchar(1) NOT NULL,
   PRIMARY KEY (`id_user`,`email`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -251,7 +252,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (1,'Hendry','Rafdi','l','Depok','1996-01-25','',12321930,'hendry.rafdi@live.com','amoeba123','a'),(2,'Rizqi','Fadilla','l','jakarta','1996-10-22','Condet City',901920901,'dilafadila48@yahoo.com','bebas','a'),(3,'Depok','City','l','Depok','1999-01-02','Depok',1293123,'depok@city.co.id','depok','u'),(6,'Momo','Pedro','p','Jakarta','2013-02-04','Jakarta',901920901,'momo@gmail.com','momo','u'),(7,'Ambon','Eric','l','Ambon','1995-12-01','Jakarta',19023123,'ambon@capricornboy.tk','123456','a');
+INSERT INTO `user` VALUES (1,'Hendry','Rafdi','l','Depok','1996-01-25','',12321930,'hendry.rafdi@live.com','amoeba123','a'),(2,'Rizqi','Fadilla','l','jakarta','1996-10-22','Condet City',901920901,'dilafadila48@yahoo.com','bebas','a'),(3,'Hendry','Abi','l','Depok','1999-01-02','Depok',1293123,'hendryrafdi@gmail.com','abc','u'),(6,'Momo','Pedro','p','Jakarta','2013-02-04','Jakarta',901920901,'momo@gmail.com','momo','u'),(7,'Ambon','Eric','l','Ambon','1995-12-01','Jakarta',19023123,'ambon@capricornboy.tk','123456','a');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -264,4 +265,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2013-03-15 14:49:12
+-- Dump completed on 2013-03-26  9:41:23
