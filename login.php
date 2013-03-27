@@ -142,12 +142,9 @@
                                                                                 </font>
                                                                             </td>
                                                                             <td style="width: 300px;">
-                                                                                <select class="inputlogin" name="gender" style="width: 284px;" required>
-                                                                                    <option selected="selected">Gender</option>
-                                                                                    <option value="l">Male</option>
-                                                                                    <option value="p">Female</option>
-                                                                                </select>
-                                                                            </td>
+                                                                                <input type="radio" name="gender" value="l"><font color="black"> Laki-Laki </font>
+																				<input type="radio" name="gender" value="p"><font color="black"> Perempuan</font>
+																			</td>
                                                                         </tr>
                                                                         <tr>
                                                                             <td style="width: 180px;">
@@ -176,7 +173,7 @@
                                                                                 </font>
                                                                             </td>
                                                                             <td style="width: 300px;">
-                                                                                <input type="text" name="email" placeholder="Email" class="inputlogin" required>
+                                                                                <input type="email" name="email" placeholder="Email" class="inputlogin" required>
                                                                             </td>
                                                                         </tr>
                                                                         <tr>

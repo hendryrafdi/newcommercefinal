@@ -14,6 +14,7 @@
 		$_SESSION[id_user] = $r[id_user];
 		$_SESSION[f_name] = $r[f_name];
         $_SESSION[l_name] = $r[l_name];
+		$_SESSION[level] = $r[level];
 		$_SESSION[telp] = $r[telp];
 		$_SESSION[address] = $r[address];
 		$_SESSION[email] = $r[email];

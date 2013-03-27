@@ -8,14 +8,16 @@ $birthday_p = $_POST[birthday_place];
 $birthday = $_POST[birthday];
 $address = $_POST[address];
 $telp = $_POST[telp];
+$level = $_POST[level];
 $email = $_POST[email];
-$password = $_POST[password];
+$password = md5($_POST[password]);
 
 $save = mysql_query("insert into user values(null,'$f_name', '$l_name', '$gender', '$birthday_p', '$birthday', '$address', '$telp', '$email', '$password','u')");
 if ($save) {
 	$_SESSION[email] = $email;
 	$_SESSION[f_name] = $f_name;
 	$_SESSION[l_name] = $l_name;
+	$_SESSION[level] = $lavel;
 	$_SESSION[telp] = $telp;
 	$_SESSION[address] = $address;
     $shop = mysql_query("select *from shoppingcart");
