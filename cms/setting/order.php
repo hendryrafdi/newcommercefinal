@@ -16,7 +16,7 @@ include '../inc/config.php';
         <title></title>
         <link rel="stylesheet" type="css/text" href="../css/setting.css"/>
     </head>
-    <body style="background-image: url(../images/images.jpg);">
+    <body style="background-image: url(../images/Beautiful.jpg);">
         <div class="menu">
             <center>
                 <nav>

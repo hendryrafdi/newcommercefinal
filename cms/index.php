@@ -14,7 +14,7 @@ if($_SESSION['level'] == 'u'){
         <title></title>
         <link rel="stylesheet" type="css/text" href="css/style.css"/>
     </head>
-    <body style="background-image: url(images/images.jpg);">
+    <body style="background-image: url(images/Beautiful.jpg);">
         <div class="menu">
             <center>
                 <nav>
