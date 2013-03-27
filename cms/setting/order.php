@@ -1,4 +1,5 @@
 <?php
+ob_start();
 session_start();
 if ($_SESSION['email'] == NULL) {
     echo "<script>window.location=('../login.html')</script>";
@@ -36,17 +37,9 @@ include '../inc/config.php';
                         <table border="1">
                             <tr align="center">
                                 <td>ID Order</td>
-                                <td>ID User</td>
-                                <td>ID Product</td>
                                 <td>Name</td>
-                                <td>Company</td>
                                 <td>Address</td>
-                                <td>City</td>
-                                <td>Postcode</td>
-                                <td>State</td>
-                                <td>Country</td>
                                 <td>Phone</td>
-                                <td>Quantity</td>
                                 <td>Payment</td>
                                 <td>Date Purchased</td>
                                 <td>Status</td>
@@ -58,18 +51,10 @@ include '../inc/config.php';
                             while ($row = mysql_fetch_array($qorder)) {
                                 ?>
                                 <tr>
-                                    <td align="center"><?php echo $row[id_order] ?></td>
-                                    <td align="center"><?php echo $row[id_user] ?></td>
-                                    <td align="center"><?php echo $row[id_product] ?></td>
+                                    <td align="center"><a href="detail.php?oid=<?php echo $row[id_order]?>"><?php echo $row[id_order] ?></a></td>
                                     <td><?php echo $row[customer_name] ?></td>
-                                    <td><?php echo $row[customer_company] ?></td>
                                     <td><?php echo $row[address] ?></td>
-                                    <td><?php echo $row[city] ?></td>
-                                    <td><?php echo $row[postcode] ?></td>
-                                    <td><?php echo $row[state] ?></td>
-                                    <td><?php echo $row[country] ?></td>
                                     <td><?php echo $row[telp] ?></td>
-                                    <td align="center"><?php echo $row[qty] ?></td>
                                     <td><?php echo $row[payment_method] ?></td>
                                     <td><?php echo $row[date_purchased] ?></td>
                                     <td><?php echo $row[status] ?></td>
@@ -87,3 +72,4 @@ include '../inc/config.php';
         </div>
     </body>
 </html>
+<?php ob_flush(); ?>
