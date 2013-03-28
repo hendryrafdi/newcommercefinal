@@ -62,7 +62,7 @@ CREATE TABLE `contact` (
 
 LOCK TABLES `contact` WRITE;
 /*!40000 ALTER TABLE `contact` DISABLE KEYS */;
-INSERT INTO `contact` VALUES (1,6285692535495,'Jl. Kegausan Raya , No.36 Keluarahan Ragunan \r\nKecamatan Pasar Minggu','Carpink@Cingprung.krik','1404512');
+INSERT INTO `contact` VALUES (1,6285692535496,'Jl. Kegausan Raya , No.37 Keluarahan Ragunan \r\nKecamatan Pasar Minggu','Carpink@Cingprung.com','1404517');
 /*!40000 ALTER TABLE `contact` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -123,7 +123,7 @@ CREATE TABLE `orders` (
   KEY `id_product_2` (`id_product`),
   KEY `id_product_3` (`id_product`),
   CONSTRAINT `orders_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -132,7 +132,7 @@ CREATE TABLE `orders` (
 
 LOCK TABLES `orders` WRITE;
 /*!40000 ALTER TABLE `orders` DISABLE KEYS */;
-INSERT INTO `orders` VALUES (1,1,2,'Hendry','Software Transformator','Jl. Kutilang 4 No.41','Depok',16432,'Jawa Barat','Indonesia',2147483647,1,'cod','active','2013-02-05 17:00:24',NULL),(2,1,4,'Hendry Rafdi','Software Transformator','Jl. Kutilang 4 No.41','Depok',16432,'Jawa Barat','Indonesia',2147483647,1,'cod','active','2013-02-05 17:00:24',NULL),(3,1,1,'Hendry Rafdi','Software Transformator','Jl. Kutilang 4 No.41','Depok',16432,'Jawa Barat','Indonesia',2147483647,1,'cod','pending','2013-02-05 17:00:24',NULL),(4,7,5,'Frets Eric','Capricornboy','Jl. Raya Bogor','Jakarta Timur',13425,'DKI Jakarta','Indonesia',901920901,1,'cod','pending','2013-02-05 17:00:24',NULL),(7,2,1,'Rizqi Fadilla','jksjdsk','Condet City','Jakarta Timur',13520,'Jawa Barat','Indonesia',901920901,1,'cod','deactive','2013-03-11 17:00:24',NULL),(8,1,7,'Cir Indomil','','Jl. Cisarua Raya','Depok',16421,'Jawa Barat','Indonesia',81238912099,1,'cod','pending','2013-03-24 17:00:24',NULL);
+INSERT INTO `orders` VALUES (1,1,2,'Hendry','Software Transformator','Jl. Kutilang 4 No.41','Depok',16432,'Jawa Barat','Indonesia',2147483647,1,'cod','active','2013-02-05 17:00:24',NULL),(2,1,4,'Hendry Rafdi','Software Transformator','Jl. Kutilang 4 No.41','Depok',16432,'Jawa Barat','Indonesia',2147483647,1,'cod','active','2013-02-05 17:00:24',NULL),(3,1,1,'Hendry Rafdi','Software Transformator','Jl. Kutilang 4 No.41','Depok',16432,'Jawa Barat','Indonesia',2147483647,1,'cod','pending','2013-02-05 17:00:24',NULL),(4,7,5,'Frets Eric','Capricornboy','Jl. Raya Bogor','Jakarta Timur',13425,'DKI Jakarta','Indonesia',901920901,1,'cod','pending','2013-02-05 17:00:24',NULL),(7,2,1,'Rizqi Fadilla','jksjdsk','Condet City','Jakarta Timur',13520,'Jawa Barat','Indonesia',901920901,1,'cod','deactive','2013-03-11 17:00:24',NULL),(8,1,7,'Cir Indomil','','Jl. Cisarua Raya','Depok',16421,'Jawa Barat','Indonesia',81238912099,1,'cod','pending','2013-03-24 17:00:24',NULL),(9,1,1,'Hendry Rafdi','','Jl. Sederhana No. 49','Depok',16421,'Jawa Barat','Indonesia',12321930,1,'cod','pending','2013-03-25 17:00:24',NULL),(10,1,1,'Hendry Rafdi','','Jl. Sederhana No. 49','Depok',16421,'Jawa Barat','Indonesia',12321930,1,'cod','pending','2013-03-25 17:00:24',NULL),(11,1,7,'Hendry Rafdi','Softtranz','Congok','Jakarta Pusat',16421,'DKI Jakarta','Indonesia',12321930,1,'cod','pending','2013-03-25 17:00:24',NULL),(12,1,3,'Hendry Rafdi','Band','Canjur','Bogor',16421,'Jawa Barat','Indonesia',12321930,1,'cod','pending','2013-03-25 17:00:24',NULL),(13,9,3,'nama belakang','','jakarta','Depok',16421,'Jawa Barat','Indonesia',2147483647,4,'cod','pending','2013-03-25 17:00:24',NULL),(14,9,5,'nama belakang','','jakarta','Depok',16421,'Jawa Barat','Indonesia',2147483647,1,'cod','active','2013-03-25 17:00:24',NULL),(15,1,7,'Hendry Rafdi','','Jl. Sederhana No. 49','Depok',16421,'Jawa Barat','Indonesia',12321930,1,'cod','pending','2013-03-27 17:00:24',NULL);
 /*!40000 ALTER TABLE `orders` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -239,11 +239,11 @@ CREATE TABLE `user` (
   `address` text NOT NULL,
   `telp` int(12) NOT NULL,
   `email` varchar(40) NOT NULL,
-  `password` varchar(20) NOT NULL,
+  `password` text NOT NULL,
   `level` varchar(1) NOT NULL,
   PRIMARY KEY (`id_user`,`email`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -252,7 +252,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (1,'Hendry','Rafdi','l','Depok','1996-01-25','',12321930,'hendry.rafdi@live.com','amoeba123','a'),(2,'Rizqi','Fadilla','l','jakarta','1996-10-22','Condet City',901920901,'dilafadila48@yahoo.com','bebas','a'),(3,'Hendry','Abi','l','Depok','1999-01-02','Depok',1293123,'hendryrafdi@gmail.com','abc','u'),(6,'Momo','Pedro','p','Jakarta','2013-02-04','Jakarta',901920901,'momo@gmail.com','momo','u'),(7,'Ambon','Eric','l','Ambon','1995-12-01','Jakarta',19023123,'ambon@capricornboy.tk','123456','a');
+INSERT INTO `user` VALUES (1,'Hendry','Rafdi','l','Depok','1996-01-25','',12321930,'hendry.rafdi@live.com','2a65a8b5f3bb1ac4697777713070eeec','a'),(2,'Rizqi','Fadilla','l','jakarta','1996-10-22','Condet City',901920901,'dilafadila48@yahoo.com','bebas','a'),(3,'Hendry','Abi','l','Depok','1999-01-02','Depok',1293123,'hendryrafdi@gmail.com','abc','u'),(6,'Momo','Pedro','p','Jakarta','2013-02-04','Jakarta',901920901,'momo@gmail.com','momo','u'),(7,'Ambon','Eric','l','Ambon','1995-12-01','Jakarta',19023123,'ambon@capricornboy.tk','123456','a'),(8,'Natasha','','p','Jakarta','1992-09-05','Jl. Sederhana No. 49',2147483647,'natasha@gmail.com','acb123','u'),(9,'nama','belakang','G','jakarta','2013-02-25','jakarta',2147483647,'test','pass','u'),(10,'Usro','Unyil','l','Jakarta','1997-02-02','Jl. Sederhana No. 49',2147483647,'test@gmail.com','202cb962ac59075b964b07152d234b70','u');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -265,4 +265,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2013-03-26  9:41:23
+-- Dump completed on 2013-03-28  9:59:35

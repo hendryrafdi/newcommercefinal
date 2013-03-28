@@ -3,7 +3,7 @@
 	$password    = $_POST['password'];
 	$pass_md5 = md5($password);
 	
-	$login = mysql_query("select *from user where email='$_POST[email]' AND password='$password'");
+	$login = mysql_query("select *from user where email='$_POST[email]' AND password='$pass_md5'");
 	$ketemu = mysql_num_rows($login);
 	$r = mysql_fetch_array($login);
 	

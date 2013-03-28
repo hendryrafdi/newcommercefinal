@@ -2,7 +2,9 @@
 
 include 'config.php';
 
-$login = mysql_query("SELECT * FROM user WHERE email='$_POST[email]' AND password='$_POST[password]'");
+$pass = md5($_POST[password]);
+
+$login = mysql_query("SELECT * FROM user WHERE email='$_POST[email]' AND password='$pass'");
 $hasil = mysql_num_rows($login);
 $r = mysql_fetch_array($login);
 
